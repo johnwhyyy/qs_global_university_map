@@ -1,0 +1,222 @@
+[
+  {
+    "id": "mit",
+    "name": "Massachusetts Institute of Technology",
+    "profileUrl": "https://www.topuniversities.com/universities/massachusetts-institute-technology-mit",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/massachusetts-institute-of-technology-mit_410_large.jpg",
+    "localPath": "/logos/qs/mit.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:51:30.800Z"
+  },
+  {
+    "id": "imperial",
+    "name": "Imperial College London",
+    "profileUrl": "https://www.topuniversities.com/universities/imperial-college-london",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/240430033452pm869301QS-Imperial-Logo-white-text-blue-background-200x200.jpg",
+    "localPath": "/logos/qs/imperial.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:51:54.782Z"
+  },
+  {
+    "id": "stanford",
+    "name": "Stanford University",
+    "profileUrl": "https://www.topuniversities.com/universities/stanford-university",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/stanford-university_573_large.jpg",
+    "localPath": "/logos/qs/stanford.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:52:33.371Z"
+  },
+  {
+    "id": "oxford",
+    "name": "University of Oxford",
+    "profileUrl": "https://www.topuniversities.com/universities/university-oxford",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/university-of-oxford_478_large.jpg",
+    "localPath": "/logos/qs/oxford.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:52:59.644Z"
+  },
+  {
+    "id": "harvard",
+    "name": "Harvard University",
+    "profileUrl": "https://www.topuniversities.com/universities/harvard-university",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/harvard-university_253_large.jpg",
+    "localPath": "/logos/qs/harvard.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:53:24.387Z"
+  },
+  {
+    "id": "cambridge",
+    "name": "University of Cambridge",
+    "profileUrl": "https://www.topuniversities.com/universities/university-cambridge",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/university-of-cambridge_95_large.jpg",
+    "localPath": "/logos/qs/cambridge.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:53:54.112Z"
+  },
+  {
+    "id": "caltech",
+    "name": "California Institute of Technology",
+    "profileUrl": "https://www.topuniversities.com/universities/california-institute-technology-caltech",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/california-institute-of-technology-caltech_94_large.jpg",
+    "localPath": "/logos/qs/caltech.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:54:32.910Z"
+  },
+  {
+    "id": "eth",
+    "name": "ETH Zurich",
+    "profileUrl": "https://www.topuniversities.com/universities/eth-zurich",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/260622010903pm265059eth-zurich-swiss-federal-inst-of-technology-200x200.jpg",
+    "localPath": "/logos/qs/eth.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:55:02.424Z"
+  },
+  {
+    "id": "ucl",
+    "name": "University College London",
+    "profileUrl": "https://www.topuniversities.com/universities/ucl",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/brand-VI-logo-horizontal-fullcol%20%283%29.jpg",
+    "localPath": "/logos/qs/ucl.jpg",
+    "width": 150,
+    "height": 84,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:55:30.265Z"
+  },
+  {
+    "id": "nus",
+    "name": "National University of Singapore",
+    "profileUrl": "https://www.topuniversities.com/universities/national-university-singapore-nus",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/national-university-of-singapore-nus_443_large.jpg",
+    "localPath": "/logos/qs/nus.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:55:55.214Z"
+  },
+  {
+    "id": "hku",
+    "name": "The University of Hong Kong",
+    "profileUrl": "https://www.topuniversities.com/universities/university-hong-kong",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/250912101330am198735HKUcolour-low-resolution-200x200.jpg",
+    "localPath": "/logos/qs/hku.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:56:16.018Z"
+  },
+  {
+    "id": "ntu",
+    "name": "Nanyang Technological University, Singapore",
+    "profileUrl": "https://www.topuniversities.com/universities/nanyang-technological-university-singapore-ntu-singapore",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/nanyang-technological-university-singapore-ntu_592560cf2aeae70239af4c32_large.jpg",
+    "localPath": "/logos/qs/ntu.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:56:58.150Z"
+  },
+  {
+    "id": "pku",
+    "name": "Peking University",
+    "profileUrl": "https://www.topuniversities.com/universities/peking-university",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/peking-university_50_large.jpg",
+    "localPath": "/logos/qs/pku.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:57:40.862Z"
+  },
+  {
+    "id": "tsinghua",
+    "name": "Tsinghua University",
+    "profileUrl": "https://www.topuniversities.com/universities/tsinghua-university",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/tsinghua-university_626_large.jpg",
+    "localPath": "/logos/qs/tsinghua.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:57:59.464Z"
+  },
+  {
+    "id": "penn",
+    "name": "University of Pennsylvania",
+    "profileUrl": "https://www.topuniversities.com/universities/university-pennsylvania",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/university-of-pennsylvania_495_large.jpg",
+    "localPath": "/logos/qs/penn.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:58:25.832Z"
+  },
+  {
+    "id": "cornell",
+    "name": "Cornell University",
+    "profileUrl": "https://www.topuniversities.com/universities/cornell-university",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/cornell-university_143_large.jpg",
+    "localPath": "/logos/qs/cornell.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:59:01.335Z"
+  },
+  {
+    "id": "yale",
+    "name": "Yale University",
+    "profileUrl": "https://www.topuniversities.com/universities/yale-university",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/yale-university_684_large.jpg",
+    "localPath": "/logos/qs/yale.jpg",
+    "width": 0,
+    "height": 0,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:59:22.078Z"
+  },
+  {
+    "id": "cuhk",
+    "name": "The Chinese University of Hong Kong",
+    "profileUrl": "https://www.topuniversities.com/universities/chinese-university-hong-kong-cuhk",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/230719090304am589775CUHK-acronym-logo-thumb-200x200_0.jpg",
+    "localPath": "/logos/qs/cuhk.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T12:59:46.573Z"
+  },
+  {
+    "id": "unsw",
+    "name": "The University of New South Wales",
+    "profileUrl": "https://www.topuniversities.com/universities/university-new-south-wales-unsw-sydney",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/221220094647am317557UNSW-Sydney-Logo-jpeg-200x200.jpg",
+    "localPath": "/logos/qs/unsw.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T13:00:15.253Z"
+  },
+  {
+    "id": "jhu",
+    "name": "Johns Hopkins University",
+    "profileUrl": "https://www.topuniversities.com/universities/johns-hopkins-university",
+    "logoUrl": "https://www.topuniversities.com/sites/default/files/profiles/logos/johns-hopkins-university_305_large.jpg",
+    "localPath": "/logos/qs/jhu.jpg",
+    "width": 200,
+    "height": 200,
+    "alt": "university logo",
+    "scrapedAt": "2026-06-29T13:00:36.254Z"
+  }
+]
