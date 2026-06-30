@@ -44,6 +44,7 @@ a {
   flex-direction: column;
   justify-content: center;
   gap: 1.2rem;
+  min-width: 0;
   padding: clamp(1.5rem, 4vw, 4rem);
   border-right: 1px solid rgba(148, 163, 184, 0.18);
   background: rgba(8, 13, 20, 0.72);
@@ -91,11 +92,14 @@ p {
 }
 
 h1 {
-  max-width: 9.5ch;
+  width: 100%;
+  max-width: 100%;
   color: #f8fafc;
-  font-size: clamp(2.25rem, 4.1vw, 4.35rem);
+  font-size: clamp(1.9rem, 3.35vw, 3.55rem);
   font-weight: 760;
   line-height: 0.95;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .lede {
@@ -395,7 +399,7 @@ dd span {
 
   h1 {
     max-width: 18ch;
-    font-size: clamp(2.1rem, 8vw, 3.3rem);
+    font-size: clamp(1.85rem, 7.2vw, 2.9rem);
   }
 
   .selected-card {
