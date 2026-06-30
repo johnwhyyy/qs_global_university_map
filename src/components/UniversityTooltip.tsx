@@ -30,10 +30,6 @@ export function UniversityTooltip({ hover }: UniversityTooltipProps) {
       <p>{university.region}</p>
       <dl>
         <div>
-          <dt>Region</dt>
-          <dd>{university.region}</dd>
-        </div>
-        <div>
           <dt>Location</dt>
           <dd>
             {university.city}, {university.country}

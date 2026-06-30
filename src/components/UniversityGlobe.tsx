@@ -4,7 +4,7 @@ import type { GlobeMethods } from "react-globe.gl";
 import * as THREE from "three";
 import type { University, HoverState } from "../types";
 import { assetPath } from "../utils/asset";
-import { countryFeatures } from "../utils/globe";
+import { buildCountryLabels, countryFeatures } from "../utils/globe";
 
 type UniversityGlobeProps = {
   universities: University[];
@@ -44,8 +44,8 @@ function UniversityGlobeComponent({ universities, activeUniversity, onSelect, on
     controls.enableDamping = true;
     controls.dampingFactor = 0.06;
     controls.enablePan = true;
-    controls.minDistance = 210;
-    controls.maxDistance = 620;
+    controls.minDistance = 120;
+    controls.maxDistance = 760;
   }, [isGlobeReady]);
 
   useEffect(() => {
@@ -75,6 +75,11 @@ function UniversityGlobeComponent({ universities, activeUniversity, onSelect, on
     return material;
   }, []);
 
+  const countryLabels = useMemo(
+    () => buildCountryLabels(universities),
+    [universities]
+  );
+
   return (
     <section className="globe-stage" aria-label="Interactive 3D university globe">
       <Globe
@@ -91,6 +96,16 @@ function UniversityGlobeComponent({ universities, activeUniversity, onSelect, on
         polygonCapColor={() => "rgba(148, 163, 184, 0.09)"}
         polygonSideColor={() => "rgba(15, 23, 42, 0.16)"}
         polygonStrokeColor={() => "rgba(226, 232, 240, 0.18)"}
+        labelsData={countryLabels}
+        labelLat={(d: any) => d.lat}
+        labelLng={(d: any) => d.lng}
+        labelText={(d: any) => d.name}
+        labelColor={() => "rgba(226, 232, 240, 0.72)"}
+        labelSize={() => 0.72}
+        labelAltitude={() => 0.03}
+        labelDotRadius={() => 0}
+        labelResolution={1}
+        labelIncludeDot={false}
         htmlElementsData={universities}
         htmlLat={(d) => (d as University).latitude}
         htmlLng={(d) => (d as University).longitude}

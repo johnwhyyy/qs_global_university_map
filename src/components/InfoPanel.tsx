@@ -1,7 +1,7 @@
 import { ExternalLink, GraduationCap, MapPin } from "lucide-react";
 import type { University } from "../types";
 import { assetPath } from "../utils/asset";
-import { formatCoordinates, formatMoney } from "../utils/format";
+import { formatMoney } from "../utils/format";
 
 type InfoPanelProps = {
   activeUniversity: University;
@@ -23,15 +23,11 @@ export function InfoPanel({ activeUniversity }: InfoPanelProps) {
 
       <div className="selected-card">
         <div>
-          <p className="eyebrow">{activeUniversity.region}</p>
+          <p className="region-subtitle eyebrow">{activeUniversity.region}</p>
           <h2>{activeUniversity.name}</h2>
         </div>
 
         <dl className="detail-list">
-          <div>
-            <dt>Region</dt>
-            <dd>{activeUniversity.region}</dd>
-          </div>
           <div>
             <dt>
               <MapPin size={15} />
@@ -58,10 +54,6 @@ export function InfoPanel({ activeUniversity }: InfoPanelProps) {
           <div>
             <dt>2026 Ranking</dt>
             <dd>{activeUniversity.rank2026}</dd>
-          </div>
-          <div>
-            <dt>Coordinates</dt>
-            <dd>{formatCoordinates(activeUniversity.latitude, activeUniversity.longitude)}</dd>
           </div>
         </dl>
 

@@ -127,6 +127,11 @@ h1 {
   text-transform: uppercase;
 }
 
+.region-subtitle {
+  display: inline-block;
+  color: #86efac;
+}
+
 h2 {
   color: #f8fafc;
   font-size: clamp(1.25rem, 2vw, 1.7rem);
