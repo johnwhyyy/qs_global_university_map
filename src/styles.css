@@ -215,6 +215,61 @@ dd span {
   overflow: hidden;
 }
 
+.marker-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.marker-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.cluster-marker {
+  display: grid;
+  gap: 0.12rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 0;
+  border: 1px solid rgba(191, 219, 254, 0.45);
+  border-radius: 999px;
+  background: rgba(8, 15, 28, 0.95);
+  color: #dbeafe;
+  pointer-events: auto;
+}
+
+.cluster-marker span {
+  position: static;
+  min-width: 0;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.cluster-marker small {
+  display: block;
+  color: #9fb1c7;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.spider-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.06), rgba(148, 163, 184, 0.42));
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
 .globe-loading {
   display: grid;
   place-items: center;
