@@ -8,16 +8,86 @@ const topology = countries110m as unknown as {
 };
 
 const countries = feature(countries110m as never, topology.objects.countries) as unknown as {
-  features: object[];
+  features: CountryFeature[];
 };
 
 export const countryFeatures = countries.features;
+
+type CountryFeature = {
+  properties?: {
+    name?: string;
+  };
+  geometry?: {
+    type: "Polygon" | "MultiPolygon";
+    coordinates: number[][][] | number[][][][];
+  };
+};
 
 export type CountryLabel = {
   name: string;
   lat: number;
   lng: number;
 };
+
+const COUNTRY_NAME_ALIASES: Record<string, string> = {
+  "United States": "United States of America"
+};
+
+const COUNTRY_LABEL_OVERRIDES: Record<string, { lat: number; lng: number }> = {
+  "Hong Kong SAR": { lat: 22.3193, lng: 114.1694 },
+  Singapore: { lat: 1.3521, lng: 103.8198 }
+};
+
+function ringArea(ring: number[][]): number {
+  let area = 0;
+
+  for (let index = 0; index < ring.length - 1; index += 1) {
+    const current = ring[index];
+    const next = ring[index + 1];
+    area += current[0] * next[1] - next[0] * current[1];
+  }
+
+  return area / 2;
+}
+
+function ringCentroid(ring: number[][]): { lat: number; lng: number } | null {
+  const area = ringArea(ring);
+
+  if (!area) return null;
+
+  let lngTotal = 0;
+  let latTotal = 0;
+
+  for (let index = 0; index < ring.length - 1; index += 1) {
+    const current = ring[index];
+    const next = ring[index + 1];
+    const cross = current[0] * next[1] - next[0] * current[1];
+    lngTotal += (current[0] + next[0]) * cross;
+    latTotal += (current[1] + next[1]) * cross;
+  }
+
+  return {
+    lat: latTotal / (6 * area),
+    lng: lngTotal / (6 * area)
+  };
+}
+
+function featureCentroid(country: CountryFeature): { lat: number; lng: number } | null {
+  if (!country.geometry) return null;
+
+  const polygons =
+    country.geometry.type === "Polygon"
+      ? [country.geometry.coordinates as number[][][]]
+      : (country.geometry.coordinates as number[][][][]);
+
+  const outerRings = polygons.map((polygon) => polygon[0]).filter(Boolean);
+  const largestOuterRing = outerRings.reduce<number[][] | null>((largest, ring) => {
+    if (!largest) return ring;
+    return Math.abs(ringArea(ring)) > Math.abs(ringArea(largest)) ? ring : largest;
+  }, null);
+
+  return largestOuterRing ? ringCentroid(largestOuterRing) : null;
+}
 
 export function buildCountryLabels(
   universities: Array<{
@@ -26,19 +96,30 @@ export function buildCountryLabels(
     longitude: number;
   }>
 ): CountryLabel[] {
-  const grouped = new Map<string, { latitude: number; longitude: number; count: number }>();
+  const labelCountries = [...new Set(universities.map((university) => university.country))];
 
-  for (const university of universities) {
-    const entry = grouped.get(university.country) ?? { latitude: 0, longitude: 0, count: 0 };
-    entry.latitude += university.latitude;
-    entry.longitude += university.longitude;
-    entry.count += 1;
-    grouped.set(university.country, entry);
-  }
+  return labelCountries
+    .map((displayName) => {
+      const override = COUNTRY_LABEL_OVERRIDES[displayName];
+      if (override) {
+        return {
+          name: displayName,
+          lat: override.lat,
+          lng: override.lng
+        };
+      }
 
-  return [...grouped.entries()].map(([name, value]) => ({
-    name,
-    lat: value.latitude / value.count,
-    lng: value.longitude / value.count
-  }));
+      const geometryName = COUNTRY_NAME_ALIASES[displayName] ?? displayName;
+      const country = countries.features.find((featureEntry) => featureEntry.properties?.name === geometryName);
+      if (!country) return null;
+      const centroid = featureCentroid(country);
+      if (!centroid) return null;
+
+      return {
+        name: displayName,
+        lat: centroid.lat,
+        lng: centroid.lng
+      };
+    })
+    .filter((label): label is CountryLabel => Boolean(label));
 }

@@ -21,8 +21,17 @@ export type University = {
   coordinateSource: string;
 };
 
-export type HoverState = {
-  university: University;
-  x: number;
-  y: number;
-} | null;
+export type HoverState =
+  | {
+      type: "university";
+      university: University;
+      x: number;
+      y: number;
+    }
+  | {
+      type: "cluster";
+      universities: University[];
+      x: number;
+      y: number;
+    }
+  | null;

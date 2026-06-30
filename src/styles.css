@@ -34,7 +34,7 @@ a {
 
 .app-shell {
   display: grid;
-  grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+  grid-template-columns: minmax(360px, 520px) minmax(0, 1fr);
   min-height: 100vh;
   isolation: isolate;
 }
@@ -224,6 +224,13 @@ dd span {
   overflow: hidden;
 }
 
+.marker-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
 .globe-loading {
   display: grid;
   place-items: center;
@@ -240,6 +247,36 @@ dd span {
 
 .globe-stage canvas:active {
   cursor: grabbing;
+}
+
+.map-reset-button {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 2.55rem;
+  height: 2.55rem;
+  padding: 0;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 8px;
+  color: #dbeafe;
+  background: rgba(8, 13, 20, 0.72);
+  box-shadow: 0 0.9rem 2.2rem rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(14px);
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.map-reset-button:hover,
+.map-reset-button:focus-visible {
+  border-color: rgba(147, 197, 253, 0.62);
+  background: rgba(30, 64, 175, 0.28);
+  transform: translateY(-1px);
 }
 
 .globe-caption {
@@ -322,6 +359,29 @@ dd span {
   line-height: 1;
 }
 
+.screen-marker {
+  position: absolute;
+}
+
+.marker.is-cluster {
+  border-color: rgba(134, 239, 172, 0.52);
+  box-shadow:
+    0 0 0 0.28rem rgba(15, 23, 42, 0.46),
+    0 0.85rem 1.9rem rgba(0, 0, 0, 0.38);
+}
+
+.marker .cluster-count {
+  top: -0.42rem;
+  right: -0.52rem;
+  bottom: auto;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  border-color: rgba(226, 232, 240, 0.36);
+  color: #052e16;
+  background: #86efac;
+  font-size: 0.6rem;
+}
+
 .tooltip-card {
   position: fixed;
   z-index: 20;
@@ -382,6 +442,38 @@ dd span {
 
 .tooltip-card dd {
   font-size: 0.84rem;
+}
+
+.cluster-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cluster-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #e5edf7;
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.cluster-list span {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 1.35rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 999px;
+  color: #dbeafe;
+  background: rgba(30, 64, 175, 0.22);
+  font-size: 0.68rem;
+  font-weight: 800;
 }
 
 @media (max-width: 980px) {

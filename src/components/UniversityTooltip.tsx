@@ -11,7 +11,37 @@ export function UniversityTooltip({ hover }: UniversityTooltipProps) {
     return null;
   }
 
-  const { university, x, y } = hover;
+  const { x, y } = hover;
+
+  if (hover.type === "cluster") {
+    return (
+      <div
+        className="tooltip-card"
+        style={{
+          left: `${x}px`,
+          top: `${y}px`
+        }}
+        role="status"
+      >
+        <div className="tooltip-topline">
+          <span>{hover.universities.length} schools</span>
+          <img src={assetPath(hover.universities[0].logoPath)} alt="" />
+        </div>
+        <h3>Clustered universities</h3>
+        <p>Overlapping markers at this zoom level</p>
+        <ul className="cluster-list">
+          {hover.universities.map((university) => (
+            <li key={university.name}>
+              <span>QS {university.rank2027}</span>
+              {university.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  const { university } = hover;
 
   return (
     <div
@@ -21,7 +51,7 @@ export function UniversityTooltip({ hover }: UniversityTooltipProps) {
         top: `${y}px`
       }}
       role="status"
-      >
+    >
       <div className="tooltip-topline">
         <span>QS {university.rank2027}</span>
         <img src={assetPath(university.logoPath)} alt="" />
