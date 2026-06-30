@@ -42,9 +42,11 @@ The production output is written to `dist/`.
 
 ### GitHub Pages
 
-1. Run `npm run build`.
-2. Publish the `dist/` directory with your preferred Pages workflow.
-3. If deploying under a subpath, set Vite's `base` option in `vite.config.ts`.
+1. Push `main` to GitHub.
+2. In the repository, open `Settings` > `Pages`.
+3. Under `Build and deployment`, choose `GitHub Actions`.
+4. Commit the workflow in `.github/workflows/deploy-pages.yml`.
+5. After the action finishes, GitHub Pages will give you a public link like `https://YOUR_USERNAME.github.io/qs_global_university_map/`.
 
 ## Data
 
