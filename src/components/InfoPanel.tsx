@@ -1,5 +1,6 @@
 import { ExternalLink, GraduationCap, MapPin } from "lucide-react";
 import type { University } from "../types";
+import { assetPath } from "../utils/asset";
 import { formatCoordinates, formatMoney } from "../utils/format";
 
 type InfoPanelProps = {
@@ -12,7 +13,7 @@ export function InfoPanel({ activeUniversity, total }: InfoPanelProps) {
     <aside className="info-panel" aria-label="Selected university details">
       <div className="panel-header">
         <div className="rank-chip">QS {activeUniversity.rank}</div>
-        <img src={activeUniversity.logoPath} alt="" className="panel-logo" />
+        <img src={assetPath(activeUniversity.logoPath)} alt="" className="panel-logo" />
       </div>
 
       <h1>QS World University Rankings 2027</h1>

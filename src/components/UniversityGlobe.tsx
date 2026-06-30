@@ -3,6 +3,7 @@ import Globe from "react-globe.gl";
 import type { GlobeMethods } from "react-globe.gl";
 import * as THREE from "three";
 import type { University, HoverState } from "../types";
+import { assetPath } from "../utils/asset";
 import { countryFeatures } from "../utils/globe";
 
 type UniversityGlobeProps = {
@@ -100,7 +101,7 @@ function UniversityGlobeComponent({ universities, activeUniversity, onSelect, on
           marker.className = `marker ${university.name === activeUniversity.name ? "is-active" : ""}`;
           marker.type = "button";
           marker.setAttribute("aria-label", `${university.rank}: ${university.name}`);
-          marker.innerHTML = `<img src="${university.logoPath}" alt="" /><span>${university.rank}</span>`;
+          marker.innerHTML = `<img src="${assetPath(university.logoPath)}" alt="" /><span>${university.rank}</span>`;
           marker.addEventListener("mouseenter", (event) => {
             const target = event.currentTarget as HTMLElement;
             const rect = target.getBoundingClientRect();

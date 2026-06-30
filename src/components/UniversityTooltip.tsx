@@ -1,4 +1,5 @@
 import type { HoverState } from "../types";
+import { assetPath } from "../utils/asset";
 import { formatCoordinates, formatMoney } from "../utils/format";
 
 type UniversityTooltipProps = {
@@ -23,7 +24,7 @@ export function UniversityTooltip({ hover }: UniversityTooltipProps) {
     >
       <div className="tooltip-topline">
         <span>QS {university.rank}</span>
-        <img src={university.logoPath} alt="" />
+        <img src={assetPath(university.logoPath)} alt="" />
       </div>
       <h3>{university.name}</h3>
       <p>
