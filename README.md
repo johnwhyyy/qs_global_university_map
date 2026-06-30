@@ -1,6 +1,6 @@
-# QS Top 20 Universities Globe
+# QS World Best Universities Map
 
-Interactive, static-hostable React visualization of the current QS top universities on a minimalist 3D globe.
+Interactive, static-hostable React visualization of the top 100 QS 2027 universities on a minimalist 3D globe.
 
 ## Stack
 
@@ -55,12 +55,12 @@ The structured data lives in `src/data/universities.json`. Each record includes:
 - 2027 and 2026 QS rank, university name, city, country
 - Region
 - Campus latitude and longitude
-- Annual tuition amount, currency, label, and assumptions
+- Annual tuition amount when available, currency, label, and assumptions
 - Official website
 - Marker logo path
-- QS, tuition, and coordinate source links
+- QS, logo, official website, and coordinate source links
 
-The ranking and region values are sourced from `2027 QS World University Rankings.xlsx`, using rows 4 through 24. The workbook includes a tied 20th place, so the app currently renders 21 university records.
+The ranking and region values are sourced from `2027 QS World University Rankings.xlsx`, using rows 4 through 103. The app currently renders 100 university records.
 
 The app keeps the QS page URL in the row data for reference:
 
@@ -78,13 +78,13 @@ Tuition varies by residency, course, school, and whether fees are quoted as tuit
 - ETH Zurich: two semesters of tuition plus the international surcharge; mandatory semester fees are excluded.
 - UNSW Sydney: representative international undergraduate indicative annual tuition.
 
-Every tuition value has a direct source URL in `src/data/universities.json` so figures can be audited or replaced when institutional fee tables change.
+The original top-ranked records keep representative tuition figures. Expanded top-100 records that were not manually audited use a clear "see official website" tuition label rather than an invented amount.
 
 ## Logos And Markers
 
-The app uses local image assets in `public/logos/qs/` that were scraped from the corresponding QS TopUniversities profile pages. The scraped source URL, QS profile URL, local path, dimensions, and timestamp for each logo are recorded in `src/data/qs-logo-sources.json`.
+The app uses local image assets in `public/logos/qs/`. Existing QS-sourced images are preserved for the original top-ranked records. For expanded records where QS profile scraping was unavailable from the local environment, generated local placeholder SVGs are stored in the same folder so the deployed app remains self-contained and does not hotlink assets.
 
-The older monogram placeholder badges remain in `public/logos/` as fallback assets. The scraped QS files avoid hotlinking, but they do not remove trademark or licensing obligations. Confirm permission to use each university mark before deploying a public production site.
+Logo source metadata, local paths, dimensions, and notes are recorded in `src/data/qs-logo-sources.json`. Confirm permission to use each university mark before deploying a public production site.
 
 ## Maintenance
 

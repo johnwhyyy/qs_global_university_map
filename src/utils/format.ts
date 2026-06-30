@@ -1,4 +1,8 @@
-export function formatMoney(amount: number, currency: string): string {
+export function formatMoney(amount: number | null, currency: string): string {
+  if (amount === null) {
+    return "See official website";
+  }
+
   return new Intl.NumberFormat("en", {
     style: "currency",
     currency,

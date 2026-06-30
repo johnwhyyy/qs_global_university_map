@@ -75,7 +75,7 @@ export function UniversityTooltip({ hover }: UniversityTooltipProps) {
         </div>
         <div>
           <dt>2026 Ranking</dt>
-          <dd>{university.rank2026}</dd>
+          <dd>{university.rank2026 || "Not ranked"}</dd>
         </div>
       </dl>
     </div>

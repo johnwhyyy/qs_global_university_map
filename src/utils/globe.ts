@@ -30,11 +30,14 @@ export type CountryLabel = {
 };
 
 const COUNTRY_NAME_ALIASES: Record<string, string> = {
+  "China (Mainland)": "China",
+  "Republic of Korea": "South Korea",
   "United States": "United States of America"
 };
 
 const COUNTRY_LABEL_OVERRIDES: Record<string, { lat: number; lng: number }> = {
   "Hong Kong SAR": { lat: 22.3193, lng: 114.1694 },
+  "Hong Kong SAR, China": { lat: 22.3193, lng: 114.1694 },
   Singapore: { lat: 1.3521, lng: 103.8198 }
 };
 

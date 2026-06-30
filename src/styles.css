@@ -299,8 +299,8 @@ dd span {
   position: relative;
   display: grid;
   place-items: center;
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.05rem;
+  height: 2.05rem;
   padding: 0;
   border: 1px solid rgba(226, 232, 240, 0.44);
   border-radius: 50%;
@@ -335,26 +335,26 @@ dd span {
 }
 
 .marker img {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.55rem;
+  height: 1.55rem;
   border-radius: 50%;
   object-fit: contain;
 }
 
 .marker span {
   position: absolute;
-  right: -0.46rem;
-  bottom: -0.3rem;
+  right: -0.42rem;
+  bottom: -0.28rem;
   display: grid;
   place-items: center;
-  min-width: 1.15rem;
-  height: 1.15rem;
+  min-width: 1.05rem;
+  height: 1.05rem;
   padding: 0 0.18rem;
   border: 1px solid rgba(226, 232, 240, 0.26);
   border-radius: 999px;
   color: #e5edf7;
   background: #0f172a;
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   font-weight: 800;
   line-height: 1;
 }

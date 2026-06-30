@@ -53,7 +53,7 @@ export function InfoPanel({ activeUniversity }: InfoPanelProps) {
           </div>
           <div>
             <dt>2026 Ranking</dt>
-            <dd>{activeUniversity.rank2026}</dd>
+            <dd>{activeUniversity.rank2026 || "Not ranked"}</dd>
           </div>
         </dl>
 

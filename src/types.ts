@@ -8,7 +8,7 @@ export type University = {
   latitude: number;
   longitude: number;
   tuition: {
-    amount: number;
+    amount: number | null;
     currency: string;
     label: string;
     assumption: string;

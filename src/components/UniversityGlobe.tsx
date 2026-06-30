@@ -25,11 +25,11 @@ type MarkerCluster = {
   screen: ScreenPoint;
 };
 
-const MARKER_SIZE = 37.6;
+const MARKER_SIZE = 32.8;
 const CLUSTER_DISTANCE = MARKER_SIZE * (2 / 3);
 const HORIZON_DEGREES = 91.5;
 const MAX_COUNTRY_LABEL_SIZE = 2;
-const MIN_COUNTRY_LABEL_SIZE = 0.2;
+const MIN_COUNTRY_LABEL_SIZE = 0.1;
 const LABEL_SIZE_REFERENCE_DISTANCE = 330;
 const INITIAL_ALTITUDE = 2.35;
 
