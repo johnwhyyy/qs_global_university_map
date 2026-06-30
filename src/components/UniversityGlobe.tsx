@@ -100,8 +100,8 @@ function UniversityGlobeComponent({ universities, activeUniversity, onSelect, on
           const marker = document.createElement("button");
           marker.className = `marker ${university.name === activeUniversity.name ? "is-active" : ""}`;
           marker.type = "button";
-          marker.setAttribute("aria-label", `${university.rank}: ${university.name}`);
-          marker.innerHTML = `<img src="${assetPath(university.logoPath)}" alt="" /><span>${university.rank}</span>`;
+          marker.setAttribute("aria-label", `${university.rank2027}: ${university.name}`);
+          marker.innerHTML = `<img src="${assetPath(university.logoPath)}" alt="" /><span>${university.rank2027}</span>`;
           marker.addEventListener("mouseenter", (event) => {
             const target = event.currentTarget as HTMLElement;
             const rect = target.getBoundingClientRect();

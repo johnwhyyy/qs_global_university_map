@@ -1,7 +1,8 @@
 export type University = {
-  rank: string;
+  rank2027: string;
+  rank2026: string;
+  region: string;
   name: string;
-  shortName: string;
   city: string;
   country: string;
   latitude: number;
@@ -16,7 +17,7 @@ export type University = {
   logoSource: string;
   logoProfileSource: string;
   qsSource: string;
-  tuitionSource: string;
+  officialWebsite: string;
   coordinateSource: string;
 };
 

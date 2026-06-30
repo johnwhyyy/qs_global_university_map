@@ -5,29 +5,33 @@ import { formatCoordinates, formatMoney } from "../utils/format";
 
 type InfoPanelProps = {
   activeUniversity: University;
-  total: number;
 };
 
-export function InfoPanel({ activeUniversity, total }: InfoPanelProps) {
+export function InfoPanel({ activeUniversity }: InfoPanelProps) {
   return (
     <aside className="info-panel" aria-label="Selected university details">
       <div className="panel-header">
-        <div className="rank-chip">QS {activeUniversity.rank}</div>
+        <div className="rank-chip">QS {activeUniversity.rank2027}</div>
         <img src={assetPath(activeUniversity.logoPath)} alt="" className="panel-logo" />
       </div>
 
-      <h1>QS World University Rankings 2027</h1>
+      <h1>QS World Best Universities Map</h1>
       <p className="lede">
-        A source-backed 3D view of the current top {total} institutions, plotted at campus-level coordinates.
+        Top universities in the world according to QS 2027 world university ranking. Drag to rotate and pan. Scroll or
+        pinch to zoom. Hover markers for tuition and school details.
       </p>
 
       <div className="selected-card">
         <div>
-          <p className="eyebrow">Selected university</p>
+          <p className="eyebrow">{activeUniversity.region}</p>
           <h2>{activeUniversity.name}</h2>
         </div>
 
         <dl className="detail-list">
+          <div>
+            <dt>Region</dt>
+            <dd>{activeUniversity.region}</dd>
+          </div>
           <div>
             <dt>
               <MapPin size={15} />
@@ -48,6 +52,14 @@ export function InfoPanel({ activeUniversity, total }: InfoPanelProps) {
             </dd>
           </div>
           <div>
+            <dt>2027 Ranking</dt>
+            <dd>{activeUniversity.rank2027}</dd>
+          </div>
+          <div>
+            <dt>2026 Ranking</dt>
+            <dd>{activeUniversity.rank2026}</dd>
+          </div>
+          <div>
             <dt>Coordinates</dt>
             <dd>{formatCoordinates(activeUniversity.latitude, activeUniversity.longitude)}</dd>
           </div>
@@ -56,12 +68,12 @@ export function InfoPanel({ activeUniversity, total }: InfoPanelProps) {
         <p className="assumption">{activeUniversity.tuition.assumption}</p>
 
         <div className="source-links">
-          <a href={activeUniversity.qsSource} target="_blank" rel="noreferrer">
-            QS source
+          <a href={activeUniversity.officialWebsite} target="_blank" rel="noreferrer">
+            Official website
             <ExternalLink size={13} />
           </a>
-          <a href={activeUniversity.tuitionSource} target="_blank" rel="noreferrer">
-            Tuition source
+          <a href={activeUniversity.qsSource} target="_blank" rel="noreferrer">
+            QS source
             <ExternalLink size={13} />
           </a>
         </div>

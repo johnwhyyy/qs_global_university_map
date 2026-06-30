@@ -1,6 +1,6 @@
 # QS Top 20 Universities Globe
 
-Interactive, static-hostable React visualization of the current top 20 institutions in the QS World University Rankings on a minimalist 3D globe.
+Interactive, static-hostable React visualization of the current QS top universities on a minimalist 3D globe.
 
 ## Stack
 
@@ -52,17 +52,19 @@ The production output is written to `dist/`.
 
 The structured data lives in `src/data/universities.json`. Each record includes:
 
-- QS rank, university name, city, country
+- 2027 and 2026 QS rank, university name, city, country
+- Region
 - Campus latitude and longitude
-- Tuition amount, currency, label, and assumptions
+- Annual tuition amount, currency, label, and assumptions
+- Official website
 - Marker logo path
 - QS, tuition, and coordinate source links
 
-The ranking is based on the current QS World University Rankings 2027 page from QS TopUniversities, accessed June 29, 2026:
+The ranking and region values are sourced from `2027 QS World University Rankings.xlsx`, using rows 4 through 24. The workbook includes a tied 20th place, so the app currently renders 21 university records.
+
+The app keeps the QS page URL in the row data for reference:
 
 - https://www.topuniversities.com/world-university-rankings
-
-Because the QS page is dynamically rendered and may be rate-limited, the top-20 order was cross-checked against contemporary reporting of the QS 2027 table. The app uses the official QS page as the ranking source URL in the data file.
 
 ## Tuition Assumptions
 
@@ -89,6 +91,6 @@ The older monogram placeholder badges remain in `public/logos/` as fallback asse
 To update a future QS release:
 
 1. Edit `src/data/universities.json`.
-2. Keep `rank`, `latitude`, `longitude`, `tuition`, `currency`, `logoPath`, `qsSource`, and `tuitionSource` populated.
+2. Keep `rank2027`, `rank2026`, `region`, `latitude`, `longitude`, `tuition`, `currency`, `logoPath`, `officialWebsite`, and `qsSource` populated.
 3. Replace or add marker assets in `public/logos/qs/` and update `src/data/qs-logo-sources.json` if the source changes.
 4. Run `npm run build` before deployment.

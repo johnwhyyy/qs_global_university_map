@@ -1,6 +1,6 @@
 import type { HoverState } from "../types";
 import { assetPath } from "../utils/asset";
-import { formatCoordinates, formatMoney } from "../utils/format";
+import { formatMoney } from "../utils/format";
 
 type UniversityTooltipProps = {
   hover: HoverState;
@@ -21,27 +21,35 @@ export function UniversityTooltip({ hover }: UniversityTooltipProps) {
         top: `${y}px`
       }}
       role="status"
-    >
+      >
       <div className="tooltip-topline">
-        <span>QS {university.rank}</span>
+        <span>QS {university.rank2027}</span>
         <img src={assetPath(university.logoPath)} alt="" />
       </div>
       <h3>{university.name}</h3>
-      <p>
-        {university.city}, {university.country}
-      </p>
+      <p>{university.region}</p>
       <dl>
+        <div>
+          <dt>Region</dt>
+          <dd>{university.region}</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>
+            {university.city}, {university.country}
+          </dd>
+        </div>
         <div>
           <dt>Annual tuition</dt>
           <dd>{formatMoney(university.tuition.amount, university.tuition.currency)}</dd>
         </div>
         <div>
-          <dt>Tuition basis</dt>
-          <dd>{university.tuition.label}</dd>
+          <dt>2027 Ranking</dt>
+          <dd>{university.rank2027}</dd>
         </div>
         <div>
-          <dt>Coordinates</dt>
-          <dd>{formatCoordinates(university.latitude, university.longitude)}</dd>
+          <dt>2026 Ranking</dt>
+          <dd>{university.rank2026}</dd>
         </div>
       </dl>
     </div>

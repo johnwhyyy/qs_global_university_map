@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { InfoPanel } from "./components/InfoPanel";
 import { UniversityTooltip } from "./components/UniversityTooltip";
 import universitiesData from "./data/universities.json";
@@ -13,11 +13,15 @@ export default function App() {
   const [activeUniversity, setActiveUniversity] = useState<University>(universities[0]);
   const [hover, setHover] = useState<HoverState>(null);
 
+  useEffect(() => {
+    document.title = "QS World Best Universities Map";
+  }, []);
+
   const rankedUniversities = useMemo(
     () =>
       [...universities].sort((a, b) => {
-        const rankA = Number(a.rank.replace("=", ""));
-        const rankB = Number(b.rank.replace("=", ""));
+        const rankA = Number(a.rank2027.replace("=", ""));
+        const rankB = Number(b.rank2027.replace("=", ""));
         return rankA - rankB || a.name.localeCompare(b.name);
       }),
     []
@@ -25,7 +29,7 @@ export default function App() {
 
   return (
     <main className="app-shell">
-      <InfoPanel activeUniversity={activeUniversity} total={rankedUniversities.length} />
+      <InfoPanel activeUniversity={activeUniversity} />
       <Suspense
         fallback={
           <section className="globe-stage globe-loading" aria-label="Loading interactive globe">
