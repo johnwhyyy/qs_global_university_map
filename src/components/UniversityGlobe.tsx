@@ -13,6 +13,7 @@ type UniversityGlobeProps = {
   panelFocusRequest: { university: University; id: number } | null;
   onSelect: (university: University) => void;
   onHover: (hover: HoverState) => void;
+  onHoverEnd: () => void;
 };
 
 type ScreenPoint = {
@@ -150,7 +151,8 @@ function UniversityGlobeComponent({
   activeUniversity,
   panelFocusRequest,
   onSelect,
-  onHover
+  onHover,
+  onHoverEnd
 }: UniversityGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const hasSetInitialView = useRef(false);
@@ -393,7 +395,7 @@ function UniversityGlobeComponent({
                       }
                 );
               }}
-              onMouseLeave={() => onHover(null)}
+              onMouseLeave={onHoverEnd}
               onClick={() => selectUniversity(topUniversity)}
             >
               <img src={assetPath(topUniversity.logoPath)} alt="" />

@@ -44,7 +44,7 @@ export function InfoPanel({
         <div className="selected-card">
           <button className="panel-secondary-button" type="button" onClick={onShowRankingList}>
             <List size={15} />
-            Ranking list
+            Go back to full ranking list
           </button>
 
           <div>
@@ -119,6 +119,7 @@ export function InfoPanel({
                 <li key={university.name}>
                   <button type="button" onClick={() => onSelectUniversity(university)}>
                     <span>QS {university.rank2027}</span>
+                    <img src={assetPath(university.logoPath)} alt={`${university.name} logo`} />
                     <strong>{university.name}</strong>
                   </button>
                 </li>

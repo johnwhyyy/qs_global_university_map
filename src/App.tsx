@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { InfoPanel } from "./components/InfoPanel";
 import { UniversityTooltip } from "./components/UniversityTooltip";
 import universitiesData from "./data/universities.json";
@@ -14,6 +14,7 @@ export default function App() {
   const [activeUniversity, setActiveUniversity] = useState<University | null>(null);
   const [panelFocusRequest, setPanelFocusRequest] = useState<{ university: University; id: number } | null>(null);
   const [hover, setHover] = useState<HoverState>(null);
+  const hoverCloseTimer = useRef<number | null>(null);
 
   useEffect(() => {
     document.title = "QS World Best Universities Map";
@@ -21,9 +22,33 @@ export default function App() {
 
   const rankedUniversities = useMemo(() => sortByRank(universities), []);
 
-  const selectUniversityFromPanel = (university: University) => {
+  const cancelHoverClose = () => {
+    if (hoverCloseTimer.current !== null) {
+      window.clearTimeout(hoverCloseTimer.current);
+      hoverCloseTimer.current = null;
+    }
+  };
+
+  const showHover = (nextHover: HoverState) => {
+    cancelHoverClose();
+    setHover(nextHover);
+  };
+
+  const scheduleHoverClose = () => {
+    cancelHoverClose();
+    hoverCloseTimer.current = window.setTimeout(() => {
+      setHover(null);
+      hoverCloseTimer.current = null;
+    }, 180);
+  };
+
+  useEffect(() => () => cancelHoverClose(), []);
+
+  const handleUniversitySelection = (university: University, options: { focusGlobe?: boolean } = {}) => {
     setActiveUniversity(university);
-    setPanelFocusRequest({ university, id: Date.now() });
+    if (options.focusGlobe) {
+      setPanelFocusRequest({ university, id: Date.now() });
+    }
   };
 
   return (
@@ -31,7 +56,7 @@ export default function App() {
       <InfoPanel
         activeUniversity={activeUniversity}
         universities={rankedUniversities}
-        onSelectUniversity={selectUniversityFromPanel}
+        onSelectUniversity={(university) => handleUniversitySelection(university, { focusGlobe: true })}
         onShowRankingList={() => setActiveUniversity(null)}
       />
       <Suspense
@@ -45,11 +70,17 @@ export default function App() {
           universities={rankedUniversities}
           activeUniversity={activeUniversity}
           panelFocusRequest={panelFocusRequest}
-          onSelect={setActiveUniversity}
-          onHover={setHover}
+          onSelect={(university) => handleUniversitySelection(university)}
+          onHover={showHover}
+          onHoverEnd={scheduleHoverClose}
         />
       </Suspense>
-      <UniversityTooltip hover={hover} />
+      <UniversityTooltip
+        hover={hover}
+        onSelectUniversity={(university) => handleUniversitySelection(university, { focusGlobe: true })}
+        onPointerEnter={cancelHoverClose}
+        onPointerLeave={scheduleHoverClose}
+      />
     </main>
   );
 }
