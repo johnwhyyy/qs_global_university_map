@@ -2,6 +2,8 @@
 
 Interactive, static-hostable React visualization of the top 100 QS 2027 universities on a minimalist 3D globe.
 
+On first load, the side panel shows a scrollable QS ranking list instead of a preselected school. Users can choose a school from the list, search by university name or region, or click a marker on the globe to open the school detail view.
+
 ## Stack
 
 - React + TypeScript + Vite
@@ -25,6 +27,23 @@ npm run preview
 ```
 
 The production output is written to `dist/`.
+
+## Interface
+
+The left side panel has two states:
+
+- Ranking list: the default view, sorted by 2027 QS ranking. Each row shows the 2027 rank and university name.
+- Detail view: opens after selecting a school and shows region, location, annual tuition, 2027 rank, 2026 rank, official website, and QS source.
+
+The search field filters the ranking list as the user types. Search is case-insensitive and matches university name, region, city, country, and rank. Selecting a search result uses the same shared selection flow as selecting a ranking-list row.
+
+Selecting from the ranking list or search recenters the globe on the selected campus at a readable altitude. Clicking a globe marker keeps the existing marker behavior: it selects the school and shows the detail card without using the side-panel zoom target.
+
+## Map Behavior
+
+University markers use campus latitude and longitude from `src/data/universities.json`. The globe projects those coordinates into screen space, clusters visually overlapping markers, and shows a `+n` badge for hidden schools in a cluster. The cluster uses the highest-ranked school logo as its visible marker.
+
+The selected university marker is highlighted in the same green used by the Region subtitle. If the selected university is currently inside a cluster, the cluster marker receives the active highlight.
 
 ## Deploy
 
@@ -66,6 +85,8 @@ The app keeps the QS page URL in the row data for reference:
 
 - https://www.topuniversities.com/world-university-rankings
 
+Search and rank ordering helpers live in `src/utils/universitySearch.ts`, so future data updates do not require changing component-level filtering logic.
+
 ## Tuition Assumptions
 
 Tuition varies by residency, course, school, and whether fees are quoted as tuition only or full cost of attendance. To keep the visualization comparable and readable, each record uses one representative annual figure:
@@ -94,3 +115,5 @@ To update a future QS release:
 2. Keep `rank2027`, `rank2026`, `region`, `latitude`, `longitude`, `tuition`, `currency`, `logoPath`, `officialWebsite`, and `qsSource` populated.
 3. Replace or add marker assets in `public/logos/qs/` and update `src/data/qs-logo-sources.json` if the source changes.
 4. Run `npm run build` before deployment.
+
+When expanding or replacing the dataset, preserve the same field names so the ranking list, search, detail panel, clustering, and marker highlighting continue to work without component changes.

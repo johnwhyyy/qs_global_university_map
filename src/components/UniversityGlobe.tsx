@@ -9,7 +9,8 @@ import { buildCountryLabels, countryFeatures } from "../utils/globe";
 
 type UniversityGlobeProps = {
   universities: University[];
-  activeUniversity: University;
+  activeUniversity: University | null;
+  panelFocusRequest: { university: University; id: number } | null;
   onSelect: (university: University) => void;
   onHover: (hover: HoverState) => void;
 };
@@ -28,10 +29,11 @@ type MarkerCluster = {
 const MARKER_SIZE = 32.8;
 const CLUSTER_DISTANCE = MARKER_SIZE * (2 / 3);
 const HORIZON_DEGREES = 91.5;
-const MAX_COUNTRY_LABEL_SIZE = 2;
+const MAX_COUNTRY_LABEL_SIZE = 1;
 const MIN_COUNTRY_LABEL_SIZE = 0.1;
 const LABEL_SIZE_REFERENCE_DISTANCE = 330;
 const INITIAL_ALTITUDE = 2.35;
+const PANEL_SELECTION_ALTITUDE = 1.45;
 
 function parseRank(rank: string): number {
   return Number(rank.replace(/=/g, ""));
@@ -143,7 +145,13 @@ function buildMarkerClusters(
   });
 }
 
-function UniversityGlobeComponent({ universities, activeUniversity, onSelect, onHover }: UniversityGlobeProps) {
+function UniversityGlobeComponent({
+  universities,
+  activeUniversity,
+  panelFocusRequest,
+  onSelect,
+  onHover
+}: UniversityGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const hasSetInitialView = useRef(false);
   const countryLabelSizeRef = useRef(MAX_COUNTRY_LABEL_SIZE);
@@ -200,6 +208,20 @@ function UniversityGlobeComponent({ universities, activeUniversity, onSelect, on
     hasSetInitialView.current = true;
     window.setTimeout(() => resetToInitialView(0), 80);
   }, [isGlobeReady, universities]);
+
+  useEffect(() => {
+    if (!isGlobeReady || !panelFocusRequest) return;
+
+    const { university } = panelFocusRequest;
+    globeRef.current?.pointOfView(
+      {
+        lat: university.latitude,
+        lng: university.longitude,
+        altitude: PANEL_SELECTION_ALTITUDE
+      },
+      900
+    );
+  }, [isGlobeReady, panelFocusRequest]);
 
   const globeMaterial = useMemo(() => {
     const material = new THREE.MeshPhongMaterial();
@@ -316,17 +338,18 @@ function UniversityGlobeComponent({ universities, activeUniversity, onSelect, on
           const topUniversity = cluster.universities[0];
           const hiddenCount = cluster.universities.length - 1;
           const isCluster = hiddenCount > 0;
+          const containsActiveUniversity = activeUniversity
+            ? cluster.universities.some((university) => university.name === activeUniversity.name)
+            : false;
 
           return (
             <button
               key={cluster.key}
-              className={`marker screen-marker ${topUniversity.name === activeUniversity.name ? "is-active" : ""} ${
-                isCluster ? "is-cluster" : ""
-              }`}
+              className={`marker screen-marker ${containsActiveUniversity ? "is-active" : ""} ${isCluster ? "is-cluster" : ""}`}
               style={{
                 left: `${cluster.screen.x}px`,
                 top: `${cluster.screen.y}px`,
-                zIndex: 1000 - parseRank(topUniversity.rank2027)
+                zIndex: containsActiveUniversity ? 2000 : 1000 - parseRank(topUniversity.rank2027)
               }}
               type="button"
               aria-label={
