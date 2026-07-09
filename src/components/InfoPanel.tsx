@@ -36,8 +36,7 @@ export function InfoPanel({
 
       <h1>QS World Best Universities Map</h1>
       <p className="lede">
-        Top universities in the world according to QS 2027 world university ranking. Drag to rotate and pan. Scroll or
-        pinch to zoom. Hover markers for tuition and school details.
+        Top universities in the world according to QS 2027 world university ranking.
       </p>
 
       {activeUniversity ? (
