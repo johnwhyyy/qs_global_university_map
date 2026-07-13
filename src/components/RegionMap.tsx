@@ -372,8 +372,8 @@ function alignOffsetCityLabels(placements: RegionCityLabelPlacement[], height: n
     const groups: RegionCityLabelPlacement[][] = [];
 
     for (const placement of sortedPlacements) {
-      const currentGroup = groups.at(-1);
-      const previousPlacement = currentGroup?.at(-1);
+      const currentGroup = groups[groups.length - 1];
+      const previousPlacement = currentGroup?.[currentGroup.length - 1];
 
       if (previousPlacement && placement.label.y - previousPlacement.label.y < REGION_CITY_LABEL_STACK_GAP) {
         currentGroup!.push(placement);
