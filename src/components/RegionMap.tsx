@@ -70,10 +70,10 @@ const REGION_CITY_LABEL_OFFSET_Y = -24;
 const REGION_CITY_LABEL_STACK_GAP = 18;
 const REGION_CITY_LABEL_MAX_ALIGN_DISTANCE = 118;
 const REGION_CITY_LABEL_VIEWPORT_MARGIN = 28;
-const REGION_START_TRANSFORMS: Partial<Record<RegionName, ViewTransform>> = {
-  Americas: { x: -1030, y: -1240, scale: 3.88 },
-  Asia: { x: -2993, y: -2782, scale: 6.5 },
-  Europe: { x: -1160, y: -1327, scale: 3.52 }
+const REGION_START_VIEWS: Partial<Record<RegionName, { latitude: number; longitude: number; scale: number }>> = {
+  Americas: { latitude: 42.939, longitude: -98.3069, scale: 3.88 },
+  Asia: { latitude: 28.2674, longitude: 106.7436, scale: 6.5 },
+  Europe: { latitude: 51.0277, longitude: 5.8551, scale: 3.52 }
 };
 const REGION_CONTEXT_COUNTRIES: Record<RegionName, string[]> = {
   Americas: [
@@ -283,8 +283,17 @@ function getInitialRegionTransform(
   projection: ReturnType<typeof geoMercator>,
   size: { width: number; height: number }
 ): ViewTransform {
-  const fixedTransform = REGION_START_TRANSFORMS[region];
-  if (fixedTransform) return fixedTransform;
+  const fixedView = REGION_START_VIEWS[region];
+  if (fixedView && size.width > 0 && size.height > 0) {
+    const projectedCenter = projectPoint(projection, fixedView.latitude, fixedView.longitude);
+    if (projectedCenter) {
+      return {
+        scale: fixedView.scale,
+        x: size.width / 2 - projectedCenter.x * fixedView.scale,
+        y: size.height / 2 - projectedCenter.y * fixedView.scale
+      };
+    }
+  }
 
   const shouldFocusOnUniversityCentroid = region === "Americas" || region === "Europe";
   if (!shouldFocusOnUniversityCentroid || size.width <= 0 || size.height <= 0) {
