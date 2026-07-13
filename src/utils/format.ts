@@ -1,9 +1,12 @@
-export function formatMoney(amount: number | null, currency: string): string {
+import type { Language } from "../types";
+import { getUiString } from "./i18n";
+
+export function formatMoney(amount: number | null, currency: string, language: Language = "en"): string {
   if (amount === null) {
-    return "See official website";
+    return getUiString(language, "seeOfficialWebsite");
   }
 
-  return new Intl.NumberFormat("en", {
+  return new Intl.NumberFormat(language === "zh" ? "zh-CN" : "en", {
     style: "currency",
     currency,
     maximumFractionDigits: 0

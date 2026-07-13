@@ -1,0 +1,7 @@
+[
+  { "city": "San Francisco", "country": "United States of America", "latitude": 37.7749, "longitude": -122.4194, "population": 808437, "isCapital": false },
+  { "city": "Washington DC", "country": "United States of America", "latitude": 38.9072, "longitude": -77.0369, "population": 678972, "isCapital": true },
+  { "city": "Seattle", "country": "United States of America", "latitude": 47.6062, "longitude": -122.3321, "population": 755078, "isCapital": false },
+  { "city": "Atlanta", "country": "United States of America", "latitude": 33.7490, "longitude": -84.3880, "population": 510823, "isCapital": false },
+  { "city": "Dallas", "country": "United States of America", "latitude": 32.7767, "longitude": -96.7970, "population": 1302868, "isCapital": false }
+]

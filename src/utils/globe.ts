@@ -1,3 +1,5 @@
+import type { Language } from "../types";
+import { getLocalizedCountry } from "./i18n";
 import { feature } from "topojson-client";
 import countries110m from "world-atlas/countries-110m.json";
 
@@ -13,7 +15,7 @@ const countries = feature(countries110m as never, topology.objects.countries) as
 
 export const countryFeatures = countries.features;
 
-type CountryFeature = {
+export type CountryFeature = {
   properties?: {
     name?: string;
   };
@@ -34,6 +36,10 @@ const COUNTRY_NAME_ALIASES: Record<string, string> = {
   "Republic of Korea": "South Korea",
   "United States": "United States of America"
 };
+
+export function getCountryGeometryName(displayName: string): string {
+  return COUNTRY_NAME_ALIASES[displayName] ?? displayName;
+}
 
 const COUNTRY_LABEL_OVERRIDES: Record<string, { lat: number; lng: number }> = {
   "Hong Kong SAR": { lat: 22.3193, lng: 114.1694 },
@@ -97,7 +103,8 @@ export function buildCountryLabels(
     country: string;
     latitude: number;
     longitude: number;
-  }>
+  }>,
+  language: Language = "en"
 ): CountryLabel[] {
   const labelCountries = [...new Set(universities.map((university) => university.country))];
 
@@ -106,20 +113,20 @@ export function buildCountryLabels(
       const override = COUNTRY_LABEL_OVERRIDES[displayName];
       if (override) {
         return {
-          name: displayName,
+          name: getLocalizedCountry(displayName, language),
           lat: override.lat,
           lng: override.lng
         };
       }
 
-      const geometryName = COUNTRY_NAME_ALIASES[displayName] ?? displayName;
+      const geometryName = getCountryGeometryName(displayName);
       const country = countries.features.find((featureEntry) => featureEntry.properties?.name === geometryName);
       if (!country) return null;
       const centroid = featureCentroid(country);
       if (!centroid) return null;
 
       return {
-        name: displayName,
+        name: getLocalizedCountry(displayName, language),
         lat: centroid.lat,
         lng: centroid.lng
       };

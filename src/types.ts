@@ -1,3 +1,5 @@
+export type Language = "en" | "zh";
+
 export type University = {
   rank2027: string;
   rank2026: string;

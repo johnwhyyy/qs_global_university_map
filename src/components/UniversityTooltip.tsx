@@ -1,8 +1,15 @@
-import type { HoverState, University } from "../types";
+import type { HoverState, Language, University } from "../types";
 import { assetPath } from "../utils/asset";
 import { formatMoney } from "../utils/format";
+import {
+  getLocalizedLocation,
+  getLocalizedRegion,
+  getLocalizedUniversityName,
+  getUiString
+} from "../utils/i18n";
 
 type UniversityTooltipProps = {
+  language: Language;
   hover: HoverState;
   onSelectUniversity: (university: University) => void;
   onPointerEnter: () => void;
@@ -10,6 +17,7 @@ type UniversityTooltipProps = {
 };
 
 export function UniversityTooltip({
+  language,
   hover,
   onSelectUniversity,
   onPointerEnter,
@@ -34,17 +42,20 @@ export function UniversityTooltip({
         onMouseLeave={onPointerLeave}
       >
         <div className="tooltip-topline">
-          <span>{hover.universities.length} schools</span>
+          <span>
+            {hover.universities.length}
+            {language === "zh" ? getUiString(language, "schools") : ` ${getUiString(language, "schools")}`}
+          </span>
           <img src={assetPath(hover.universities[0].logoPath)} alt="" />
         </div>
-        <h3>Universities Here</h3>
-        <p>Overlapping markers at this zoom level</p>
+        <h3>{getUiString(language, "clusterTitle")}</h3>
+        <p>{getUiString(language, "clusterDescription")}</p>
         <ul className="cluster-list">
           {hover.universities.map((university) => (
             <li key={university.name}>
               <button type="button" onClick={() => onSelectUniversity(university)}>
                 <span>QS {university.rank2027}</span>
-                {university.name}
+                {getLocalizedUniversityName(university, language)}
               </button>
             </li>
           ))}
@@ -70,26 +81,24 @@ export function UniversityTooltip({
         <span>QS {university.rank2027}</span>
         <img src={assetPath(university.logoPath)} alt="" />
       </div>
-      <h3>{university.name}</h3>
-      <p>{university.region}</p>
+      <h3>{getLocalizedUniversityName(university, language)}</h3>
+      <p>{getLocalizedRegion(university.region, language)}</p>
       <dl>
         <div>
-          <dt>Location</dt>
-          <dd>
-            {university.city}, {university.country}
-          </dd>
+          <dt>{getUiString(language, "location")}</dt>
+          <dd>{getLocalizedLocation(university, language)}</dd>
         </div>
         <div>
-          <dt>Annual tuition</dt>
-          <dd>{formatMoney(university.tuition.amount, university.tuition.currency)}</dd>
+          <dt>{getUiString(language, "annualTuition")}</dt>
+          <dd>{formatMoney(university.tuition.amount, university.tuition.currency, language)}</dd>
         </div>
         <div>
-          <dt>2027 Ranking</dt>
+          <dt>{getUiString(language, "ranking2027")}</dt>
           <dd>{university.rank2027}</dd>
         </div>
         <div>
-          <dt>2026 Ranking</dt>
-          <dd>{university.rank2026 || "Not ranked"}</dd>
+          <dt>{getUiString(language, "ranking2026")}</dt>
+          <dd>{university.rank2026 || getUiString(language, "notRanked")}</dd>
         </div>
       </dl>
     </div>

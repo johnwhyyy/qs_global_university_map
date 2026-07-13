@@ -1,4 +1,5 @@
 import type { University } from "../types";
+import { getLocalizedSearchText } from "./i18n";
 
 export function parseRankValue(rank: string): number {
   return Number(rank.replace(/=/g, ""));
@@ -16,17 +17,5 @@ export function searchUniversities(universities: University[], query: string): U
   const normalizedQuery = query.trim().toLowerCase();
   if (!normalizedQuery) return universities;
 
-  return universities.filter((university) => {
-    const searchableText = [
-      university.name,
-      university.region,
-      university.city,
-      university.country,
-      university.rank2027
-    ]
-      .join(" ")
-      .toLowerCase();
-
-    return searchableText.includes(normalizedQuery);
-  });
+  return universities.filter((university) => getLocalizedSearchText(university).includes(normalizedQuery));
 }
