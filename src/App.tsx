@@ -6,13 +6,29 @@ import { UniversityTooltip } from "./components/UniversityTooltip";
 import universitiesData from "./data/universities.json";
 import type { HoverState, Language, University } from "./types";
 import type { MapMode, RegionName } from "./types/mapModeTypes";
-import { getUiString } from "./utils/i18n";
+import { assetPath } from "./utils/asset";
+import { getLocalizedUniversityName, getUiString } from "./utils/i18n";
 import { sortByRank } from "./utils/universitySearch";
 
 const universities = universitiesData as University[];
 const UniversityGlobe = lazy(() =>
   import("./components/UniversityGlobe").then((module) => ({ default: module.UniversityGlobe }))
 );
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+    return () => mediaQuery.removeEventListener("change", updateIsMobile);
+  }, []);
+
+  return isMobile;
+}
 
 export default function App() {
   const [language, setLanguage] = useState<Language>("zh");
@@ -22,7 +38,9 @@ export default function App() {
   const [globeListResetRequest, setGlobeListResetRequest] = useState(0);
   const [regionFocusRequest, setRegionFocusRequest] = useState<{ university: University; id: number } | null>(null);
   const [hover, setHover] = useState<HoverState>(null);
+  const [mobileCluster, setMobileCluster] = useState<University[] | null>(null);
   const hoverCloseTimer = useRef<number | null>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     document.title = getUiString(language, "title");
@@ -43,6 +61,7 @@ export default function App() {
   };
 
   const showHover = (nextHover: HoverState) => {
+    if (isMobile) return;
     cancelHoverClose();
     setHover(nextHover);
   };
@@ -57,7 +76,14 @@ export default function App() {
 
   useEffect(() => () => cancelHoverClose(), []);
 
+  useEffect(() => {
+    if (!isMobile) {
+      setMobileCluster(null);
+    }
+  }, [isMobile]);
+
   const handleUniversitySelection = (university: University, options: { focusGlobe?: boolean } = {}) => {
+    setMobileCluster(null);
     setActiveUniversity(university);
     if (selectedRegion && university.region !== selectedRegion) {
       setSelectedRegion(university.region as RegionName);
@@ -68,6 +94,7 @@ export default function App() {
   };
 
   const handleSideListUniversitySelection = (university: University) => {
+    setMobileCluster(null);
     setActiveUniversity(university);
 
     if (!selectedRegion) {
@@ -86,14 +113,21 @@ export default function App() {
 
   const handleRegionSelection = (region: RegionName | null) => {
     setHover(null);
+    setMobileCluster(null);
     setSelectedRegion(region);
   };
 
   const handleShowRankingList = () => {
+    setMobileCluster(null);
     setActiveUniversity(null);
     if (!selectedRegion) {
       setGlobeListResetRequest((request) => request + 1);
     }
+  };
+
+  const openMobileCluster = (clusterUniversities: University[]) => {
+    setHover(null);
+    setMobileCluster(clusterUniversities);
   };
 
   return (
@@ -128,6 +162,7 @@ export default function App() {
               activeUniversity={activeUniversity}
               focusRequest={regionFocusRequest}
               onSelect={(university) => handleUniversitySelection(university)}
+              onClusterSelect={isMobile ? openMobileCluster : undefined}
               onHover={showHover}
               onHoverEnd={scheduleHoverClose}
             />
@@ -139,6 +174,7 @@ export default function App() {
               panelFocusRequest={panelFocusRequest}
               listResetRequest={globeListResetRequest}
               onSelect={(university) => handleUniversitySelection(university)}
+              onClusterSelect={isMobile ? openMobileCluster : undefined}
               onHover={showHover}
               onHoverEnd={scheduleHoverClose}
             />
@@ -152,6 +188,39 @@ export default function App() {
         onPointerEnter={cancelHoverClose}
         onPointerLeave={scheduleHoverClose}
       />
+      {mobileCluster ? (
+        <div className="mobile-cluster-layer" role="presentation" onClick={() => setMobileCluster(null)}>
+          <section
+            className="mobile-cluster-sheet"
+            aria-label={getUiString(language, "clusterTitle")}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mobile-cluster-header">
+              <div>
+                <span>
+                  {mobileCluster.length}
+                  {language === "zh" ? getUiString(language, "schools") : ` ${getUiString(language, "schools")}`}
+                </span>
+                <h3>{getUiString(language, "clusterTitle")}</h3>
+              </div>
+              <button type="button" onClick={() => setMobileCluster(null)} aria-label="Close cluster list">
+                x
+              </button>
+            </div>
+            <ol className="mobile-cluster-list">
+              {mobileCluster.map((university) => (
+                <li key={university.name}>
+                  <button type="button" onClick={() => handleUniversitySelection(university)}>
+                    <span>QS {university.rank2027}</span>
+                    <img src={assetPath(university.logoPath)} alt="" />
+                    <strong>{getLocalizedUniversityName(university, language)}</strong>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </section>
+        </div>
+      ) : null}
     </main>
   );
 }

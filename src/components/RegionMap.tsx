@@ -26,6 +26,7 @@ type RegionMapProps = {
   activeUniversity: University | null;
   focusRequest: { university: University; id: number } | null;
   onSelect: (university: University) => void;
+  onClusterSelect?: (universities: University[]) => void;
   onHover: (hover: HoverState) => void;
   onHoverEnd: () => void;
 };
@@ -427,6 +428,7 @@ export function RegionMap({
   activeUniversity,
   focusRequest,
   onSelect,
+  onClusterSelect,
   onHover,
   onHoverEnd
 }: RegionMapProps) {
@@ -1021,7 +1023,13 @@ export function RegionMap({
                 );
               }}
               onMouseLeave={onHoverEnd}
-              onClick={() => onSelect(displayUniversity)}
+              onClick={() => {
+                if (isCluster && onClusterSelect) {
+                  onClusterSelect(cluster.universities);
+                  return;
+                }
+                onSelect(displayUniversity);
+              }}
             >
               <img src={assetPath(displayUniversity.logoPath)} alt="" />
               {isCluster ? <span className="cluster-count">+{hiddenCount}</span> : <span>{displayUniversity.rank2027}</span>}

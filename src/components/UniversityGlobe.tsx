@@ -19,6 +19,7 @@ type UniversityGlobeProps = {
   panelFocusRequest: { university: University; id: number } | null;
   listResetRequest: number;
   onSelect: (university: University) => void;
+  onClusterSelect?: (universities: University[]) => void;
   onHover: (hover: HoverState) => void;
   onHoverEnd: () => void;
 };
@@ -212,6 +213,7 @@ function UniversityGlobeComponent({
   panelFocusRequest,
   listResetRequest,
   onSelect,
+  onClusterSelect,
   onHover,
   onHoverEnd
 }: UniversityGlobeProps) {
@@ -604,7 +606,13 @@ function UniversityGlobeComponent({
                 );
               }}
               onMouseLeave={onHoverEnd}
-              onClick={() => selectUniversity(displayUniversity)}
+              onClick={() => {
+                if (isCluster && onClusterSelect) {
+                  onClusterSelect(cluster.universities);
+                  return;
+                }
+                selectUniversity(displayUniversity);
+              }}
             >
               <img src={assetPath(displayUniversity.logoPath)} alt="" />
               {isCluster ? <span className="cluster-count">+{hiddenCount}</span> : <span>{displayUniversity.rank2027}</span>}
