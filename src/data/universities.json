@@ -1858,7 +1858,7 @@
       "label": "Consult official website for current annual tuition and fees",
       "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
     },
-    "logoPath": "/logos/qs/durham-university.svg",
+    "logoPath": "/logos/qs/durham-university.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
     "coordinateSource": "Manual campus coordinate entry based on public map references",
     "logoSource": "Generated local placeholder asset",
@@ -2100,7 +2100,7 @@
       "label": "Consult official website for current annual tuition and fees",
       "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
     },
-    "logoPath": "/logos/qs/university-of-alberta.svg",
+    "logoPath": "/logos/qs/university-of-alberta.avif",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
     "coordinateSource": "Manual campus coordinate entry based on public map references",
     "logoSource": "Generated local placeholder asset",

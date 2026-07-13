@@ -771,14 +771,14 @@
   },
   {
     "name": "University of Texas at Austin",
-    "profileUrl": "",
-    "logoUrl": "",
+    "profileUrl": "https://commons.wikimedia.org/wiki/File:University_of_Texas_at_Austin_logo.svg",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/University_of_Texas_at_Austin_logo.svg",
     "localPath": "/logos/qs/university-of-texas-at-austin.svg",
-    "width": 256,
-    "height": 256,
-    "alt": "Generated local placeholder logo",
-    "scrapedAt": "2026-06-30T11:59:26.970Z",
-    "note": "QS profile logo scraping was unavailable from the local environment; this generated placeholder keeps the app self-contained."
+    "width": null,
+    "height": null,
+    "alt": "Official university logo from Wikimedia Commons",
+    "scrapedAt": "2026-07-13T12:16:00.000Z",
+    "note": "Replaced generated local placeholder with a real logo asset from Wikimedia Commons."
   },
   {
     "name": "Sorbonne University",
@@ -848,14 +848,14 @@
   },
   {
     "name": "Adelaide University",
-    "profileUrl": "",
-    "logoUrl": "",
+    "profileUrl": "https://www.adelaideuni.edu.au/",
+    "logoUrl": "https://www.adelaideuni.edu.au/content/dam/adelaideuniversity/images/global/logos/au-logo-dark-blue-horizontal.svg",
     "localPath": "/logos/qs/adelaide-university.svg",
-    "width": 256,
-    "height": 256,
-    "alt": "Generated local placeholder logo",
-    "scrapedAt": "2026-06-30T11:59:26.970Z",
-    "note": "QS profile logo scraping was unavailable from the local environment; this generated placeholder keeps the app self-contained."
+    "width": null,
+    "height": null,
+    "alt": "Official Adelaide University logo",
+    "scrapedAt": "2026-07-13T12:16:00.000Z",
+    "note": "Replaced generated local placeholder with the official logo asset from the university website."
   },
   {
     "name": "University of Glasgow",
@@ -893,35 +893,35 @@
   {
     "name": "The University of Sheffield",
     "profileUrl": "https://www.sheffield.ac.uk/",
-    "logoUrl": "https://sheffield.ac.uk/themes/custom/uos_public/favicon.svg",
+    "logoUrl": "https://www.sheffield.ac.uk/themes/custom/uos_public/images/logos/uos-crest.svg",
     "localPath": "/logos/qs/the-university-of-sheffield.svg",
     "width": null,
     "height": null,
-    "alt": "Official website icon or image",
-    "scrapedAt": "2026-06-30T12:35:15.776Z",
-    "note": "Pulled from official icon link on the official university website."
+    "alt": "Official University of Sheffield crest",
+    "scrapedAt": "2026-07-13T12:16:00.000Z",
+    "note": "Replaced generated/local icon with the official crest asset from the university website."
   },
   {
     "name": "Universidad de Buenos Aires (UBA)",
-    "profileUrl": "",
-    "logoUrl": "",
+    "profileUrl": "https://commons.wikimedia.org/wiki/File:UBA.svg",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/UBA.svg",
     "localPath": "/logos/qs/universidad-de-buenos-aires-uba.svg",
-    "width": 256,
-    "height": 256,
-    "alt": "Generated local placeholder logo",
-    "scrapedAt": "2026-06-30T11:59:26.970Z",
-    "note": "QS profile logo scraping was unavailable from the local environment; this generated placeholder keeps the app self-contained."
+    "width": null,
+    "height": null,
+    "alt": "Official UBA logo from Wikimedia Commons",
+    "scrapedAt": "2026-07-13T12:16:00.000Z",
+    "note": "Replaced generated local placeholder with a real logo asset from Wikimedia Commons."
   },
   {
     "name": "Durham University",
     "profileUrl": "",
-    "logoUrl": "",
-    "localPath": "/logos/qs/durham-university.svg",
+    "logoUrl": "local file provided by project owner",
+    "localPath": "/logos/qs/durham-university.png",
     "width": 256,
     "height": 256,
-    "alt": "Generated local placeholder logo",
-    "scrapedAt": "2026-06-30T11:59:26.970Z",
-    "note": "QS profile logo scraping was unavailable from the local environment; this generated placeholder keeps the app self-contained."
+    "alt": "Durham University logo",
+    "scrapedAt": "2026-07-13T12:35:00.000Z",
+    "note": "Replaced generated local placeholder SVG with the provided real PNG logo asset."
   },
   {
     "name": "Universität Heidelberg",
@@ -1036,13 +1036,13 @@
   {
     "name": "University of Alberta",
     "profileUrl": "",
-    "logoUrl": "",
-    "localPath": "/logos/qs/university-of-alberta.svg",
+    "logoUrl": "local file provided by project owner",
+    "localPath": "/logos/qs/university-of-alberta.avif",
     "width": 256,
     "height": 256,
-    "alt": "Generated local placeholder logo",
-    "scrapedAt": "2026-06-30T11:59:26.971Z",
-    "note": "QS profile logo scraping was unavailable from the local environment; this generated placeholder keeps the app self-contained."
+    "alt": "University of Alberta logo",
+    "scrapedAt": "2026-07-13T12:30:00.000Z",
+    "note": "Replaced generated local placeholder SVG with the provided real AVIF logo asset."
   },
   {
     "name": "Institute of Science Tokyo",
