@@ -30,8 +30,15 @@ function useIsMobile() {
   return isMobile;
 }
 
+function getBrowserDefaultLanguage(): Language {
+  if (typeof navigator === "undefined") return "en";
+
+  const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language];
+  return browserLanguages.some((browserLanguage) => browserLanguage.toLowerCase().startsWith("zh")) ? "zh" : "en";
+}
+
 export default function App() {
-  const [language, setLanguage] = useState<Language>("zh");
+  const [language, setLanguage] = useState<Language>(() => getBrowserDefaultLanguage());
   const [activeUniversity, setActiveUniversity] = useState<University | null>(null);
   const [selectedRegion, setSelectedRegion] = useState<RegionName | null>(null);
   const [panelFocusRequest, setPanelFocusRequest] = useState<{ university: University; id: number } | null>(null);
