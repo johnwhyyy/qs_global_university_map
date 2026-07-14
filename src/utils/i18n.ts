@@ -23,6 +23,7 @@ export const UI_STRINGS = {
     clusterDescription: "Overlapping markers at this zoom level",
     loadingGlobe: "Loading globe",
     globeCaption: "Drag to rotate and pan. Scroll or pinch to zoom. Hover markers for tuition and school details.",
+    resetZoom: "Reset Zoom",
     seeOfficialWebsite: "See official website",
     languageEnglish: "English",
     languageChinese: "中文"
@@ -49,6 +50,7 @@ export const UI_STRINGS = {
     clusterDescription: "这些标记在当前缩放级别下发生重叠",
     loadingGlobe: "正在加载地球",
     globeCaption: "拖动可旋转和平移。滚轮或双指可缩放。悬停标记可查看学费和学校详情。",
+    resetZoom: "重置缩放",
     seeOfficialWebsite: "请查看官方网站",
     languageEnglish: "English",
     languageChinese: "中文"

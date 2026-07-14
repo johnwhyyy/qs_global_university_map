@@ -104,7 +104,9 @@ export default function App() {
 
     if (university.region !== selectedRegion) {
       setSelectedRegion(null);
-      setPanelFocusRequest({ university, id: Date.now() });
+      window.requestAnimationFrame(() => {
+        setPanelFocusRequest({ university, id: Date.now() });
+      });
       return;
     }
 

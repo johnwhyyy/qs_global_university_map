@@ -55,7 +55,7 @@ const usStateCapitals = (usStateCapitalsData as TopCity[]).map((city) => ({
 const REGION_MARKER_SIZE = 32.8;
 const REGION_CLUSTER_DISTANCE = REGION_MARKER_SIZE * (2 / 3);
 const MIN_REGION_SCALE = 0.65;
-const MAX_REGION_SCALE = 20;
+const MAX_REGION_SCALE = 40;
 const REGION_ZOOM_SLIDER_STEP = 0.35;
 const FOCUSED_REGION_SCALE = 2.15;
 const REGION_ZOOM_INTENSITY = 0.0018;
@@ -69,7 +69,7 @@ const REGION_CITY_LABEL_OVERLAP_DISTANCE = 36;
 const REGION_CITY_LABEL_OFFSET_X = 76;
 const REGION_CITY_LABEL_OFFSET_Y = -24;
 const REGION_CITY_LABEL_STACK_GAP = 18;
-const REGION_CITY_LABEL_MAX_ALIGN_DISTANCE = 118;
+const REGION_CITY_LABEL_MAX_ALIGN_DISTANCE = 72;
 const REGION_CITY_LABEL_VIEWPORT_MARGIN = 28;
 const REGION_START_VIEWS: Partial<Record<RegionName, { latitude: number; longitude: number; scale: number }>> = {
   Americas: { latitude: 42.939, longitude: -98.3069, scale: 3.88 },
@@ -176,6 +176,13 @@ type RegionCityLabelPlacement = {
   anchor: { x: number; y: number };
   label: { x: number; y: number };
   isOffset: boolean;
+};
+
+type LabelBounds = {
+  left: number;
+  right: number;
+  top: number;
+  bottom: number;
 };
 
 function parseRank(rank: string): number {
@@ -367,12 +374,37 @@ function isPointInViewport(point: { x: number; y: number }, size: { width: numbe
   );
 }
 
+function estimateCityLabelWidth(name: string): number {
+  const textWidth = [...name].reduce((width, char) => width + (char.charCodeAt(0) > 255 ? 8 : 5.2), 0);
+  return textWidth + 26;
+}
+
+function getCityLabelBounds(placement: RegionCityLabelPlacement): LabelBounds {
+  const width = estimateCityLabelWidth(placement.name);
+  const height = 17;
+
+  return {
+    left: placement.label.x - width / 2,
+    right: placement.label.x + width / 2,
+    top: placement.label.y - height / 2,
+    bottom: placement.label.y + height / 2
+  };
+}
+
+function boundsOverlap(a: LabelBounds, b: LabelBounds): boolean {
+  const gap = 3;
+  return a.left < b.right + gap && a.right + gap > b.left && a.top < b.bottom + gap && a.bottom + gap > b.top;
+}
+
+function labelsOverlap(a: RegionCityLabelPlacement, b: RegionCityLabelPlacement): boolean {
+  return boundsOverlap(getCityLabelBounds(a), getCityLabelBounds(b));
+}
+
 function alignOffsetCityLabels(placements: RegionCityLabelPlacement[], height: number): RegionCityLabelPlacement[] {
   const nextPlacements = [...placements];
-  const offsetPlacements = nextPlacements.filter((placement) => placement.isOffset);
   const sides = [
-    offsetPlacements.filter((placement) => placement.label.x >= placement.anchor.x),
-    offsetPlacements.filter((placement) => placement.label.x < placement.anchor.x)
+    nextPlacements.filter((placement) => placement.label.x >= placement.anchor.x),
+    nextPlacements.filter((placement) => placement.label.x < placement.anchor.x)
   ];
 
   for (const sidePlacements of sides) {
@@ -382,11 +414,15 @@ function alignOffsetCityLabels(placements: RegionCityLabelPlacement[], height: n
     const groups: RegionCityLabelPlacement[][] = [];
 
     for (const placement of sortedPlacements) {
-      const currentGroup = groups[groups.length - 1];
-      const previousPlacement = currentGroup?.[currentGroup.length - 1];
+      const overlappingGroups = groups.filter((group) => group.some((groupPlacement) => labelsOverlap(placement, groupPlacement)));
 
-      if (previousPlacement && placement.label.y - previousPlacement.label.y < REGION_CITY_LABEL_STACK_GAP) {
-        currentGroup!.push(placement);
+      if (overlappingGroups.length > 0) {
+        const mergedGroup = overlappingGroups.flat();
+        mergedGroup.push(placement);
+        for (const group of overlappingGroups) {
+          groups.splice(groups.indexOf(group), 1);
+        }
+        groups.push(mergedGroup);
       } else {
         groups.push([placement]);
       }
@@ -399,20 +435,20 @@ function alignOffsetCityLabels(placements: RegionCityLabelPlacement[], height: n
         group[0].label.x >= group[0].anchor.x
           ? Math.max(...group.map((placement) => placement.label.x))
           : Math.min(...group.map((placement) => placement.label.x));
-      let previousY = -Infinity;
+      const sortedGroup = [...group].sort((a, b) => a.label.y - b.label.y);
+      const centerY = sortedGroup.reduce((sum, placement) => sum + placement.label.y, 0) / sortedGroup.length;
+      const startY = centerY - ((sortedGroup.length - 1) * REGION_CITY_LABEL_STACK_GAP) / 2;
 
-      for (const placement of group) {
-        const nextY = Math.max(placement.label.y, previousY + REGION_CITY_LABEL_STACK_GAP);
+      for (let index = 0; index < sortedGroup.length; index += 1) {
+        const placement = sortedGroup[index];
         const alignedLabel = {
           x: alignedX,
-          y: Math.min(Math.max(28, nextY), Math.max(28, height - 28))
+          y: Math.min(Math.max(28, startY + index * REGION_CITY_LABEL_STACK_GAP), Math.max(28, height - 28))
         };
 
         if (distance(alignedLabel, placement.anchor) <= REGION_CITY_LABEL_MAX_ALIGN_DISTANCE) {
           placement.label = alignedLabel;
-          previousY = placement.label.y;
-        } else {
-          previousY = Math.max(previousY, placement.label.y);
+          placement.isOffset = distance(placement.label, placement.anchor) > 1;
         }
       }
     }
@@ -896,7 +932,7 @@ export function RegionMap({
 
       <button className="map-reset-button" type="button" onClick={resetRegionView} aria-label="Reset map view">
         <RotateCcw size={18} />
-        <span>Reset Zoom</span>
+        <span>{getUiString(language, "resetZoom")}</span>
       </button>
 
       <label className="map-zoom-control" aria-label="Regional map zoom level">

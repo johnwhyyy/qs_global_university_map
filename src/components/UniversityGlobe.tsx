@@ -119,14 +119,34 @@ function clamp(value: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, value));
 }
 
+function interpolate(start: number, end: number, progress: number): number {
+  return start + (end - start) * progress;
+}
+
+function inverseInterpolate(start: number, end: number, value: number): number {
+  if (start === end) return 0;
+  return (value - start) / (end - start);
+}
+
 function altitudeToZoom(altitude: number): number {
-  const progress = (GLOBE_ZOOM.maxAltitude - altitude) / (GLOBE_ZOOM.maxAltitude - GLOBE_ZOOM.minAltitude);
-  return clamp(GLOBE_ZOOM.min + progress * (GLOBE_ZOOM.max - GLOBE_ZOOM.min), GLOBE_ZOOM.min, GLOBE_ZOOM.max);
+  const clampedAltitude = clamp(altitude, GLOBE_ZOOM.minAltitude, GLOBE_ZOOM.maxAltitude);
+  const progress = inverseInterpolate(GLOBE_ZOOM.maxAltitude, GLOBE_ZOOM.minAltitude, clampedAltitude);
+
+  return interpolate(GLOBE_ZOOM.min, GLOBE_ZOOM.max, progress);
 }
 
 function zoomToAltitude(zoom: number): number {
-  const progress = (zoom - GLOBE_ZOOM.min) / (GLOBE_ZOOM.max - GLOBE_ZOOM.min);
-  return GLOBE_ZOOM.maxAltitude - progress * (GLOBE_ZOOM.maxAltitude - GLOBE_ZOOM.minAltitude);
+  const clampedZoom = clamp(zoom, GLOBE_ZOOM.min, GLOBE_ZOOM.max);
+  const progress = inverseInterpolate(GLOBE_ZOOM.min, GLOBE_ZOOM.max, clampedZoom);
+
+  return interpolate(GLOBE_ZOOM.maxAltitude, GLOBE_ZOOM.minAltitude, progress);
+}
+
+function clampViewAltitude(view: { lat: number; lng: number; altitude: number }) {
+  return {
+    ...view,
+    altitude: clamp(view.altitude, GLOBE_ZOOM.minAltitude, GLOBE_ZOOM.maxAltitude)
+  };
 }
 
 function buildMarkerClusters(
@@ -219,6 +239,8 @@ function UniversityGlobeComponent({
 }: UniversityGlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const hasSetInitialView = useRef(false);
+  const initialViewTimer = useRef<number | null>(null);
+  const focusViewTimer = useRef<number | null>(null);
   const countryLabelSizeRef = useRef(MAX_COUNTRY_LABEL_SIZE);
   const [size, setSize] = useState({ width: 900, height: 700 });
   const [isGlobeReady, setIsGlobeReady] = useState(false);
@@ -275,22 +297,57 @@ function UniversityGlobeComponent({
     if (!isGlobeReady || hasSetInitialView.current) return;
 
     hasSetInitialView.current = true;
-    window.setTimeout(() => resetToInitialView(0), 80);
-  }, [isGlobeReady, universities]);
+    if (panelFocusRequest) return;
+    initialViewTimer.current = window.setTimeout(() => {
+      resetToInitialView(0);
+      initialViewTimer.current = null;
+    }, 80);
+  }, [isGlobeReady, panelFocusRequest, universities]);
 
   useEffect(() => {
     if (!isGlobeReady || !panelFocusRequest) return;
 
     const { university } = panelFocusRequest;
-    globeRef.current?.pointOfView(
-      {
-        lat: university.latitude,
-        lng: university.longitude,
-        altitude: zoomToAltitude(PANEL_SELECTION_ZOOM)
-      },
-      900
-    );
+    const focusSelectedUniversity = (transitionMs: number) => {
+      setGlobeZoom(PANEL_SELECTION_ZOOM);
+      globeRef.current?.pointOfView(
+        {
+          lat: university.latitude,
+          lng: university.longitude,
+          altitude: zoomToAltitude(PANEL_SELECTION_ZOOM)
+        },
+        transitionMs
+      );
+    };
+
+    if (initialViewTimer.current !== null) {
+      window.clearTimeout(initialViewTimer.current);
+      initialViewTimer.current = null;
+    }
+
+    if (focusViewTimer.current !== null) {
+      window.clearTimeout(focusViewTimer.current);
+    }
+
+    hasSetInitialView.current = true;
+    focusSelectedUniversity(0);
+    focusViewTimer.current = window.setTimeout(() => {
+      focusSelectedUniversity(900);
+      focusViewTimer.current = null;
+    }, 120);
   }, [isGlobeReady, panelFocusRequest]);
+
+  useEffect(
+    () => () => {
+      if (initialViewTimer.current !== null) {
+        window.clearTimeout(initialViewTimer.current);
+      }
+      if (focusViewTimer.current !== null) {
+        window.clearTimeout(focusViewTimer.current);
+      }
+    },
+    []
+  );
 
   useEffect(() => {
     if (!isGlobeReady || listResetRequest === 0) return;
@@ -336,7 +393,12 @@ function UniversityGlobeComponent({
       const points = new Map<string, ScreenPoint>();
       const nextCountryLabels: ScreenCountryLabel[] = [];
       const nextCityLabels: ScreenCityLabel[] = [];
-      const currentView = globe.pointOfView();
+      let currentView = globe.pointOfView();
+      const clampedView = clampViewAltitude(currentView);
+      if (clampedView.altitude !== currentView.altitude) {
+        globe.pointOfView(clampedView, 0);
+        currentView = clampedView;
+      }
       const controls = globe.controls() as { getDistance?: () => number };
       const distanceValue = controls.getDistance?.();
       const showCityLabels = typeof distanceValue === "number" && distanceValue <= CITY_VISIBILITY_DISTANCE;
@@ -499,7 +561,7 @@ function UniversityGlobeComponent({
 
       <button className="map-reset-button" type="button" onClick={() => resetToInitialView()} aria-label="Reset map view">
         <RotateCcw size={18} />
-        <span>Reset Zoom</span>
+        <span>{getUiString(language, "resetZoom")}</span>
       </button>
 
       <label className="map-zoom-control" aria-label="Globe zoom level">
