@@ -1166,7 +1166,12 @@ dd span {
 
 @media (max-width: 640px) {
   .app-shell {
+    grid-template-rows: minmax(0, 46svh) minmax(0, 54svh);
+    grid-template-rows: minmax(0, 46dvh) minmax(0, 54dvh);
+    height: 100svh;
+    height: 100dvh;
     min-height: 100dvh;
+    overflow: hidden;
   }
 
   .info-panel {
@@ -1176,19 +1181,20 @@ dd span {
     column-gap: 0.55rem;
     row-gap: 0.48rem;
     gap: 0.58rem;
-    height: auto;
-    max-height: 39svh;
-    max-height: 39dvh;
+    height: 46svh;
+    height: 46dvh;
+    max-height: 46svh;
+    max-height: 46dvh;
     overflow-y: auto;
   }
 
   .globe-stage,
   .visualization-panel,
   .region-map-stage {
-    min-height: 61svh;
-    min-height: 61dvh;
-    height: 61svh;
-    height: 61dvh;
+    min-height: 54svh;
+    min-height: 54dvh;
+    height: 54svh;
+    height: 54dvh;
   }
 
   h1 {
