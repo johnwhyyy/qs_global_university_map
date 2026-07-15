@@ -1193,11 +1193,18 @@ dd span {
 
   h1 {
     align-self: center;
-    font-size: clamp(0.86rem, 3.2vw, 1.25rem);
+    max-width: none;
+    min-width: 0;
+    font-size: clamp(0.68rem, 2.75vw, 1rem);
+    line-height: 1;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
   }
 
   .panel-title-row {
     grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.28rem;
     align-items: center;
   }
