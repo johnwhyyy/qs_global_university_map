@@ -2,21 +2,26 @@ import type { Language, University } from "../types";
 
 export const UI_STRINGS = {
   en: {
-    title: "QS World Best Universities Map",
-    lede: "Top universities in the world according to QS 2027 world university ranking.",
+    title: "World Best University Map",
+    lede: "Top universities in the world according to QS and US News 2027 world university ranking..",
     listChip: "QS top 100",
     backToList: "Go back to full ranking list",
     location: "Location",
     annualTuition: "Annual tuition",
-    ranking2027: "2027 Ranking",
-    ranking2026: "2026 Ranking",
+    ranking2027: "2027 QS Ranking",
+    ranking2026: "2026 QS Ranking",
+    usNewsGlobalRanking: "US News Global Ranking",
     notRanked: "Not ranked",
     officialWebsite: "Official website",
     qsSource: "QS source",
+    usNewsSource: "US News source",
     searchPlaceholder: "Search by university or region",
     searchAria: "Search universities",
     searchResults: "Search results",
     rankingList: "QS ranking list",
+    rankBy: "Rank By",
+    rankByQs: "QS Ranking",
+    rankByUsNews: "US News Ranking",
     noMatches: "No matching universities found",
     schools: "schools",
     clusterTitle: "Universities Here",
@@ -29,21 +34,26 @@ export const UI_STRINGS = {
     languageChinese: "中文"
   },
   zh: {
-    title: "QS 世界最佳大学地图",
-    lede: "根据 QS 2027 世界大学排名整理的全球顶尖大学。",
+    title: "世界最佳大学地图",
+    lede: "根据 2027 QS 及US News 世界大学排名整理",
     listChip: "QS 前100",
     backToList: "返回完整排名列表",
     location: "地点",
     annualTuition: "年度学费",
-    ranking2027: "2027 排名",
-    ranking2026: "2026 排名",
+    ranking2027: "2027 QS 排名",
+    ranking2026: "2026 QS 排名",
+    usNewsGlobalRanking: "US News 全球排名",
     notRanked: "未上榜",
     officialWebsite: "官方网站",
     qsSource: "QS 来源",
+    usNewsSource: "US News 来源",
     searchPlaceholder: "按大学名称或地区搜索",
     searchAria: "搜索大学",
     searchResults: "搜索结果",
     rankingList: "QS 排名列表",
+    rankBy: "排名依据",
+    rankByQs: "QS 排名",
+    rankByUsNews: "US News 排名",
     noMatches: "未找到匹配的大学",
     schools: "所学校",
     clusterTitle: "此处的大学",
@@ -66,7 +76,7 @@ const UNIVERSITY_NAME_ZH: Record<string, string> = {
   "University of Cambridge": "剑桥大学",
   "California Institute of Technology (Caltech)": "加州理工学院",
   "ETH Zurich": "苏黎世联邦理工学院",
-  UCL: "伦敦大学学院",
+  "UCL": "伦敦大学学院",
   "National University of Singapore (NUS)": "新加坡国立大学",
   "The University of Hong Kong": "香港大学",
   "Nanyang Technological University, Singapore (NTU Singapore)": "南洋理工大学",
@@ -125,9 +135,9 @@ const UNIVERSITY_NAME_ZH: Record<string, string> = {
   "University of Amsterdam": "阿姆斯特丹大学",
   "Ludwig-Maximilians-Universität München": "慕尼黑大学",
   "The London School of Economics and Political Science (LSE)": "伦敦政治经济学院",
-  KFUPM: "法赫德国王石油与矿业大学",
+  "KFUPM": "法赫德国王石油与矿业大学",
   "Kyoto University": "京都大学",
-  KAIST: "韩国科学技术院",
+  "KAIST": "韩国科学技术院",
   "Brown University": "布朗大学",
   "The University of Auckland": "奥克兰大学",
   "The University of Warwick": "华威大学",
@@ -162,7 +172,37 @@ const UNIVERSITY_NAME_ZH: Record<string, string> = {
   "Institute of Science Tokyo": "东京科学大学",
   "University of Nottingham": "诺丁汉大学",
   "Freie Universitaet Berlin": "柏林自由大学",
-  "University of Zurich": "苏黎世大学"
+  "University of Zurich": "苏黎世大学",
+  "University of California, San Francisco": "加州大学旧金山分校",
+  "Washington University in St. Louis": "圣路易斯华盛顿大学",
+  "Icahn School of Medicine at Mount Sinai": "西奈山伊坎医学院",
+  "Humboldt-Universität zu Berlin": "柏林洪堡大学",
+  "University of Chinese Academy of Sciences": "中国科学院大学",
+  "Utrecht University": "乌得勒支大学",
+  "University of North Carolina at Chapel Hill": "北卡罗来纳大学教堂山分校",
+  "Karolinska Institute": "卡罗林斯卡学院",
+  "University of Pittsburgh": "匹兹堡大学",
+  "University of Science and Technology of China": "中国科学技术大学",
+  "University of Wisconsin-Madison": "威斯康星大学麦迪逊分校",
+  "Leiden University": "莱顿大学",
+  "Université Paris Cité": "巴黎西岱大学",
+  "Emory University": "埃默里大学",
+  "Ohio State University": "俄亥俄州立大学",
+  "Vanderbilt University": "范德堡大学",
+  "Sun Yat-sen University": "中山大学",
+  "University of Southern California": "南加利福尼亚大学",
+  "University of Minnesota Twin Cities": "明尼苏达大学双城分校",
+  "University of Groningen": "格罗宁根大学",
+  "University of Maryland, College Park": "马里兰大学帕克分校",
+  "Wuhan University": "武汉大学",
+  "University of Barcelona": "巴塞罗那大学",
+  "Erasmus University Rotterdam": "鹿特丹伊拉斯姆斯大学",
+  "Vrije Universiteit Amsterdam": "阿姆斯特丹自由大学",
+  "Huazhong University of Science and Technology": "华中科技大学",
+  "Georgia Institute of Technology": "佐治亚理工学院",
+  "University of California, Davis": "加州大学戴维斯分校",
+  "University of California, Irvine": "加州大学欧文分校",
+  "University of California, Santa Barbara": "加州大学圣塔芭芭拉分校"
 };
 
 const REGION_ZH: Record<string, string> = {
@@ -191,6 +231,7 @@ const COUNTRY_ZH: Record<string, string> = {
   "Republic of Korea": "韩国",
   "Saudi Arabia": "沙特阿拉伯",
   Singapore: "新加坡",
+  Spain: "西班牙",
   Sweden: "瑞典",
   Switzerland: "瑞士",
   Taiwan: "中国台湾",
@@ -314,6 +355,7 @@ const CITY_ZH: Record<string, string> = {
   Perth: "珀斯",
   "Philadelphia, PA": "费城",
   "Pittsburgh, PA": "匹兹堡",
+  "St. Louis, MO": "圣路易斯",
   "Princeton, NJ": "普林斯顿",
   "Providence, RI": "普罗维登斯",
   Riyadh: "利雅得",
@@ -322,6 +364,7 @@ const CITY_ZH: Record<string, string> = {
   Rotterdam: "鹿特丹",
   Sapporo: "札幌",
   "San Diego, CA": "圣地亚哥",
+  "San Francisco, CA": "旧金山",
   "San Francisco": "旧金山",
   "San Miguel de Tucumán": "圣米格尔-德图库曼",
   "Seattle, WA": "西雅图",
@@ -356,6 +399,21 @@ const CITY_ZH: Record<string, string> = {
   Wellington: "惠灵顿",
   Woodlands: "兀兰",
   "Washington DC": "华盛顿特区",
+  "Chapel Hill, NC": "教堂山",
+  Hefei: "合肥",
+  "Madison, WI": "麦迪逊",
+  Leiden: "莱顿",
+  "Atlanta, GA": "亚特兰大",
+  "Columbus, OH": "哥伦布",
+  "Nashville, TN": "纳什维尔",
+  "Minneapolis, MN": "明尼阿波利斯",
+  Groningen: "格罗宁根",
+  "College Park, MD": "大学公园",
+  Wuhan: "武汉",
+  Barcelona: "巴塞罗那",
+  "Davis, CA": "戴维斯",
+  "Irvine, CA": "欧文",
+  "Santa Barbara, CA": "圣塔芭芭拉",
   Yokohama: "横滨",
   "Yuen Long Kau Hui": "元朗",
   Montgomery: "蒙哥马利",
@@ -425,9 +483,16 @@ const TUITION_LABEL_ZH: Record<string, string> = {
   "2025-26 representative international undergraduate tuition without tuition grant":
     "2025-26 学年不含学费补助的代表性国际本科生学费",
   "2025-26 representative international undergraduate tuition": "2025-26 学年代表性国际本科生学费",
+  "2025-26 representative nonresident undergraduate tuition": "2025-26 学年代表性非居民本科生学费",
   "2025-26 endowed undergraduate tuition": "2025-26 学年捐赠学院本科生学费",
   "2026 representative international undergraduate tuition": "2026 学年代表性国际本科生学费",
   "2026-27 undergraduate tuition and fees": "2026-27 学年本科生学费与费用",
+  "2025-26 undergraduate tuition based on two semesters": "2025-26 学年按两个学期计算的本科生学费",
+  "No standard undergraduate tuition": "无标准本科生学费",
+  "2025-26 representative MD tuition and professional degree supplemental tuition":
+    "2025-26 学年代表性医学博士学费及专业学位附加学费",
+  "2026-27 MD programme tuition": "2026-27 学年医学博士项目学费",
+  "2026-27 representative international bachelor tuition": "2026-27 学年代表性国际本科生学费",
   "Consult official website for current annual tuition and fees": "当前年度学费与费用请查看官方网站"
 };
 
@@ -458,6 +523,24 @@ const TUITION_ASSUMPTION_ZH: Record<string, string> = {
     "采用多数未获补贴国际本科课程的代表性年度费用；具体费用因专业而异。",
   "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.":
     "采用国际本科项目的代表性年度学费；具体费用因学院和专业而异。",
+  "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.":
+    "采用常见本科收费档的代表性年度海外学费；具体费用因专业而异。",
+  "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.":
+    "采用代表性非居民本科年度学费；不含杂费、住宿、膳食、书本费、旅行费和个人开支。",
+  "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.":
+    "按两个学期计算的代表性本科年度学费；可能另收强制性学生费用。",
+  "Public undergraduate tuition is charged as zero tuition; mandatory fees or semester contributions may still apply.":
+    "公立本科项目学费按零学费记录；可能仍需支付强制性费用或学期贡献费。",
+  "This institution is primarily graduate/professional or research-focused, so no standard annual undergraduate tuition is listed.":
+    "该机构主要面向研究生、专业学院或科研领域，因此未列出标准年度本科生学费。",
+  "UCSF does not offer standard undergraduate programmes; figure uses School of Medicine annual tuition plus professional degree supplemental tuition and excludes mandatory fees, insurance, housing, and living costs.":
+    "UCSF 不提供标准本科项目；该数值采用医学院年度学费加专业学位附加学费，不含强制性费用、保险、住宿和生活成本。",
+  "Icahn is a medical and graduate institution; figure uses MD programme annual tuition and excludes general fee, activity fee, technology fee, insurance, housing, and living costs.":
+    "Icahn 是医学及研究生院校；该数值采用医学博士项目年度学费，不含一般费用、活动费、技术费、保险、住宿和生活成本。",
+  "Annualized from Karolinska Institutet Biomedicine bachelor tuition: SEK 540,000 total over three years, paid as SEK 90,000 per semester.":
+    "根据卡罗林斯卡学院生物医学本科总学费 SEK 540,000 按年度折算；三年制，每学期 SEK 90,000。",
+  "Representative non-EU undergraduate tuition at the national differentiated fee rate; programme exemptions may apply.":
+    "采用国家差异化收费标准下非欧盟本科生代表性学费；部分项目可能有豁免。",
   "Annual tuition only; excludes fees, housing, food, books, transportation, and personal expenses.":
     "仅包含年度学费；不含杂费、住宿、餐饮、书本费、交通费和个人开支。",
   "Annual endowed-college tuition; state-contract college tuition differs for New York residents.":
@@ -524,7 +607,8 @@ export function getLocalizedSearchText(university: University): string {
     CITY_ZH[university.city] ?? "",
     university.country,
     COUNTRY_ZH[university.country] ?? "",
-    university.rank2027
+    university.rank2027,
+    university.usNewsGlobalRank ?? ""
   ]
     .join(" ")
     .toLowerCase();

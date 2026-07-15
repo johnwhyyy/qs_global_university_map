@@ -19,7 +19,9 @@
     "rank2027": "1",
     "rank2026": "1",
     "region": "Americas",
-    "officialWebsite": "https://web.mit.edu/"
+    "officialWebsite": "https://web.mit.edu/",
+    "usNewsGlobalRank": "2",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Imperial College London",
@@ -41,7 +43,9 @@
     "rank2027": "2",
     "rank2026": "2",
     "region": "Europe",
-    "officialWebsite": "https://www.imperial.ac.uk/"
+    "officialWebsite": "https://www.imperial.ac.uk/",
+    "usNewsGlobalRank": "14",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Stanford University",
@@ -63,7 +67,9 @@
     "rank2027": "2",
     "rank2026": "3",
     "region": "Americas",
-    "officialWebsite": "https://www.stanford.edu/"
+    "officialWebsite": "https://www.stanford.edu/",
+    "usNewsGlobalRank": "3",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Oxford",
@@ -85,7 +91,9 @@
     "rank2027": "4",
     "rank2026": "4",
     "region": "Europe",
-    "officialWebsite": "https://www.ox.ac.uk/"
+    "officialWebsite": "https://www.ox.ac.uk/",
+    "usNewsGlobalRank": "4",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Harvard University",
@@ -107,7 +115,9 @@
     "rank2027": "5",
     "rank2026": "5",
     "region": "Americas",
-    "officialWebsite": "https://www.harvard.edu/"
+    "officialWebsite": "https://www.harvard.edu/",
+    "usNewsGlobalRank": "1",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Cambridge",
@@ -129,7 +139,9 @@
     "rank2027": "6",
     "rank2026": "6",
     "region": "Europe",
-    "officialWebsite": "https://www.cam.ac.uk/"
+    "officialWebsite": "https://www.cam.ac.uk/",
+    "usNewsGlobalRank": "5",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "California Institute of Technology (Caltech)",
@@ -151,7 +163,9 @@
     "rank2027": "7",
     "rank2026": "10",
     "region": "Americas",
-    "officialWebsite": "https://www.caltech.edu/"
+    "officialWebsite": "https://www.caltech.edu/",
+    "usNewsGlobalRank": "23",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "ETH Zurich",
@@ -173,7 +187,9 @@
     "rank2027": "8",
     "rank2026": "7",
     "region": "Europe",
-    "officialWebsite": "https://ethz.ch/en.html"
+    "officialWebsite": "https://ethz.ch/en.html",
+    "usNewsGlobalRank": "33",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "UCL",
@@ -195,7 +211,9 @@
     "rank2027": "8",
     "rank2026": "9",
     "region": "Europe",
-    "officialWebsite": "https://www.ucl.ac.uk/"
+    "officialWebsite": "https://www.ucl.ac.uk/",
+    "usNewsGlobalRank": "9",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "National University of Singapore (NUS)",
@@ -217,7 +235,9 @@
     "rank2027": "10",
     "rank2026": "8",
     "region": "Asia",
-    "officialWebsite": "https://www.nus.edu.sg/"
+    "officialWebsite": "https://www.nus.edu.sg/",
+    "usNewsGlobalRank": "16",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The University of Hong Kong",
@@ -239,7 +259,9 @@
     "rank2027": "11",
     "rank2026": "11",
     "region": "Asia",
-    "officialWebsite": "https://www.hku.hk/"
+    "officialWebsite": "https://www.hku.hk/",
+    "usNewsGlobalRank": "40",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Nanyang Technological University, Singapore (NTU Singapore)",
@@ -261,7 +283,9 @@
     "rank2027": "12",
     "rank2026": "12",
     "region": "Asia",
-    "officialWebsite": "https://www.ntu.edu.sg/"
+    "officialWebsite": "https://www.ntu.edu.sg/",
+    "usNewsGlobalRank": "27",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Peking University",
@@ -283,7 +307,9 @@
     "rank2027": "13",
     "rank2026": "14",
     "region": "Asia",
-    "officialWebsite": "https://english.pku.edu.cn/"
+    "officialWebsite": "https://english.pku.edu.cn/",
+    "usNewsGlobalRank": "19",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Tsinghua University",
@@ -305,7 +331,9 @@
     "rank2027": "14",
     "rank2026": "17",
     "region": "Asia",
-    "officialWebsite": "https://www.tsinghua.edu.cn/en/"
+    "officialWebsite": "https://www.tsinghua.edu.cn/en/",
+    "usNewsGlobalRank": "6",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Pennsylvania",
@@ -327,7 +355,9 @@
     "rank2027": "15",
     "rank2026": "15",
     "region": "Americas",
-    "officialWebsite": "https://www.upenn.edu/"
+    "officialWebsite": "https://www.upenn.edu/",
+    "usNewsGlobalRank": "17",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Cornell University",
@@ -349,7 +379,9 @@
     "rank2027": "16",
     "rank2026": "16",
     "region": "Americas",
-    "officialWebsite": "https://www.cornell.edu/"
+    "officialWebsite": "https://www.cornell.edu/",
+    "usNewsGlobalRank": "13",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Yale University",
@@ -371,7 +403,9 @@
     "rank2027": "16",
     "rank2026": "21",
     "region": "Americas",
-    "officialWebsite": "https://www.yale.edu/"
+    "officialWebsite": "https://www.yale.edu/",
+    "usNewsGlobalRank": "8",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The Chinese University of Hong Kong (CUHK)",
@@ -393,7 +427,9 @@
     "rank2027": "18",
     "rank2026": "32",
     "region": "Asia",
-    "officialWebsite": "https://www.cuhk.edu.hk/"
+    "officialWebsite": "https://www.cuhk.edu.hk/",
+    "usNewsGlobalRank": "28",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The University of New South Wales (UNSW Sydney)",
@@ -415,7 +451,9 @@
     "rank2027": "19",
     "rank2026": "20",
     "region": "Oceania",
-    "officialWebsite": "https://www.unsw.edu.au/"
+    "officialWebsite": "https://www.unsw.edu.au/",
+    "usNewsGlobalRank": "33",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Johns Hopkins University",
@@ -437,7 +475,9 @@
     "rank2027": "20",
     "rank2026": "24",
     "region": "Americas",
-    "officialWebsite": "https://www.jhu.edu/"
+    "officialWebsite": "https://www.jhu.edu/",
+    "usNewsGlobalRank": "17",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of California, Berkeley (UCB)",
@@ -458,7 +498,10 @@
     "officialWebsite": "https://www.berkeley.edu/",
     "region": "Americas",
     "rank2027": "20",
-    "rank2026": "17"
+    "rank2026": "17",
+    "usNewsGlobalRank": "7",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "coordinateSource": "https://www.openstreetmap.org/relation/2833528"
   },
   {
     "name": "EPFL – École polytechnique fédérale de Lausanne",
@@ -467,10 +510,11 @@
     "latitude": 46.5191,
     "longitude": 6.5668,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 4380,
+      "currency": "CHF",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Two semesters at CHF 1,390 tuition plus CHF 800 per-semester international surcharge; mandatory semester fees are excluded.",
+      "sourceUrl": "https://www.epfl.ch/education/studies/en/rules-and-procedures/tuition-fees/"
     },
     "logoPath": "/logos/qs/epfl-ecole-polytechnique-federale-de-lausanne.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -480,7 +524,9 @@
     "rank2027": "22",
     "rank2026": "22",
     "region": "Europe",
-    "officialWebsite": "https://www.epfl.ch/"
+    "officialWebsite": "https://www.epfl.ch/",
+    "usNewsGlobalRank": "80",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The University of Melbourne",
@@ -489,10 +535,11 @@
     "latitude": -37.7963,
     "longitude": 144.9614,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 53248,
+      "currency": "AUD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://students.unimelb.edu.au/your-course/manage-your-course/fees-and-payments/undergraduate-fees"
     },
     "logoPath": "/logos/qs/the-university-of-melbourne.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -502,7 +549,9 @@
     "rank2027": "22",
     "rank2026": "19",
     "region": "Oceania",
-    "officialWebsite": "https://www.unimelb.edu.au/"
+    "officialWebsite": "https://www.unimelb.edu.au/",
+    "usNewsGlobalRank": "28",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Chicago",
@@ -511,10 +560,11 @@
     "latitude": 41.7897,
     "longitude": -87.5997,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 75960,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://college.uchicago.edu/financial-aid/tuition-fees"
     },
     "logoPath": "/logos/qs/university-of-chicago.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -524,7 +574,9 @@
     "rank2027": "24",
     "rank2026": "13",
     "region": "Americas",
-    "officialWebsite": "https://www.uchicago.edu/"
+    "officialWebsite": "https://www.uchicago.edu/",
+    "usNewsGlobalRank": "25",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Technical University of Munich",
@@ -533,10 +585,11 @@
     "latitude": 48.1496,
     "longitude": 11.5676,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 6000,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative non-EU bachelor tuition based on EUR 3,000 per semester; exact fees vary by programme.",
+      "sourceUrl": "https://www.tum.de/en/studies/fees/tuition"
     },
     "logoPath": "/logos/qs/technical-university-of-munich.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -546,7 +599,9 @@
     "rank2027": "25",
     "rank2026": "22",
     "region": "Europe",
-    "officialWebsite": "https://www.tum.de/en/"
+    "officialWebsite": "https://www.tum.de/en/",
+    "usNewsGlobalRank": "73",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Fudan University",
@@ -555,10 +610,11 @@
     "latitude": 31.2989,
     "longitude": 121.503,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 26000,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://iso.fudan.edu.cn/isoenglish/wxzd/list.htm"
     },
     "logoPath": "/logos/qs/fudan-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -568,7 +624,9 @@
     "rank2027": "26",
     "rank2026": "30",
     "region": "Asia",
-    "officialWebsite": "https://www.fudan.edu.cn/en/"
+    "officialWebsite": "https://www.fudan.edu.cn/en/",
+    "usNewsGlobalRank": "49",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Princeton University",
@@ -577,10 +635,11 @@
     "latitude": 40.3431,
     "longitude": -74.6551,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 65150,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://admission.princeton.edu/cost-aid/fees-payment-options"
     },
     "logoPath": "/logos/qs/princeton-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -590,7 +649,9 @@
     "rank2027": "27",
     "rank2026": "25",
     "region": "Americas",
-    "officialWebsite": "https://www.princeton.edu/"
+    "officialWebsite": "https://www.princeton.edu/",
+    "usNewsGlobalRank": "14",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The University of Sydney",
@@ -599,10 +660,11 @@
     "latitude": -33.8886,
     "longitude": 151.1873,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 58800,
+      "currency": "AUD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.sydney.edu.au/courses/fees-and-loans.html"
     },
     "logoPath": "/logos/qs/the-university-of-sydney.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -612,7 +674,9 @@
     "rank2027": "28",
     "rank2026": "25",
     "region": "Oceania",
-    "officialWebsite": "https://www.sydney.edu.au/"
+    "officialWebsite": "https://www.sydney.edu.au/",
+    "usNewsGlobalRank": "31",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Australian National University (ANU)",
@@ -621,10 +685,11 @@
     "latitude": -35.2777,
     "longitude": 149.1185,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 53370,
+      "currency": "AUD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.anu.edu.au/students/program-administration/fees-payments/program-fees"
     },
     "logoPath": "/logos/qs/australian-national-university-anu.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -634,7 +699,9 @@
     "rank2027": "29",
     "rank2026": "32",
     "region": "Oceania",
-    "officialWebsite": "https://www.anu.edu.au/"
+    "officialWebsite": "https://www.anu.edu.au/",
+    "usNewsGlobalRank": "81",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "McGill University",
@@ -643,10 +710,11 @@
     "latitude": 45.5048,
     "longitude": -73.5772,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 45732,
+      "currency": "CAD",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.mcgill.ca/student-accounts/tuition-fees/tuition-and-fees-tables-and-rates"
     },
     "logoPath": "/logos/qs/mcgill-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -656,7 +724,9 @@
     "rank2027": "30",
     "rank2026": "27",
     "region": "Americas",
-    "officialWebsite": "https://www.mcgill.ca/"
+    "officialWebsite": "https://www.mcgill.ca/",
+    "usNewsGlobalRank": "68",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Monash University",
@@ -665,10 +735,11 @@
     "latitude": -37.914,
     "longitude": 145.13,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 53200,
+      "currency": "AUD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.monash.edu/study/fees-scholarships/fees"
     },
     "logoPath": "/logos/qs/monash-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -678,7 +749,9 @@
     "rank2027": "31",
     "rank2026": "36",
     "region": "Oceania",
-    "officialWebsite": "https://www.monash.edu/"
+    "officialWebsite": "https://www.monash.edu/",
+    "usNewsGlobalRank": "38",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Toronto",
@@ -687,10 +760,11 @@
     "latitude": 43.6629,
     "longitude": -79.3957,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 67370,
+      "currency": "CAD",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://studentaccount.utoronto.ca/tuition-fees/current-fall-winter-fee-refund-schedules/"
     },
     "logoPath": "/logos/qs/university-of-toronto.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -700,7 +774,9 @@
     "rank2027": "32",
     "rank2026": "29",
     "region": "Americas",
-    "officialWebsite": "https://www.utoronto.ca/"
+    "officialWebsite": "https://www.utoronto.ca/",
+    "usNewsGlobalRank": "20",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The Hong Kong University of Science and Technology",
@@ -709,10 +785,11 @@
     "latitude": 22.3375,
     "longitude": 114.263,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 185000,
+      "currency": "HKD",
+      "label": "2026-27 non-local undergraduate tuition",
+      "assumption": "Annual non-local undergraduate tuition; excludes accommodation and living costs.",
+      "sourceUrl": "https://join.hkust.edu.hk/fees"
     },
     "logoPath": "/logos/qs/the-hong-kong-university-of-science-and-technology.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -722,7 +799,9 @@
     "rank2027": "33",
     "rank2026": "44",
     "region": "Asia",
-    "officialWebsite": "https://hkust.edu.hk/"
+    "officialWebsite": "https://hkust.edu.hk/",
+    "usNewsGlobalRank": "82",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Université PSL",
@@ -731,10 +810,11 @@
     "latitude": 48.845,
     "longitude": 2.344,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 2770,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative non-EU undergraduate tuition at the national differentiated fee rate; programme exemptions may apply.",
+      "sourceUrl": "https://psl.eu/en/education/admissions/tuition-fees"
     },
     "logoPath": "/logos/qs/universite-psl.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -744,7 +824,9 @@
     "rank2027": "34",
     "rank2026": "28",
     "region": "Europe",
-    "officialWebsite": "https://psl.eu/en"
+    "officialWebsite": "https://psl.eu/en",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "The University of Edinburgh",
@@ -753,10 +835,11 @@
     "latitude": 55.9445,
     "longitude": -3.1889,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 34800,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.ed.ac.uk/tuition-fees/find/undergraduate"
     },
     "logoPath": "/logos/qs/the-university-of-edinburgh.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -766,7 +849,9 @@
     "rank2027": "35",
     "rank2026": "34",
     "region": "Europe",
-    "officialWebsite": "https://www.ed.ac.uk/"
+    "officialWebsite": "https://www.ed.ac.uk/",
+    "usNewsGlobalRank": "41",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Shanghai Jiao Tong University",
@@ -775,10 +860,11 @@
     "latitude": 31.2009,
     "longitude": 121.4295,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 24800,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://isc.sjtu.edu.cn/EN/content.aspx?info_lb=38&flag=2"
     },
     "logoPath": "/logos/qs/shanghai-jiao-tong-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -788,7 +874,9 @@
     "rank2027": "36",
     "rank2026": "47",
     "region": "Asia",
-    "officialWebsite": "https://en.sjtu.edu.cn/"
+    "officialWebsite": "https://en.sjtu.edu.cn/",
+    "usNewsGlobalRank": "37",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "King's College London",
@@ -797,10 +885,11 @@
     "latitude": 51.5115,
     "longitude": -0.116,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 31260,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.kcl.ac.uk/study/undergraduate/fees-and-funding"
     },
     "logoPath": "/logos/qs/king-s-college-london.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -810,7 +899,9 @@
     "rank2027": "37",
     "rank2026": "31",
     "region": "Europe",
-    "officialWebsite": "https://www.kcl.ac.uk/"
+    "officialWebsite": "https://www.kcl.ac.uk/",
+    "usNewsGlobalRank": "42",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Seoul National University",
@@ -819,10 +910,11 @@
     "latitude": 37.4599,
     "longitude": 126.9519,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 4884000,
+      "currency": "KRW",
+      "label": "2025-26 undergraduate tuition based on two semesters",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://en.snu.ac.kr/admission/undergraduate/tuition"
     },
     "logoPath": "/logos/qs/seoul-national-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -832,7 +924,9 @@
     "rank2027": "38",
     "rank2026": "38",
     "region": "Asia",
-    "officialWebsite": "https://en.snu.ac.kr/"
+    "officialWebsite": "https://en.snu.ac.kr/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "The University of Tokyo",
@@ -841,10 +935,11 @@
     "latitude": 35.7138,
     "longitude": 139.7626,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 535800,
+      "currency": "JPY",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://www.u-tokyo.ac.jp/en/prospective-students/tuition_fees.html"
     },
     "logoPath": "/logos/qs/the-university-of-tokyo.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -854,7 +949,9 @@
     "rank2027": "39",
     "rank2026": "36",
     "region": "Asia",
-    "officialWebsite": "https://www.u-tokyo.ac.jp/en/"
+    "officialWebsite": "https://www.u-tokyo.ac.jp/en/",
+    "usNewsGlobalRank": "72",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The University of Manchester",
@@ -863,10 +960,11 @@
     "latitude": 53.4668,
     "longitude": -2.2339,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 30000,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate/fees-and-funding/tuition-fees/"
     },
     "logoPath": "/logos/qs/the-university-of-manchester.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -876,7 +974,9 @@
     "rank2027": "40",
     "rank2026": "35",
     "region": "Europe",
-    "officialWebsite": "https://www.manchester.ac.uk/"
+    "officialWebsite": "https://www.manchester.ac.uk/",
+    "usNewsGlobalRank": "68",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The University of Queensland",
@@ -885,10 +985,11 @@
     "latitude": -27.4975,
     "longitude": 153.0137,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 51200,
+      "currency": "AUD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://study.uq.edu.au/study-options/fees-scholarships"
     },
     "logoPath": "/logos/qs/the-university-of-queensland.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -898,7 +999,9 @@
     "rank2027": "40",
     "rank2026": "42",
     "region": "Oceania",
-    "officialWebsite": "https://www.uq.edu.au/"
+    "officialWebsite": "https://www.uq.edu.au/",
+    "usNewsGlobalRank": "42",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Yonsei University",
@@ -907,10 +1010,11 @@
     "latitude": 37.5658,
     "longitude": 126.9386,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 8900000,
+      "currency": "KRW",
+      "label": "2025-26 undergraduate tuition based on two semesters",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://www.yonsei.ac.kr/en_sc/admission/tuition1.jsp"
     },
     "logoPath": "/logos/qs/yonsei-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -920,7 +1024,9 @@
     "rank2027": "42",
     "rank2026": "50",
     "region": "Asia",
-    "officialWebsite": "https://www.yonsei.ac.kr/en_sc/"
+    "officialWebsite": "https://www.yonsei.ac.kr/en_sc/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Columbia University",
@@ -929,10 +1035,11 @@
     "latitude": 40.8075,
     "longitude": -73.9626,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 71170,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://cc-seas.financialaid.columbia.edu/how/aid/works/cost"
     },
     "logoPath": "/logos/qs/columbia-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -942,7 +1049,9 @@
     "rank2027": "43",
     "rank2026": "38",
     "region": "Americas",
-    "officialWebsite": "https://www.columbia.edu/"
+    "officialWebsite": "https://www.columbia.edu/",
+    "usNewsGlobalRank": "10",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Institut Polytechnique de Paris",
@@ -951,10 +1060,11 @@
     "latitude": 48.7131,
     "longitude": 2.211,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 15400,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.ip-paris.fr/en/education/admissions/tuition-fees"
     },
     "logoPath": "/logos/qs/institut-polytechnique-de-paris.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -964,7 +1074,9 @@
     "rank2027": "43",
     "rank2026": "41",
     "region": "Europe",
-    "officialWebsite": "https://www.ip-paris.fr/en"
+    "officialWebsite": "https://www.ip-paris.fr/en",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Northwestern University",
@@ -973,10 +1085,11 @@
     "latitude": 42.05598,
     "longitude": -87.6753,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 69402,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://undergradaid.northwestern.edu/aid-basics-eligibility/cost-of-attendance.html"
     },
     "logoPath": "/logos/qs/northwestern-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -986,7 +1099,9 @@
     "rank2027": "45",
     "rank2026": "42",
     "region": "Americas",
-    "officialWebsite": "https://www.northwestern.edu/"
+    "officialWebsite": "https://www.northwestern.edu/",
+    "usNewsGlobalRank": "26",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of British Columbia",
@@ -995,10 +1110,11 @@
     "latitude": 49.2606,
     "longitude": -123.246,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 47189,
+      "currency": "CAD",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://students.ubc.ca/enrolment/finances/tuition-fees/undergraduate-tuition-fees"
     },
     "logoPath": "/logos/qs/university-of-british-columbia.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1008,7 +1124,9 @@
     "rank2027": "45",
     "rank2026": "40",
     "region": "Americas",
-    "officialWebsite": "https://www.ubc.ca/"
+    "officialWebsite": "https://www.ubc.ca/",
+    "usNewsGlobalRank": "42",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Zhejiang University",
@@ -1017,10 +1135,11 @@
     "latitude": 30.2638,
     "longitude": 120.1236,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 19800,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://iczu.zju.edu.cn/admissionsen/wsc/list.htm"
     },
     "logoPath": "/logos/qs/zhejiang-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1030,7 +1149,9 @@
     "rank2027": "47",
     "rank2026": "49",
     "region": "Asia",
-    "officialWebsite": "https://www.zju.edu.cn/english/"
+    "officialWebsite": "https://www.zju.edu.cn/english/",
+    "usNewsGlobalRank": "35",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Delft University of Technology",
@@ -1039,10 +1160,11 @@
     "latitude": 51.9988,
     "longitude": 4.3735,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 17310,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.tudelft.nl/en/education/practical-matters/tuition-fee-finances"
     },
     "logoPath": "/logos/qs/delft-university-of-technology.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1052,7 +1174,9 @@
     "rank2027": "48",
     "rank2026": "47",
     "region": "Europe",
-    "officialWebsite": "https://www.tudelft.nl/en/"
+    "officialWebsite": "https://www.tudelft.nl/en/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "University of California, Los Angeles (UCLA)",
@@ -1061,10 +1185,11 @@
     "latitude": 34.0689,
     "longitude": -118.4452,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 50626,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://admission.ucla.edu/tuition-aid/tuition-fees"
     },
     "logoPath": "/logos/qs/university-of-california-los-angeles-ucla.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1074,7 +1199,9 @@
     "rank2027": "49",
     "rank2026": "46",
     "region": "Americas",
-    "officialWebsite": "https://www.ucla.edu/"
+    "officialWebsite": "https://www.ucla.edu/",
+    "usNewsGlobalRank": "11",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The Hong Kong Polytechnic University",
@@ -1083,10 +1210,11 @@
     "latitude": 22.3046,
     "longitude": 114.1796,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 175000,
+      "currency": "HKD",
+      "label": "2026-27 non-local undergraduate tuition",
+      "assumption": "Annual non-local undergraduate tuition; excludes accommodation and living costs.",
+      "sourceUrl": "https://www.polyu.edu.hk/study/ug/admissions/fees-scholarships/"
     },
     "logoPath": "/logos/qs/the-hong-kong-polytechnic-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1096,7 +1224,9 @@
     "rank2027": "50",
     "rank2026": "54",
     "region": "Asia",
-    "officialWebsite": "https://www.polyu.edu.hk/"
+    "officialWebsite": "https://www.polyu.edu.hk/",
+    "usNewsGlobalRank": "52",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Michigan-Ann Arbor",
@@ -1105,10 +1235,11 @@
     "latitude": 42.278,
     "longitude": -83.7382,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 63081,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://admissions.umich.edu/costs-aid/costs"
     },
     "logoPath": "/logos/qs/university-of-michigan-ann-arbor.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1118,7 +1249,9 @@
     "rank2027": "51",
     "rank2026": "45",
     "region": "Americas",
-    "officialWebsite": "https://umich.edu/"
+    "officialWebsite": "https://umich.edu/",
+    "usNewsGlobalRank": "21",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "City University of Hong Kong (CityUHK)",
@@ -1127,10 +1260,11 @@
     "latitude": 22.3363,
     "longitude": 114.1732,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 170000,
+      "currency": "HKD",
+      "label": "2026-27 non-local undergraduate tuition",
+      "assumption": "Annual non-local undergraduate tuition; excludes accommodation and living costs.",
+      "sourceUrl": "https://www.cityu.edu.hk/admo/tuition-fees"
     },
     "logoPath": "/logos/qs/city-university-of-hong-kong-cityuhk.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1140,7 +1274,9 @@
     "rank2027": "52",
     "rank2026": "63",
     "region": "Asia",
-    "officialWebsite": "https://www.cityu.edu.hk/"
+    "officialWebsite": "https://www.cityu.edu.hk/",
+    "usNewsGlobalRank": "47",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Korea University",
@@ -1149,10 +1285,11 @@
     "latitude": 37.5896,
     "longitude": 127.0326,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 8500000,
+      "currency": "KRW",
+      "label": "2025-26 undergraduate tuition based on two semesters",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://registrar.korea.edu/eduinfo_en/affairs/tuition.do"
     },
     "logoPath": "/logos/qs/korea-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1162,7 +1299,9 @@
     "rank2027": "52",
     "rank2026": "61",
     "region": "Asia",
-    "officialWebsite": "https://www.korea.edu/mbshome/mbs/en/index.do"
+    "officialWebsite": "https://www.korea.edu/mbshome/mbs/en/index.do",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "National Taiwan University (NTU)",
@@ -1171,10 +1310,11 @@
     "latitude": 25.0173,
     "longitude": 121.5397,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 124200,
+      "currency": "TWD",
+      "label": "2025-26 undergraduate tuition based on two semesters",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://admissions.ntu.edu.tw/apply/fees/"
     },
     "logoPath": "/logos/qs/national-taiwan-university-ntu.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1184,7 +1324,9 @@
     "rank2027": "54",
     "rank2026": "63",
     "region": "Asia",
-    "officialWebsite": "https://www.ntu.edu.tw/english/"
+    "officialWebsite": "https://www.ntu.edu.tw/english/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Carnegie Mellon University",
@@ -1193,10 +1335,11 @@
     "latitude": 40.4433,
     "longitude": -79.9436,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 66700,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://www.cmu.edu/sfs/tuition/undergraduate/index.html"
     },
     "logoPath": "/logos/qs/carnegie-mellon-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1206,7 +1349,9 @@
     "rank2027": "55",
     "rank2026": "52",
     "region": "Americas",
-    "officialWebsite": "https://www.cmu.edu/"
+    "officialWebsite": "https://www.cmu.edu/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Universiti Malaya (UM)",
@@ -1215,10 +1360,11 @@
     "latitude": 3.12,
     "longitude": 101.6544,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 17900,
+      "currency": "MYR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://study.um.edu.my/fees"
     },
     "logoPath": "/logos/qs/universiti-malaya-um.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1228,7 +1374,9 @@
     "rank2027": "56",
     "rank2026": "58",
     "region": "Asia",
-    "officialWebsite": "https://www.um.edu.my/"
+    "officialWebsite": "https://www.um.edu.my/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "University of Bristol",
@@ -1237,10 +1385,11 @@
     "latitude": 51.4584,
     "longitude": -2.603,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 33900,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.bristol.ac.uk/students/support/finances/tuition-fees/undergraduate-fees/"
     },
     "logoPath": "/logos/qs/university-of-bristol.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1250,7 +1399,9 @@
     "rank2027": "57",
     "rank2026": "51",
     "region": "Europe",
-    "officialWebsite": "https://www.bristol.ac.uk/"
+    "officialWebsite": "https://www.bristol.ac.uk/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "New York University (NYU)",
@@ -1259,10 +1410,11 @@
     "latitude": 40.7295,
     "longitude": -73.9965,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 65622,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://www.nyu.edu/admissions/financial-aid-and-scholarships/tuitiongeneral.html"
     },
     "logoPath": "/logos/qs/new-york-university-nyu.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1272,7 +1424,9 @@
     "rank2027": "58",
     "rank2026": "55",
     "region": "Americas",
-    "officialWebsite": "https://www.nyu.edu/"
+    "officialWebsite": "https://www.nyu.edu/",
+    "usNewsGlobalRank": "36",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "KU Leuven",
@@ -1281,10 +1435,11 @@
     "latitude": 50.8779,
     "longitude": 4.7009,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 7518,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.kuleuven.be/english/education/tuition/fees"
     },
     "logoPath": "/logos/qs/ku-leuven.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1294,7 +1449,9 @@
     "rank2027": "59",
     "rank2026": "60",
     "region": "Europe",
-    "officialWebsite": "https://www.kuleuven.be/english/"
+    "officialWebsite": "https://www.kuleuven.be/english/",
+    "usNewsGlobalRank": "48",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Amsterdam",
@@ -1303,10 +1460,11 @@
     "latitude": 52.368,
     "longitude": 4.8906,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 12900,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.uva.nl/en/education/fees-and-funding/tuition-fees/tuition-fees.html"
     },
     "logoPath": "/logos/qs/university-of-amsterdam.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1316,7 +1474,9 @@
     "rank2027": "60",
     "rank2026": "53",
     "region": "Europe",
-    "officialWebsite": "https://www.uva.nl/en"
+    "officialWebsite": "https://www.uva.nl/en",
+    "usNewsGlobalRank": "39",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Ludwig-Maximilians-Universität München",
@@ -1325,10 +1485,11 @@
     "latitude": 48.15,
     "longitude": 11.58,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 0,
+      "currency": "EUR",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Public undergraduate tuition is charged as zero tuition; mandatory fees or semester contributions may still apply.",
+      "sourceUrl": "https://www.lmu.de/en/study/important-information-for-international-students/fees-and-funding/"
     },
     "logoPath": "/logos/qs/ludwig-maximilians-universitat-munchen.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1338,7 +1499,9 @@
     "rank2027": "61",
     "rank2026": "58",
     "region": "Europe",
-    "officialWebsite": "https://www.lmu.de/en/"
+    "officialWebsite": "https://www.lmu.de/en/",
+    "usNewsGlobalRank": "50",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The London School of Economics and Political Science (LSE)",
@@ -1347,10 +1510,11 @@
     "latitude": 51.5144,
     "longitude": -0.1165,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 29200,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.lse.ac.uk/study-at-lse/Undergraduate/fees-and-funding"
     },
     "logoPath": "/logos/qs/the-london-school-of-economics-and-political-science-lse.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1360,7 +1524,9 @@
     "rank2027": "62",
     "rank2026": "56",
     "region": "Europe",
-    "officialWebsite": "https://www.lse.ac.uk/"
+    "officialWebsite": "https://www.lse.ac.uk/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "KFUPM",
@@ -1369,10 +1535,11 @@
     "latitude": 26.3094,
     "longitude": 50.146,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 0,
+      "currency": "SAR",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Undergraduate study is typically scholarship-supported; mandatory deposits or fees may still apply.",
+      "sourceUrl": "https://admissions.kfupm.edu.sa/"
     },
     "logoPath": "/logos/qs/kfupm.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1382,7 +1549,9 @@
     "rank2027": "63",
     "rank2026": "67",
     "region": "Asia",
-    "officialWebsite": "https://www.kfupm.edu.sa/"
+    "officialWebsite": "https://www.kfupm.edu.sa/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Kyoto University",
@@ -1391,10 +1560,11 @@
     "latitude": 35.0262,
     "longitude": 135.7809,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 535800,
+      "currency": "JPY",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://www.kyoto-u.ac.jp/en/education-campus/tuition/school-fees"
     },
     "logoPath": "/logos/qs/kyoto-university.jpg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1404,7 +1574,9 @@
     "rank2027": "64",
     "rank2026": "57",
     "region": "Asia",
-    "officialWebsite": "https://www.kyoto-u.ac.jp/en"
+    "officialWebsite": "https://www.kyoto-u.ac.jp/en",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "KAIST",
@@ -1413,10 +1585,11 @@
     "latitude": 36.3721,
     "longitude": 127.3608,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 6866000,
+      "currency": "KRW",
+      "label": "2025-26 undergraduate tuition based on two semesters",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://admission.kaist.ac.kr/intl-undergraduate/tuition-scholarship/"
     },
     "logoPath": "/logos/qs/kaist.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1426,7 +1599,9 @@
     "rank2027": "65",
     "rank2026": "",
     "region": "Asia",
-    "officialWebsite": "https://www.kaist.ac.kr/en/"
+    "officialWebsite": "https://www.kaist.ac.kr/en/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Brown University",
@@ -1435,10 +1610,11 @@
     "latitude": 41.8268,
     "longitude": -71.4025,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 71700,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://finaid.brown.edu/cost-attendance"
     },
     "logoPath": "/logos/qs/brown-university.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1448,7 +1624,9 @@
     "rank2027": "66",
     "rank2026": "69",
     "region": "Americas",
-    "officialWebsite": "https://www.brown.edu/"
+    "officialWebsite": "https://www.brown.edu/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "The University of Auckland",
@@ -1457,10 +1635,11 @@
     "latitude": -36.8523,
     "longitude": 174.7691,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 50810,
+      "currency": "NZD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.auckland.ac.nz/en/study/fees-and-money-matters/tuition-fees/undergraduate-international-fees.html"
     },
     "logoPath": "/logos/qs/the-university-of-auckland.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1470,7 +1649,9 @@
     "rank2027": "67",
     "rank2026": "65",
     "region": "Oceania",
-    "officialWebsite": "https://www.auckland.ac.nz/en.html"
+    "officialWebsite": "https://www.auckland.ac.nz/en.html",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "The University of Warwick",
@@ -1479,10 +1660,11 @@
     "latitude": 52.381,
     "longitude": -1.5615,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 33520,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://warwick.ac.uk/services/finance/studentfinance/fees/overseasfees/"
     },
     "logoPath": "/logos/qs/the-university-of-warwick.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1492,7 +1674,9 @@
     "rank2027": "68",
     "rank2026": "74",
     "region": "Europe",
-    "officialWebsite": "https://warwick.ac.uk/"
+    "officialWebsite": "https://warwick.ac.uk/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "University of Birmingham",
@@ -1501,10 +1685,11 @@
     "latitude": 52.4508,
     "longitude": -1.9305,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 28560,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.birmingham.ac.uk/study/undergraduate/fees-funding/tuition-fees"
     },
     "logoPath": "/logos/qs/university-of-birmingham.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1514,7 +1699,9 @@
     "rank2027": "68",
     "rank2026": "76",
     "region": "Europe",
-    "officialWebsite": "https://www.birmingham.ac.uk/"
+    "officialWebsite": "https://www.birmingham.ac.uk/",
+    "usNewsGlobalRank": "97",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Duke University",
@@ -1523,10 +1710,11 @@
     "latitude": 36.0014,
     "longitude": -78.9382,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 69160,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://financialaid.duke.edu/how-aid-calculated/cost-attendance/"
     },
     "logoPath": "/logos/qs/duke-university.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1536,7 +1724,9 @@
     "rank2027": "70",
     "rank2026": "62",
     "region": "Americas",
-    "officialWebsite": "https://duke.edu/"
+    "officialWebsite": "https://duke.edu/",
+    "usNewsGlobalRank": "30",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Lund University",
@@ -1545,10 +1735,11 @@
     "latitude": 55.7047,
     "longitude": 13.191,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 160000,
+      "currency": "SEK",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.lunduniversity.lu.se/admissions/bachelors-and-masters-studies/tuition-fees"
     },
     "logoPath": "/logos/qs/lund-university.ico",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1558,7 +1749,9 @@
     "rank2027": "71",
     "rank2026": "72",
     "region": "Europe",
-    "officialWebsite": "https://www.lunduniversity.lu.se/"
+    "officialWebsite": "https://www.lunduniversity.lu.se/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "University of Texas at Austin",
@@ -1567,10 +1760,11 @@
     "latitude": 30.2849,
     "longitude": -97.7341,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 46498,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://admissions.utexas.edu/apply/tuition-and-costs/"
     },
     "logoPath": "/logos/qs/university-of-texas-at-austin.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1580,7 +1774,9 @@
     "rank2027": "72",
     "rank2026": "68",
     "region": "Americas",
-    "officialWebsite": "https://www.utexas.edu/"
+    "officialWebsite": "https://www.utexas.edu/",
+    "usNewsGlobalRank": "56",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Sorbonne University",
@@ -1589,20 +1785,23 @@
     "latitude": 48.8489,
     "longitude": 2.3563,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 2770,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative non-EU undergraduate tuition at the national differentiated fee rate; programme exemptions may apply.",
+      "sourceUrl": "https://www.sorbonne-universite.fr/en/education/fees-and-registration"
     },
-    "logoPath": "/logos/qs/sorbonne-university.ico",
+    "logoPath": "/logos/qs/sorbonne-university.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
     "coordinateSource": "Manual campus coordinate entry based on public map references",
-    "logoSource": "https://www.sorbonne-universite.fr/themes/custom/boots/favicon.ico",
+    "logoSource": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_of_Sorbonne_University.svg",
     "logoProfileSource": "https://www.sorbonne-universite.fr/en",
     "rank2027": "73",
     "rank2026": "72",
     "region": "Europe",
-    "officialWebsite": "https://www.sorbonne-universite.fr/en"
+    "officialWebsite": "https://www.sorbonne-universite.fr/en",
+    "usNewsGlobalRank": "67",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Illinois Urbana-Champaign",
@@ -1611,10 +1810,11 @@
     "latitude": 40.102,
     "longitude": -88.2272,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 43894,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://cost.illinois.edu/"
     },
     "logoPath": "/logos/qs/university-of-illinois-urbana-champaign.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1624,7 +1824,9 @@
     "rank2027": "74",
     "rank2026": "70",
     "region": "Americas",
-    "officialWebsite": "https://illinois.edu/"
+    "officialWebsite": "https://illinois.edu/",
+    "usNewsGlobalRank": "98",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Trinity College Dublin, The University of Dublin",
@@ -1633,10 +1835,11 @@
     "latitude": 53.3438,
     "longitude": -6.2546,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 21570,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.tcd.ie/academicregistry/fees-and-payments/"
     },
     "logoPath": "/logos/qs/trinity-college-dublin-the-university-of-dublin.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1646,7 +1849,9 @@
     "rank2027": "75",
     "rank2026": "75",
     "region": "Europe",
-    "officialWebsite": "https://www.tcd.ie/"
+    "officialWebsite": "https://www.tcd.ie/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Université Paris-Saclay",
@@ -1655,10 +1860,11 @@
     "latitude": 48.7098,
     "longitude": 2.1672,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 2770,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative non-EU undergraduate tuition at the national differentiated fee rate; programme exemptions may apply.",
+      "sourceUrl": "https://www.universite-paris-saclay.fr/en/admission/tuition-fees"
     },
     "logoPath": "/logos/qs/universite-paris-saclay.ico",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1668,7 +1874,9 @@
     "rank2027": "76",
     "rank2026": "70",
     "region": "Europe",
-    "officialWebsite": "https://www.universite-paris-saclay.fr/en"
+    "officialWebsite": "https://www.universite-paris-saclay.fr/en",
+    "usNewsGlobalRank": "82",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The University of Western Australia",
@@ -1677,10 +1885,11 @@
     "latitude": -31.9812,
     "longitude": 115.8199,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 47900,
+      "currency": "AUD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.uwa.edu.au/study/fees-and-scholarships/course-fees"
     },
     "logoPath": "/logos/qs/the-university-of-western-australia.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1690,7 +1899,9 @@
     "rank2027": "77",
     "rank2026": "77",
     "region": "Oceania",
-    "officialWebsite": "https://www.uwa.edu.au/"
+    "officialWebsite": "https://www.uwa.edu.au/",
+    "usNewsGlobalRank": "90",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Leeds",
@@ -1699,10 +1910,11 @@
     "latitude": 53.8076,
     "longitude": -1.5547,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 30250,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.leeds.ac.uk/undergraduate-fees"
     },
     "logoPath": "/logos/qs/university-of-leeds.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1712,7 +1924,9 @@
     "rank2027": "77",
     "rank2026": "86",
     "region": "Europe",
-    "officialWebsite": "https://www.leeds.ac.uk/"
+    "officialWebsite": "https://www.leeds.ac.uk/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Adelaide University",
@@ -1721,10 +1935,11 @@
     "latitude": -34.9206,
     "longitude": 138.6063,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 49000,
+      "currency": "AUD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://adelaideuni.edu.au/study/fees/"
     },
     "logoPath": "/logos/qs/adelaide-university.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1734,7 +1949,9 @@
     "rank2027": "79",
     "rank2026": "82",
     "region": "Oceania",
-    "officialWebsite": "https://www.adelaideuni.edu.au/"
+    "officialWebsite": "https://www.adelaideuni.edu.au/",
+    "usNewsGlobalRank": "85",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Glasgow",
@@ -1743,10 +1960,11 @@
     "latitude": 55.8721,
     "longitude": -4.2882,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 30240,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.gla.ac.uk/undergraduate/fees/"
     },
     "logoPath": "/logos/qs/university-of-glasgow.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1756,7 +1974,9 @@
     "rank2027": "80",
     "rank2026": "79",
     "region": "Europe",
-    "officialWebsite": "https://www.gla.ac.uk/"
+    "officialWebsite": "https://www.gla.ac.uk/",
+    "usNewsGlobalRank": "77",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of California, San Diego (UCSD)",
@@ -1765,10 +1985,11 @@
     "latitude": 32.8801,
     "longitude": -117.234,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 52536,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://admissions.ucsd.edu/tuition-financial-aid/tuition-stability-plan.html"
     },
     "logoPath": "/logos/qs/university-of-california-san-diego-ucsd.ico",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1778,7 +1999,9 @@
     "rank2027": "81",
     "rank2026": "66",
     "region": "Americas",
-    "officialWebsite": "https://ucsd.edu/"
+    "officialWebsite": "https://ucsd.edu/",
+    "usNewsGlobalRank": "23",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "KTH Royal Institute of Technology",
@@ -1787,10 +2010,11 @@
     "latitude": 59.347,
     "longitude": 18.073,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 160000,
+      "currency": "SEK",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.kth.se/en/studies/master/general/tuition-fees-1.516312"
     },
     "logoPath": "/logos/qs/kth-royal-institute-of-technology.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1800,7 +2024,9 @@
     "rank2027": "82",
     "rank2026": "78",
     "region": "Europe",
-    "officialWebsite": "https://www.kth.se/en"
+    "officialWebsite": "https://www.kth.se/en",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "The University of Sheffield",
@@ -1809,10 +2035,11 @@
     "latitude": 53.3811,
     "longitude": -1.488,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 29110,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.sheffield.ac.uk/undergraduate/fees-funding/tuition-fees"
     },
     "logoPath": "/logos/qs/the-university-of-sheffield.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1822,7 +2049,9 @@
     "rank2027": "82",
     "rank2026": "92",
     "region": "Europe",
-    "officialWebsite": "https://www.sheffield.ac.uk/"
+    "officialWebsite": "https://www.sheffield.ac.uk/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Universidad de Buenos Aires (UBA)",
@@ -1831,10 +2060,11 @@
     "latitude": -34.5997,
     "longitude": -58.3731,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 0,
+      "currency": "ARS",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Public undergraduate tuition is charged as zero tuition; mandatory fees or semester contributions may still apply.",
+      "sourceUrl": "https://www.uba.ar/internacionales/contenido.php?id=430"
     },
     "logoPath": "/logos/qs/universidad-de-buenos-aires-uba.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1844,7 +2074,9 @@
     "rank2027": "84",
     "rank2026": "84",
     "region": "Americas",
-    "officialWebsite": "https://www.uba.ar/"
+    "officialWebsite": "https://www.uba.ar/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Durham University",
@@ -1853,10 +2085,11 @@
     "latitude": 54.765,
     "longitude": -1.5782,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 33250,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.durham.ac.uk/study/undergraduate/fees-and-funding/"
     },
     "logoPath": "/logos/qs/durham-university.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1866,7 +2099,9 @@
     "rank2027": "85",
     "rank2026": "94",
     "region": "Europe",
-    "officialWebsite": "https://www.durham.ac.uk/"
+    "officialWebsite": "https://www.durham.ac.uk/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Universität Heidelberg",
@@ -1875,10 +2110,11 @@
     "latitude": 49.4106,
     "longitude": 8.7064,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 3000,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative non-EU tuition based on EUR 1,500 per semester; semester contribution may also apply.",
+      "sourceUrl": "https://www.uni-heidelberg.de/en/study/management-of-studies/tuition-fees"
     },
     "logoPath": "/logos/qs/universitat-heidelberg.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1888,7 +2124,9 @@
     "rank2027": "86",
     "rank2026": "80",
     "region": "Europe",
-    "officialWebsite": "https://www.uni-heidelberg.de/en"
+    "officialWebsite": "https://www.uni-heidelberg.de/en",
+    "usNewsGlobalRank": "68",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Politecnico di Milano",
@@ -1897,10 +2135,11 @@
     "latitude": 45.4781,
     "longitude": 9.2279,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 3898,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.polimi.it/en/international-prospective-students/tuition-fees"
     },
     "logoPath": "/logos/qs/politecnico-di-milano.ico",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1910,7 +2149,9 @@
     "rank2027": "87",
     "rank2026": "98",
     "region": "Europe",
-    "officialWebsite": "https://www.polimi.it/en"
+    "officialWebsite": "https://www.polimi.it/en",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "University of Technology Sydney",
@@ -1919,10 +2160,11 @@
     "latitude": -33.883,
     "longitude": 151.2009,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 48672,
+      "currency": "AUD",
+      "label": "2026 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.uts.edu.au/study/international/essential-information/fees-and-scholarships"
     },
     "logoPath": "/logos/qs/university-of-technology-sydney.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1932,7 +2174,9 @@
     "rank2027": "87",
     "rank2026": "96",
     "region": "Oceania",
-    "officialWebsite": "https://www.uts.edu.au/"
+    "officialWebsite": "https://www.uts.edu.au/",
+    "usNewsGlobalRank": "85",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Uppsala University",
@@ -1941,10 +2185,11 @@
     "latitude": 59.8586,
     "longitude": 17.6389,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 150000,
+      "currency": "SEK",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.uu.se/en/study/fees"
     },
     "logoPath": "/logos/qs/uppsala-university.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1954,7 +2199,9 @@
     "rank2027": "87",
     "rank2026": "93",
     "region": "Europe",
-    "officialWebsite": "https://www.uu.se/en"
+    "officialWebsite": "https://www.uu.se/en",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Nanjing University",
@@ -1963,10 +2210,11 @@
     "latitude": 32.0569,
     "longitude": 118.7793,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 21000,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://hwxy.nju.edu.cn/EN/Admissions/Fees.htm"
     },
     "logoPath": "/logos/qs/nanjing-university.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1976,7 +2224,9 @@
     "rank2027": "90",
     "rank2026": "103",
     "region": "Asia",
-    "officialWebsite": "https://www.nju.edu.cn/en/"
+    "officialWebsite": "https://www.nju.edu.cn/en/",
+    "usNewsGlobalRank": "77",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Copenhagen",
@@ -1985,10 +2235,11 @@
     "latitude": 55.6802,
     "longitude": 12.5726,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 110000,
+      "currency": "DKK",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://studies.ku.dk/bachelor/tuition-fees/"
     },
     "logoPath": "/logos/qs/university-of-copenhagen.ico",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -1998,7 +2249,9 @@
     "rank2027": "90",
     "rank2026": "101",
     "region": "Europe",
-    "officialWebsite": "https://www.ku.dk/english/"
+    "officialWebsite": "https://www.ku.dk/english/",
+    "usNewsGlobalRank": "45",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Pennsylvania State University",
@@ -2007,10 +2260,11 @@
     "latitude": 40.7982,
     "longitude": -77.8599,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 43280,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://admissions.psu.edu/costs-aid/tuition/"
     },
     "logoPath": "/logos/qs/pennsylvania-state-university.ico",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -2020,7 +2274,9 @@
     "rank2027": "92",
     "rank2026": "82",
     "region": "Americas",
-    "officialWebsite": "https://www.psu.edu/"
+    "officialWebsite": "https://www.psu.edu/",
+    "usNewsGlobalRank": "92",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Washington",
@@ -2029,20 +2285,23 @@
     "latitude": 47.6553,
     "longitude": -122.3035,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 43209,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://admit.washington.edu/costs/coa/"
     },
-    "logoPath": "/logos/qs/university-of-washington.jpg",
+    "logoPath": "/logos/qs/university-of-washington.svg",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
     "coordinateSource": "Manual campus coordinate entry based on public map references",
-    "logoSource": "https://uw-s3-cdn.s3.us-west-2.amazonaws.com/wp-content/uploads/sites/81/2023/07/19162807/w-statue-car-blur-377x160-1.jpg",
+    "logoSource": "https://upload.wikimedia.org/wikipedia/commons/3/36/University_of_Washington_Purple_Block_W_logo.svg",
     "logoProfileSource": "https://www.washington.edu/",
     "rank2027": "92",
     "rank2026": "81",
     "region": "Americas",
-    "officialWebsite": "https://www.washington.edu/"
+    "officialWebsite": "https://www.washington.edu/",
+    "usNewsGlobalRank": "12",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "Boston University",
@@ -2051,10 +2310,11 @@
     "latitude": 42.3505,
     "longitude": -71.1054,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 69870,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://www.bu.edu/admissions/tuition-aid/tuition/"
     },
     "logoPath": "/logos/qs/boston-university.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -2064,7 +2324,9 @@
     "rank2027": "94",
     "rank2026": "88",
     "region": "Americas",
-    "officialWebsite": "https://www.bu.edu/"
+    "officialWebsite": "https://www.bu.edu/",
+    "usNewsGlobalRank": "96",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "The University of Osaka",
@@ -2073,10 +2335,11 @@
     "latitude": 34.8197,
     "longitude": 135.5235,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 535800,
+      "currency": "JPY",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://www.osaka-u.ac.jp/en/international/action/tuition"
     },
     "logoPath": "/logos/qs/the-university-of-osaka.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -2086,7 +2349,9 @@
     "rank2027": "95",
     "rank2026": "91",
     "region": "Asia",
-    "officialWebsite": "https://www.osaka-u.ac.jp/en"
+    "officialWebsite": "https://www.osaka-u.ac.jp/en",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "University of Alberta",
@@ -2095,10 +2360,11 @@
     "latitude": 53.5232,
     "longitude": -113.5263,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 33968,
+      "currency": "CAD",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.ualberta.ca/en/registrar/costs-tuition-fees/undergraduate-tuition/index.html"
     },
     "logoPath": "/logos/qs/university-of-alberta.avif",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -2108,7 +2374,9 @@
     "rank2027": "96",
     "rank2026": "94",
     "region": "Americas",
-    "officialWebsite": "https://www.ualberta.ca/"
+    "officialWebsite": "https://www.ualberta.ca/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Institute of Science Tokyo",
@@ -2117,10 +2385,11 @@
     "latitude": 35.6047,
     "longitude": 139.6835,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 635400,
+      "currency": "JPY",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Representative annual undergraduate tuition based on two semesters; mandatory student fees may be additional.",
+      "sourceUrl": "https://admissions.isct.ac.jp/intl/fees"
     },
     "logoPath": "/logos/qs/institute-of-science-tokyo.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -2130,7 +2399,9 @@
     "rank2027": "97",
     "rank2026": "",
     "region": "Asia",
-    "officialWebsite": "https://www.isct.ac.jp/en"
+    "officialWebsite": "https://www.isct.ac.jp/en",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "University of Nottingham",
@@ -2139,10 +2410,11 @@
     "latitude": 52.9386,
     "longitude": -1.195,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 30750,
+      "currency": "GBP",
+      "label": "2026-27 representative overseas undergraduate tuition",
+      "assumption": "Representative annual overseas tuition for a common undergraduate band; fees vary by programme.",
+      "sourceUrl": "https://www.nottingham.ac.uk/fees/tuitionfees/202627/undergraduate.aspx"
     },
     "logoPath": "/logos/qs/university-of-nottingham.ico",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -2152,7 +2424,9 @@
     "rank2027": "97",
     "rank2026": "97",
     "region": "Europe",
-    "officialWebsite": "https://www.nottingham.ac.uk/"
+    "officialWebsite": "https://www.nottingham.ac.uk/",
+    "usNewsGlobalRank": "",
+    "usNewsSource": ""
   },
   {
     "name": "Freie Universitaet Berlin",
@@ -2161,10 +2435,11 @@
     "latitude": 52.4523,
     "longitude": 13.2906,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 0,
+      "currency": "EUR",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Public undergraduate tuition is charged as zero tuition; mandatory fees or semester contributions may still apply.",
+      "sourceUrl": "https://www.fu-berlin.de/en/studium/studieren/gebuehren/index.html"
     },
     "logoPath": "/logos/qs/freie-universitaet-berlin.ico",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -2174,7 +2449,9 @@
     "rank2027": "98",
     "rank2026": "88",
     "region": "Europe",
-    "officialWebsite": "https://www.fu-berlin.de/en/"
+    "officialWebsite": "https://www.fu-berlin.de/en/",
+    "usNewsGlobalRank": "63",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
   },
   {
     "name": "University of Zurich",
@@ -2183,10 +2460,11 @@
     "latitude": 47.3744,
     "longitude": 8.548,
     "tuition": {
-      "amount": null,
-      "currency": "",
-      "label": "Consult official website for current annual tuition and fees",
-      "assumption": "Representative tuition was not bulk-filled for the expanded top 100 dataset; use the official website for current program-specific fees."
+      "amount": 1540,
+      "currency": "CHF",
+      "label": "2025-26 undergraduate tuition based on two semesters",
+      "assumption": "Representative annual tuition based on two semesters for bachelor students; some surcharges and semester fees may apply.",
+      "sourceUrl": "https://www.students.uzh.ch/en/administration/tuitionfees.html"
     },
     "logoPath": "/logos/qs/university-of-zurich.png",
     "qsSource": "https://www.topuniversities.com/world-university-rankings",
@@ -2196,6 +2474,758 @@
     "rank2027": "98",
     "rank2026": "100",
     "region": "Europe",
-    "officialWebsite": "https://www.uzh.ch/en.html"
+    "officialWebsite": "https://www.uzh.ch/en.html",
+    "usNewsGlobalRank": "64",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "22",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of California, San Francisco",
+    "city": "San Francisco, CA",
+    "country": "United States of America",
+    "latitude": 37.7631,
+    "longitude": -122.4586,
+    "tuition": {
+      "amount": 40698,
+      "currency": "USD",
+      "label": "2025-26 representative MD tuition and professional degree supplemental tuition",
+      "assumption": "UCSF does not offer standard undergraduate programmes; figure uses School of Medicine annual tuition plus professional degree supplemental tuition and excludes mandatory fees, insurance, housing, and living costs.",
+      "sourceUrl": "https://registrar.ucsf.edu/registration/fees/school-of-medicine-2025-26"
+    },
+    "logoPath": "/logos/qs/university-of-california-san-francisco.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/2836174",
+    "logoSource": "https://www.ucsf.edu/themes/custom/ucsf/logo.svg",
+    "logoProfileSource": "https://www.ucsf.edu/",
+    "officialWebsite": "https://www.ucsf.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "32",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "Washington University in St. Louis",
+    "city": "St. Louis, MO",
+    "country": "United States of America",
+    "latitude": 38.6488,
+    "longitude": -90.3108,
+    "tuition": {
+      "amount": 66240,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://financialaid.washu.edu/how-aid-works/cost-of-attendance/"
+    },
+    "logoPath": "/logos/qs/washington-university-in-st-louis.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/112101",
+    "logoSource": "https://washu.edu/app/themes/antipasto/assets/img/favicon/apple-touch-icon.png",
+    "logoProfileSource": "https://wustl.edu/",
+    "officialWebsite": "https://wustl.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "46",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "Icahn School of Medicine at Mount Sinai",
+    "city": "New York, NY",
+    "country": "United States of America",
+    "latitude": 40.7906,
+    "longitude": -73.9533,
+    "tuition": {
+      "amount": 78738,
+      "currency": "USD",
+      "label": "2026-27 MD programme tuition",
+      "assumption": "Icahn is a medical and graduate institution; figure uses MD programme annual tuition and excludes general fee, activity fee, technology fee, insurance, housing, and living costs.",
+      "sourceUrl": "https://icahn.mssm.edu/files/ISMMS/Assets/Education/Student%20Life%20and%20Resources/MD%20%28By%20Class%29%20COA.pdf"
+    },
+    "logoPath": "/logos/qs/icahn-school-of-medicine-at-mount-sinai.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/way/285536583",
+    "logoSource": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Icahn_School_of_Medicine_at_Mount_Sinai_logo.svg",
+    "logoProfileSource": "https://icahn.mssm.edu/",
+    "officialWebsite": "https://icahn.mssm.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "51",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "Humboldt-Universität zu Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "latitude": 52.5179,
+    "longitude": 13.3937,
+    "tuition": {
+      "amount": 0,
+      "currency": "EUR",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Public undergraduate tuition is charged as zero tuition; mandatory fees or semester contributions may still apply.",
+      "sourceUrl": "https://www.hu-berlin.de/en/studies/counselling/fees"
+    },
+    "logoPath": "/logos/qs/humboldt-universit-t-zu-berlin.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/1469268",
+    "logoSource": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Huberlin-logo.svg",
+    "logoProfileSource": "https://www.hu-berlin.de/en",
+    "officialWebsite": "https://www.hu-berlin.de/en"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "53",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Asia",
+    "name": "University of Chinese Academy of Sciences",
+    "city": "Beijing",
+    "country": "China (Mainland)",
+    "latitude": 39.9897,
+    "longitude": 116.3104,
+    "tuition": {
+      "amount": 24000,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://english.ucas.ac.cn/index.php/admission"
+    },
+    "logoPath": "/logos/qs/university-of-chinese-academy-of-sciences.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/search?query=University%20of%20Chinese%20Academy%20of%20Sciences",
+    "logoSource": "https://english.ucas.ac.cn/images/LOGO-new.png",
+    "logoProfileSource": "https://english.ucas.ac.cn/",
+    "officialWebsite": "https://english.ucas.ac.cn/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "54",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "Utrecht University",
+    "city": "Utrecht",
+    "country": "Netherlands",
+    "latitude": 52.0907,
+    "longitude": 5.1214,
+    "tuition": {
+      "amount": 14400,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.uu.nl/en/bachelors/general-information/fees-and-funding/tuition-fees"
+    },
+    "logoPath": "/logos/qs/utrecht-university.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/458587",
+    "logoSource": "https://www.uu.nl/themes/custom/corp/src/images/uu-logo-en.svg",
+    "logoProfileSource": "https://www.uu.nl/en",
+    "officialWebsite": "https://www.uu.nl/en"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "55",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of North Carolina at Chapel Hill",
+    "city": "Chapel Hill, NC",
+    "country": "United States of America",
+    "latitude": 35.9049,
+    "longitude": -79.0469,
+    "tuition": {
+      "amount": 42428,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://admissions.unc.edu/tuition-and-financial-aid/"
+    },
+    "logoPath": "/logos/qs/university-of-north-carolina-at-chapel-hill.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/357291",
+    "logoSource": "https://upload.wikimedia.org/wikipedia/commons/d/d7/North_Carolina_Tar_Heels_logo.svg",
+    "logoProfileSource": "https://www.unc.edu/",
+    "officialWebsite": "https://www.unc.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "57",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "Karolinska Institute",
+    "city": "Stockholm",
+    "country": "Sweden",
+    "latitude": 59.3484,
+    "longitude": 18.0275,
+    "tuition": {
+      "amount": 180000,
+      "currency": "SEK",
+      "label": "2026-27 representative international bachelor tuition",
+      "assumption": "Annualized from Karolinska Institutet Biomedicine bachelor tuition: SEK 540,000 total over three years, paid as SEK 90,000 per semester.",
+      "sourceUrl": "https://education.ki.se/bachelors-masters-studies/tuition-fees"
+    },
+    "logoPath": "/logos/qs/karolinska-institute.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/1565819",
+    "logoSource": "https://ki.se/themes/custom/theorell/dist/images/ki-logo-header.png",
+    "logoProfileSource": "https://ki.se/en",
+    "officialWebsite": "https://ki.se/en"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "57",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of Pittsburgh",
+    "city": "Pittsburgh, PA",
+    "country": "United States of America",
+    "latitude": 40.444,
+    "longitude": -79.96,
+    "tuition": {
+      "amount": 41714,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://payments.pitt.edu/tuition-fees/tuition-fee-rates/"
+    },
+    "logoPath": "/logos/qs/university-of-pittsburgh.ico",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/357285",
+    "logoSource": "https://www.pitt.edu/themes/custom/pitt_25_edu/favicon.ico",
+    "logoProfileSource": "https://www.pitt.edu/",
+    "officialWebsite": "https://www.pitt.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "59",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Asia",
+    "name": "University of Science and Technology of China",
+    "city": "Hefei",
+    "country": "China (Mainland)",
+    "latitude": 31.8206,
+    "longitude": 117.2763,
+    "tuition": {
+      "amount": 23000,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://ic.ustc.edu.cn/en/v7info.php?Nav_x=1"
+    },
+    "logoPath": "/logos/qs/university-of-science-and-technology-of-china.ico",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/search?query=University%20of%20Science%20and%20Technology%20of%20China",
+    "logoSource": "https://en.ustc.edu.cn/images/logo.ico",
+    "logoProfileSource": "https://en.ustc.edu.cn/",
+    "officialWebsite": "https://en.ustc.edu.cn/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "60",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of Wisconsin-Madison",
+    "city": "Madison, WI",
+    "country": "United States of America",
+    "latitude": 43.0766,
+    "longitude": -89.4125,
+    "tuition": {
+      "amount": 43204,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://financialaid.wisc.edu/cost-of-attendance/"
+    },
+    "logoPath": "/logos/qs/university-of-wisconsin-madison.ico",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/397996",
+    "logoSource": "https://www.wisc.edu/favicon.ico",
+    "logoProfileSource": "https://www.wisc.edu/",
+    "officialWebsite": "https://www.wisc.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "61",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "Leiden University",
+    "city": "Leiden",
+    "country": "Netherlands",
+    "latitude": 52.1572,
+    "longitude": 4.4853,
+    "tuition": {
+      "amount": 14200,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.universiteitleiden.nl/en/education/admission-and-application/bachelors/tuition-fee"
+    },
+    "logoPath": "/logos/qs/leiden-university.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/478546",
+    "logoSource": "https://www.universiteitleiden.nl/en/design-1.0/assets/icons/icon-195px.png",
+    "logoProfileSource": "https://www.universiteitleiden.nl/en",
+    "officialWebsite": "https://www.universiteitleiden.nl/en"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "61",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "Université Paris Cité",
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8462,
+    "longitude": 2.3551,
+    "tuition": {
+      "amount": 2770,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative non-EU undergraduate tuition at the national differentiated fee rate; programme exemptions may apply.",
+      "sourceUrl": "https://u-paris.fr/en/tuition-fees/"
+    },
+    "logoPath": "/logos/qs/universite-paris-cite.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/9597353",
+    "logoSource": "https://u-paris.fr/wp-content/uploads/2026/01/logo-universite-paris-cite.png",
+    "logoProfileSource": "https://u-paris.fr/en/",
+    "officialWebsite": "https://u-paris.fr/en/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "64",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "Emory University",
+    "city": "Atlanta, GA",
+    "country": "United States of America",
+    "latitude": 33.7971,
+    "longitude": -84.3222,
+    "tuition": {
+      "amount": 64896,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://studentaid.emory.edu/undergraduate/how-aid-works/cost.html"
+    },
+    "logoPath": "/logos/qs/emory-university.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/112271",
+    "logoSource": "https://www.emory.edu/sites/emorymain/files/logos/emory-logo-blue.svg",
+    "logoProfileSource": "https://www.emory.edu/",
+    "officialWebsite": "https://www.emory.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "64",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "Ohio State University",
+    "city": "Columbus, OH",
+    "country": "United States of America",
+    "latitude": 40.0076,
+    "longitude": -83.0305,
+    "tuition": {
+      "amount": 40834,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://undergrad.osu.edu/cost-and-aid/basic-costs"
+    },
+    "logoPath": "/logos/qs/ohio-state-university.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/255663",
+    "logoSource": "https://www.osu.edu/images/osu-logo-stacked.svg",
+    "logoProfileSource": "https://www.osu.edu/",
+    "officialWebsite": "https://www.osu.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "68",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "Vanderbilt University",
+    "city": "Nashville, TN",
+    "country": "United States of America",
+    "latitude": 36.1447,
+    "longitude": -86.8027,
+    "tuition": {
+      "amount": 66760,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://admissions.vanderbilt.edu/tuition-aid/"
+    },
+    "logoPath": "/logos/qs/vanderbilt-university.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/222645",
+    "logoSource": "https://cdn.vanderbilt.edu/vu-futurevu/static/img/favicons/favicon-on-dark.png",
+    "logoProfileSource": "https://www.vanderbilt.edu/",
+    "officialWebsite": "https://www.vanderbilt.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "74",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Asia",
+    "name": "Sun Yat-sen University",
+    "city": "Guangzhou",
+    "country": "China (Mainland)",
+    "latitude": 23.0962,
+    "longitude": 113.2956,
+    "tuition": {
+      "amount": 26000,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://iso.sysu.edu.cn/en"
+    },
+    "logoPath": "/logos/qs/sun-yat-sen-university-marker.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/11804144",
+    "logoSource": "https://www.sysu.edu.cn/sysuen/images/logo.png",
+    "logoProfileSource": "https://www.sysu.edu.cn/sysuen/",
+    "officialWebsite": "https://www.sysu.edu.cn/sysuen/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "74",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of Southern California",
+    "city": "Los Angeles, CA",
+    "country": "United States of America",
+    "latitude": 34.0224,
+    "longitude": -118.2851,
+    "tuition": {
+      "amount": 71884,
+      "currency": "USD",
+      "label": "2025-26 undergraduate tuition",
+      "assumption": "Annual tuition only; excludes fees, housing, meals, books, insurance, and personal expenses.",
+      "sourceUrl": "https://financialaid.usc.edu/undergraduate-financial-aid/cost-of-attendance/"
+    },
+    "logoPath": "/logos/qs/university-of-southern-california.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/3796044",
+    "logoSource": "https://www.usc.edu/wp-content/uploads/2025/11/cropped-usc_512x512-Android@1x-192x192.png",
+    "logoProfileSource": "https://www.usc.edu/",
+    "officialWebsite": "https://www.usc.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "76",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of Minnesota Twin Cities",
+    "city": "Minneapolis, MN",
+    "country": "United States of America",
+    "latitude": 44.974,
+    "longitude": -93.2277,
+    "tuition": {
+      "amount": 39248,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://onestop.umn.edu/finances/costs/tuition"
+    },
+    "logoPath": "/logos/qs/university-of-minnesota-twin-cities.ico",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/357292",
+    "logoSource": "https://twin-cities.umn.edu/sites/twin-cities.umn.edu/files/favicon.ico",
+    "logoProfileSource": "https://twin-cities.umn.edu/",
+    "officialWebsite": "https://twin-cities.umn.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "77",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "University of Groningen",
+    "city": "Groningen",
+    "country": "Netherlands",
+    "latitude": 53.2194,
+    "longitude": 6.5665,
+    "tuition": {
+      "amount": 14570,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.rug.nl/education/bachelor/international-students/financial-matters/tuition-fees"
+    },
+    "logoPath": "/logos/qs/university-of-groningen.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/1574192",
+    "logoSource": "https://www.rug.nl/_definition/shared/images/favicons/apple-touch-icon-152x152.png",
+    "logoProfileSource": "https://www.rug.nl/education/",
+    "officialWebsite": "https://www.rug.nl/education/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "82",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of Maryland, College Park",
+    "city": "College Park, MD",
+    "country": "United States of America",
+    "latitude": 38.9869,
+    "longitude": -76.9426,
+    "tuition": {
+      "amount": 43198,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://financialaid.umd.edu/resources-policies/cost-attendance"
+    },
+    "logoPath": "/logos/qs/university-of-maryland-college-park.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/125388",
+    "logoSource": "https://umd-main.files.svdcdn.com/production/umd/logos/default/primary-logo-dark.svg?dm=1722455539",
+    "logoProfileSource": "https://www.umd.edu/",
+    "officialWebsite": "https://www.umd.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "85",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Asia",
+    "name": "Wuhan University",
+    "city": "Wuhan",
+    "country": "China (Mainland)",
+    "latitude": 30.5365,
+    "longitude": 114.3633,
+    "tuition": {
+      "amount": 20000,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://admission.whu.edu.cn/en/"
+    },
+    "logoPath": "/logos/qs/wuhan-university-marker.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/12032368",
+    "logoSource": "https://en.whu.edu.cn/images/logo.png",
+    "logoProfileSource": "https://en.whu.edu.cn/",
+    "officialWebsite": "https://en.whu.edu.cn/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "88",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "University of Barcelona",
+    "city": "Barcelona",
+    "country": "Spain",
+    "latitude": 41.3869,
+    "longitude": 2.1635,
+    "tuition": {
+      "amount": 4200,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://web.ub.edu/en/web/estudis/w/tuition-fees"
+    },
+    "logoPath": "/logos/qs/university-of-barcelona.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/way/217320938",
+    "logoSource": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Logo_Universitat_de_Barcelona.png",
+    "logoProfileSource": "https://web.ub.edu/en/",
+    "officialWebsite": "https://web.ub.edu/en/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "89",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "Erasmus University Rotterdam",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "latitude": 51.9176,
+    "longitude": 4.5255,
+    "tuition": {
+      "amount": 11800,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://www.eur.nl/en/education/practical-matters/tuition-fee"
+    },
+    "logoPath": "/logos/qs/erasmus-university-rotterdam.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/433409",
+    "logoSource": "https://www.eur.nl/apple-touch-icon.png",
+    "logoProfileSource": "https://www.eur.nl/en",
+    "officialWebsite": "https://www.eur.nl/en"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "91",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Europe",
+    "name": "Vrije Universiteit Amsterdam",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "latitude": 52.3337,
+    "longitude": 4.8656,
+    "tuition": {
+      "amount": 12610,
+      "currency": "EUR",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://vu.nl/en/education/more-about/tuition-fee"
+    },
+    "logoPath": "/logos/qs/vrije-universiteit-amsterdam.ico",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/1574285",
+    "logoSource": "https://vu.nl/favicon.ico",
+    "logoProfileSource": "https://vu.nl/en",
+    "officialWebsite": "https://vu.nl/en"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "92",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Asia",
+    "name": "Huazhong University of Science and Technology",
+    "city": "Wuhan",
+    "country": "China (Mainland)",
+    "latitude": 30.515,
+    "longitude": 114.4173,
+    "tuition": {
+      "amount": 20000,
+      "currency": "CNY",
+      "label": "2025-26 representative international undergraduate tuition",
+      "assumption": "Representative annual tuition for international undergraduate programmes; exact fees vary by school and major.",
+      "sourceUrl": "https://iso.hust.edu.cn/"
+    },
+    "logoPath": "/logos/qs/huazhong-university-of-science-and-technology-marker.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/12032369",
+    "logoSource": "https://www.hust.edu.cn/images/logo20240628.png",
+    "logoProfileSource": "https://english.hust.edu.cn/",
+    "officialWebsite": "https://english.hust.edu.cn/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "94",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "Georgia Institute of Technology",
+    "city": "Atlanta, GA",
+    "country": "United States of America",
+    "latitude": 33.7756,
+    "longitude": -84.3963,
+    "tuition": {
+      "amount": 32404,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://finaid.gatech.edu/costs/undergraduate-costs"
+    },
+    "logoPath": "/logos/qs/georgia-institute-of-technology.png",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/357290",
+    "logoSource": "https://www.gatech.edu/themes/custom/gatech/images/gatech-color_logo.png",
+    "logoProfileSource": "https://www.gatech.edu/",
+    "officialWebsite": "https://www.gatech.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "95",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of California, Davis",
+    "city": "Davis, CA",
+    "country": "United States of America",
+    "latitude": 38.5382,
+    "longitude": -121.7617,
+    "tuition": {
+      "amount": 50024,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://financialaid.ucdavis.edu/undergraduate/cost"
+    },
+    "logoPath": "/logos/qs/university-of-california-davis.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/397995",
+    "logoSource": "https://upload.wikimedia.org/wikipedia/commons/f/f3/The_University_of_California_Davis.svg",
+    "logoProfileSource": "https://www.ucdavis.edu/",
+    "officialWebsite": "https://www.ucdavis.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "99",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of California, Irvine",
+    "city": "Irvine, CA",
+    "country": "United States of America",
+    "latitude": 33.6405,
+    "longitude": -117.8443,
+    "tuition": {
+      "amount": 50328,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://www.ofas.uci.edu/cost/undergraduate-costs.php"
+    },
+    "logoPath": "/logos/qs/university-of-california-irvine.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/357287",
+    "logoSource": "https://upload.wikimedia.org/wikipedia/commons/8/8f/University_of_California%2C_Irvine_logo.svg",
+    "logoProfileSource": "https://uci.edu/",
+    "officialWebsite": "https://uci.edu/"
+  },
+  {
+    "rank2027": "",
+    "rank2026": "",
+    "usNewsGlobalRank": "100",
+    "usNewsSource": "https://www.usnews.com/education/best-global-universities/rankings?int=a27a09",
+    "region": "Americas",
+    "name": "University of California, Santa Barbara",
+    "city": "Santa Barbara, CA",
+    "country": "United States of America",
+    "latitude": 34.413,
+    "longitude": -119.8489,
+    "tuition": {
+      "amount": 50837,
+      "currency": "USD",
+      "label": "2025-26 representative nonresident undergraduate tuition",
+      "assumption": "Representative annual nonresident undergraduate tuition only; excludes fees, housing, meals, books, travel, and personal expenses.",
+      "sourceUrl": "https://www.finaid.ucsb.edu/cost-of-attendance"
+    },
+    "logoPath": "/logos/qs/university-of-california-santa-barbara.svg",
+    "qsSource": "",
+    "coordinateSource": "https://www.openstreetmap.org/relation/357289",
+    "logoSource": "https://upload.wikimedia.org/wikipedia/commons/d/d4/UC_Santa_Barbara_logo.svg",
+    "logoProfileSource": "https://www.ucsb.edu/",
+    "officialWebsite": "https://www.ucsb.edu/"
   }
 ]

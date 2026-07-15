@@ -6,15 +6,18 @@ import { RotateCcw } from "lucide-react";
 import * as THREE from "three";
 import { SHOW_MAP_DEBUG_OVERLAY } from "../config/debug";
 import { GLOBE_ZOOM } from "../config/globeZoom";
-import type { HoverState, Language, University } from "../types";
+import type { HoverState, Language, RankingSource, University } from "../types";
 import { assetPath } from "../utils/asset";
+import cityCentersData from "../data/city-centers.json";
 import topCountryCitiesData from "../data/top-country-cities.json";
 import { getLocalizedCity, getUiString } from "../utils/i18n";
+import { getRankForSource } from "../utils/universitySearch";
 import { buildCountryLabels, countryFeatures } from "../utils/globe";
 
 type UniversityGlobeProps = {
   universities: University[];
   language: Language;
+  rankingSource: RankingSource;
   activeUniversity: University | null;
   panelFocusRequest: { university: University; id: number } | null;
   listResetRequest: number;
@@ -81,9 +84,23 @@ const CITY_MARKER_OVERLAP_DISTANCE = 26;
 const CITY_LABEL_LIFT_PX = 16;
 
 const topCountryCities = topCountryCitiesData as CityCenter[];
+const universityCityCenters = cityCentersData as CityCenter[];
+
+function cityKey(city: Pick<CityCenter, "city" | "country">): string {
+  return `${city.city.toLowerCase()}|${city.country.toLowerCase()}`;
+}
+
+function uniqueCities(cities: CityCenter[]): CityCenter[] {
+  return [...new Map(cities.map((city) => [cityKey(city), city])).values()];
+}
 
 function parseRank(rank: string): number {
-  return Number(rank.replace(/=/g, ""));
+  const parsedRank = Number(rank.replace(/=/g, ""));
+  return Number.isFinite(parsedRank) && parsedRank > 0 ? parsedRank : Number.POSITIVE_INFINITY;
+}
+
+function getMarkerRank(university: University, rankingSource: RankingSource): string {
+  return getRankForSource(university, rankingSource).replace(/=/g, "") || "NR";
 }
 
 function clusterKey(universities: University[]): string {
@@ -152,7 +169,8 @@ function clampViewAltitude(view: { lat: number; lng: number; altitude: number })
 function buildMarkerClusters(
   universities: University[],
   points: Map<string, ScreenPoint>,
-  projectCoordinate: (latitude: number, longitude: number) => ScreenPoint | null
+  projectCoordinate: (latitude: number, longitude: number) => ScreenPoint | null,
+  rankingSource: RankingSource
 ): MarkerCluster[] {
   const visibleUniversities = universities.filter((university) => points.has(university.name));
   const parent = new Map<string, string>();
@@ -192,7 +210,9 @@ function buildMarkerClusters(
   }
 
   return [...groups.values()].map((group) => {
-    const sorted = [...group].sort((a, b) => parseRank(a.rank2027) - parseRank(b.rank2027));
+    const sorted = [...group].sort(
+      (a, b) => parseRank(getRankForSource(a, rankingSource)) - parseRank(getRankForSource(b, rankingSource))
+    );
     const centroid = sorted.reduce(
       (acc, university) => {
         acc.latitude += university.latitude;
@@ -229,6 +249,7 @@ function buildMarkerClusters(
 function UniversityGlobeComponent({
   universities,
   language,
+  rankingSource,
   activeUniversity,
   panelFocusRequest,
   listResetRequest,
@@ -379,6 +400,14 @@ function UniversityGlobeComponent({
     () => buildCountryLabels(universities, language),
     [language, universities]
   );
+  const displayedCityCenters = useMemo(() => {
+    const universityCityKeys = new Set(universities.map((university) => cityKey(university)));
+    return uniqueCities([
+      ...topCountryCities,
+      ...universityCityCenters.filter((cityCenter) => universityCityKeys.has(cityKey(cityCenter)))
+    ]);
+  }, [universities]);
+
   useEffect(() => {
     if (!isGlobeReady) return;
 
@@ -456,7 +485,7 @@ function UniversityGlobeComponent({
       }
 
       if (showCityLabels) {
-        for (const cityCenter of topCountryCities) {
+        for (const cityCenter of displayedCityCenters) {
           const isOnVisibleHemisphere =
             angularDistanceDegrees(
               { lat: currentView.lat, lng: currentView.lng },
@@ -490,7 +519,7 @@ function UniversityGlobeComponent({
         buildMarkerClusters(universities, points, (latitude, longitude) => {
           const screen = globe.getScreenCoords(latitude, longitude, 0.04) as ScreenPoint | null;
           return screen && Number.isFinite(screen.x) && Number.isFinite(screen.y) ? screen : null;
-        })
+        }, rankingSource)
       );
       setScreenCountryLabels(nextCountryLabels);
       setScreenCityLabels(nextCityLabels);
@@ -499,7 +528,7 @@ function UniversityGlobeComponent({
 
     frame = window.requestAnimationFrame(updateOverlays);
     return () => window.cancelAnimationFrame(frame);
-  }, [countryLabels, isGlobeReady, language, universities]);
+  }, [countryLabels, displayedCityCenters, isGlobeReady, language, rankingSource, universities]);
 
   const selectUniversity = (university: University) => {
     onSelect(university);
@@ -623,13 +652,15 @@ function UniversityGlobeComponent({
               style={{
                 left: `${cluster.screen.x}px`,
                 top: `${cluster.screen.y}px`,
-                zIndex: containsActiveUniversity ? 2000 : 1000 - parseRank(topUniversity.rank2027)
+                zIndex: containsActiveUniversity
+                  ? 2000
+                  : Math.max(1, 1000 - parseRank(getRankForSource(topUniversity, rankingSource)))
               }}
               type="button"
               aria-label={
                 isCluster
                   ? `${cluster.universities.length} university cluster, showing ${displayUniversity.name}`
-                  : `${displayUniversity.rank2027}: ${displayUniversity.name}`
+                  : `${getMarkerRank(displayUniversity, rankingSource)}: ${displayUniversity.name}`
               }
               onMouseEnter={(event) => {
                 const target = event.currentTarget as HTMLElement;
@@ -677,7 +708,11 @@ function UniversityGlobeComponent({
               }}
             >
               <img src={assetPath(displayUniversity.logoPath)} alt="" />
-              {isCluster ? <span className="cluster-count">+{hiddenCount}</span> : <span>{displayUniversity.rank2027}</span>}
+              {isCluster ? (
+                <span className="cluster-count">+{hiddenCount}</span>
+              ) : (
+                <span className="marker-rank">{getMarkerRank(displayUniversity, rankingSource)}</span>
+              )}
             </button>
           );
         })}

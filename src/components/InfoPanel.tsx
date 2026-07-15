@@ -1,6 +1,6 @@
 import { ExternalLink, GraduationCap, List, MapPin, Search } from "lucide-react";
 import { useMemo, useState } from "react";
-import type { Language, University } from "../types";
+import type { Language, RankingSource, University } from "../types";
 import { assetPath } from "../utils/asset";
 import { formatMoney } from "../utils/format";
 import {
@@ -12,11 +12,13 @@ import {
   getLocalizedUniversityName,
   getUiString
 } from "../utils/i18n";
-import { searchUniversities } from "../utils/universitySearch";
+import { getRankLabelForSource, searchUniversities } from "../utils/universitySearch";
 
 type InfoPanelProps = {
   language: Language;
   onLanguageChange: (language: Language) => void;
+  rankingSource: RankingSource;
+  onRankingSourceChange: (rankingSource: RankingSource) => void;
   activeUniversity: University | null;
   universities: University[];
   onSelectUniversity: (university: University) => void;
@@ -38,6 +40,8 @@ function getListCountryLabel(university: University, language: Language): string
 export function InfoPanel({
   language,
   onLanguageChange,
+  rankingSource,
+  onRankingSourceChange,
   activeUniversity,
   universities,
   onSelectUniversity,
@@ -45,50 +49,48 @@ export function InfoPanel({
 }: InfoPanelProps) {
   const [query, setQuery] = useState("");
   const filteredUniversities = useMemo(() => searchUniversities(universities, query), [query, universities]);
+  const languageToggle = (
+    <div className="language-toggle" role="group" aria-label="Language switcher">
+      <button
+        type="button"
+        className={language === "zh" ? "is-active" : ""}
+        onClick={() => onLanguageChange("zh")}
+      >
+        {getUiString(language, "languageChinese")}
+      </button>
+      <button
+        type="button"
+        className={language === "en" ? "is-active" : ""}
+        onClick={() => onLanguageChange("en")}
+      >
+        {getUiString(language, "languageEnglish")}
+      </button>
+    </div>
+  );
 
   return (
     <aside
       className="info-panel"
       aria-label={activeUniversity ? getUiString(language, "title") : getUiString(language, "rankingList")}
     >
-      <div className="panel-header">
-        <div className="panel-header-main">
-          <div className="rank-chip">{activeUniversity ? `QS ${activeUniversity.rank2027}` : getUiString(language, "listChip")}</div>
-          {activeUniversity ? (
-            <img src={assetPath(activeUniversity.logoPath)} alt="" className="panel-logo" />
-          ) : (
-            <div className="panel-logo panel-logo-placeholder">
-              <List size={22} />
-            </div>
-          )}
-        </div>
-        <div className="language-toggle" role="group" aria-label="Language switcher">
-          <button
-            type="button"
-            className={language === "zh" ? "is-active" : ""}
-            onClick={() => onLanguageChange("zh")}
-          >
-            {getUiString(language, "languageChinese")}
-          </button>
-          <button
-            type="button"
-            className={language === "en" ? "is-active" : ""}
-            onClick={() => onLanguageChange("en")}
-          >
-            {getUiString(language, "languageEnglish")}
-          </button>
-        </div>
+      <div className="panel-title-row">
+        <h1>{getUiString(language, "title")}</h1>
+        {languageToggle}
       </div>
-
-      <h1>{getUiString(language, "title")}</h1>
       <p className="lede">{getUiString(language, "lede")}</p>
 
       {activeUniversity ? (
         <div className="selected-card">
-          <button className="panel-secondary-button" type="button" onClick={onShowRankingList}>
-            <List size={15} />
-            {getUiString(language, "backToList")}
-          </button>
+          <div className="selected-card-top">
+            <div className="selected-card-rank-logo">
+              <div className="rank-chip">{getRankLabelForSource(activeUniversity, rankingSource)}</div>
+              <img src={assetPath(activeUniversity.logoPath)} alt="" className="panel-logo" />
+            </div>
+            <button className="panel-secondary-button" type="button" onClick={onShowRankingList}>
+              <List size={15} />
+              {getUiString(language, "backToList")}
+            </button>
+          </div>
 
           <div>
             <p className="region-subtitle eyebrow">{getLocalizedRegion(activeUniversity.region, language)}</p>
@@ -96,14 +98,14 @@ export function InfoPanel({
           </div>
 
           <dl className="detail-list">
-            <div>
+            <div className="detail-list-full">
               <dt>
                 <MapPin size={15} />
                 {getUiString(language, "location")}
               </dt>
               <dd>{getLocalizedLocation(activeUniversity, language)}</dd>
             </div>
-            <div>
+            <div className="detail-list-full">
               <dt>
                 <GraduationCap size={15} />
                 {getUiString(language, "annualTuition")}
@@ -115,11 +117,15 @@ export function InfoPanel({
             </div>
             <div>
               <dt>{getUiString(language, "ranking2027")}</dt>
-              <dd>{activeUniversity.rank2027}</dd>
+              <dd>{activeUniversity.rank2027 || getUiString(language, "notRanked")}</dd>
             </div>
             <div>
               <dt>{getUiString(language, "ranking2026")}</dt>
               <dd>{activeUniversity.rank2026 || getUiString(language, "notRanked")}</dd>
+            </div>
+            <div>
+              <dt>{getUiString(language, "usNewsGlobalRanking")}</dt>
+              <dd>{activeUniversity.usNewsGlobalRank || getUiString(language, "notRanked")}</dd>
             </div>
           </dl>
 
@@ -130,14 +136,36 @@ export function InfoPanel({
               {getUiString(language, "officialWebsite")}
               <ExternalLink size={13} />
             </a>
-            <a href={activeUniversity.qsSource} target="_blank" rel="noreferrer">
-              {getUiString(language, "qsSource")}
-              <ExternalLink size={13} />
-            </a>
+            {activeUniversity.qsSource ? (
+              <a href={activeUniversity.qsSource} target="_blank" rel="noreferrer">
+                {getUiString(language, "qsSource")}
+                <ExternalLink size={13} />
+              </a>
+            ) : null}
+            {activeUniversity.usNewsSource ? (
+              <a href={activeUniversity.usNewsSource} target="_blank" rel="noreferrer">
+                {getUiString(language, "usNewsSource")}
+                <ExternalLink size={13} />
+              </a>
+            ) : null}
           </div>
         </div>
       ) : (
         <div className="ranking-panel">
+          <div className="ranking-control-row">
+            <label className="rank-source-field">
+              <span>{getUiString(language, "rankBy")}</span>
+              <select
+                value={rankingSource}
+                onChange={(event) => onRankingSourceChange(event.target.value as RankingSource)}
+                aria-label={getUiString(language, "rankBy")}
+              >
+                <option value="qs">{getUiString(language, "rankByQs")}</option>
+                <option value="usNews">{getUiString(language, "rankByUsNews")}</option>
+              </select>
+            </label>
+          </div>
+
           <label className="search-field">
             <Search size={16} />
             <input
@@ -159,7 +187,7 @@ export function InfoPanel({
               {filteredUniversities.map((university) => (
                 <li key={university.name}>
                   <button type="button" onClick={() => onSelectUniversity(university)}>
-                    <span>QS {university.rank2027}</span>
+                    <span>{getRankLabelForSource(university, rankingSource)}</span>
                     <img src={assetPath(university.logoPath)} alt={`${getLocalizedUniversityName(university, language)} logo`} />
                     <strong className="ranking-list-school">
                       <span>{getLocalizedUniversityName(university, language)}</span>

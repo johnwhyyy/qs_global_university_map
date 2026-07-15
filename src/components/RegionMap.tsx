@@ -8,7 +8,7 @@ import cityCentersData from "../data/city-centers.json";
 import topCountryCitiesData from "../data/top-country-cities.json";
 import usPriorityCitiesData from "../data/us-priority-cities.json";
 import usStateCapitalsData from "../data/us-state-capitals.json";
-import type { HoverState, Language, University } from "../types";
+import type { HoverState, Language, RankingSource, University } from "../types";
 import type { RegionName } from "../types/mapModeTypes";
 import { assetPath } from "../utils/asset";
 import {
@@ -18,11 +18,13 @@ import {
   type CountryFeature
 } from "../utils/globe";
 import { getLocalizedCity, getUiString } from "../utils/i18n";
+import { getRankForSource } from "../utils/universitySearch";
 
 type RegionMapProps = {
   universities: University[];
   region: RegionName;
   language: Language;
+  rankingSource: RankingSource;
   activeUniversity: University | null;
   focusRequest: { university: University; id: number } | null;
   onSelect: (university: University) => void;
@@ -60,6 +62,7 @@ const REGION_ZOOM_SLIDER_STEP = 0.35;
 const FOCUSED_REGION_SCALE = 2.15;
 const REGION_ZOOM_INTENSITY = 0.0018;
 const REGION_CITY_LABEL_MIN_SCALE = 2.5;
+const AMERICAS_CITY_LABEL_MIN_SCALE = 10;
 const AMERICAS_STATE_CAPITAL_CITY_LABEL_MIN_SCALE = 15;
 const ASIA_CAPITAL_CITY_LABEL_MIN_SCALE = 6.5;
 const ASIA_OTHER_CITY_LABEL_MIN_SCALE = 10;
@@ -69,7 +72,7 @@ const REGION_CITY_LABEL_OVERLAP_DISTANCE = 36;
 const REGION_CITY_LABEL_OFFSET_X = 76;
 const REGION_CITY_LABEL_OFFSET_Y = -24;
 const REGION_CITY_LABEL_STACK_GAP = 18;
-const REGION_CITY_LABEL_MAX_ALIGN_DISTANCE = 72;
+const REGION_CITY_LABEL_MAX_ALIGN_DISTANCE = 110;
 const REGION_CITY_LABEL_VIEWPORT_MARGIN = 28;
 const REGION_START_VIEWS: Partial<Record<RegionName, { latitude: number; longitude: number; scale: number }>> = {
   Americas: { latitude: 42.939, longitude: -98.3069, scale: 3.88 },
@@ -173,6 +176,8 @@ type RegionCityLabelPlacement = {
   key: string;
   name: string;
   isCapital: boolean;
+  isCountryCapital: boolean;
+  priority: number;
   anchor: { x: number; y: number };
   label: { x: number; y: number };
   isOffset: boolean;
@@ -186,7 +191,12 @@ type LabelBounds = {
 };
 
 function parseRank(rank: string): number {
-  return Number(rank.replace(/=/g, ""));
+  const parsedRank = Number(rank.replace(/=/g, ""));
+  return Number.isFinite(parsedRank) && parsedRank > 0 ? parsedRank : Number.POSITIVE_INFINITY;
+}
+
+function getMarkerRank(university: University, rankingSource: RankingSource): string {
+  return getRankForSource(university, rankingSource).replace(/=/g, "") || "NR";
 }
 
 function projectPoint(
@@ -232,7 +242,7 @@ function distance(a: { x: number; y: number }, b: { x: number; y: number }): num
   return Math.hypot(a.x - b.x, a.y - b.y);
 }
 
-function buildRegionMarkerClusters(points: RegionMarkerPoint[]): RegionMarkerCluster[] {
+function buildRegionMarkerClusters(points: RegionMarkerPoint[], rankingSource: RankingSource): RegionMarkerCluster[] {
   const parent = new Map<string, string>();
 
   const find = (value: string): string => {
@@ -265,7 +275,9 @@ function buildRegionMarkerClusters(points: RegionMarkerPoint[]): RegionMarkerClu
   }
 
   return [...groups.values()].map((group) => {
-    const universities = group.map((point) => point.university).sort((a, b) => parseRank(a.rank2027) - parseRank(b.rank2027));
+    const universities = group
+      .map((point) => point.university)
+      .sort((a, b) => parseRank(getRankForSource(a, rankingSource)) - parseRank(getRankForSource(b, rankingSource)));
     const screen = group.reduce(
       (acc, point) => {
         acc.x += point.screen.x;
@@ -342,6 +354,9 @@ function isRegionCityLabelVisible(region: RegionName, city: TopCity, scale: numb
   if (region === "Americas" && city.isStateCapital) {
     return scale > AMERICAS_STATE_CAPITAL_CITY_LABEL_MIN_SCALE;
   }
+  if (region === "Americas") {
+    return scale > AMERICAS_CITY_LABEL_MIN_SCALE;
+  }
   if (region === "Asia") {
     return city.isCapital ? scale >= ASIA_CAPITAL_CITY_LABEL_MIN_SCALE : scale > ASIA_OTHER_CITY_LABEL_MIN_SCALE;
   }
@@ -400,67 +415,95 @@ function labelsOverlap(a: RegionCityLabelPlacement, b: RegionCityLabelPlacement)
   return boundsOverlap(getCityLabelBounds(a), getCityLabelBounds(b));
 }
 
-function alignOffsetCityLabels(placements: RegionCityLabelPlacement[], height: number): RegionCityLabelPlacement[] {
-  const nextPlacements = [...placements];
-  const sides = [
-    nextPlacements.filter((placement) => placement.label.x >= placement.anchor.x),
-    nextPlacements.filter((placement) => placement.label.x < placement.anchor.x)
-  ];
+function buildOverlappingLabelGroups(placements: RegionCityLabelPlacement[]): RegionCityLabelPlacement[][] {
+  const groups: RegionCityLabelPlacement[][] = [];
 
-  for (const sidePlacements of sides) {
-    if (sidePlacements.length < 2) continue;
+  for (const placement of placements) {
+    const overlappingGroups = groups.filter((group) => group.some((groupPlacement) => labelsOverlap(placement, groupPlacement)));
 
-    const sortedPlacements = sidePlacements.sort((a, b) => a.label.y - b.label.y);
-    const groups: RegionCityLabelPlacement[][] = [];
-
-    for (const placement of sortedPlacements) {
-      const overlappingGroups = groups.filter((group) => group.some((groupPlacement) => labelsOverlap(placement, groupPlacement)));
-
-      if (overlappingGroups.length > 0) {
-        const mergedGroup = overlappingGroups.flat();
-        mergedGroup.push(placement);
-        for (const group of overlappingGroups) {
-          groups.splice(groups.indexOf(group), 1);
-        }
-        groups.push(mergedGroup);
-      } else {
-        groups.push([placement]);
+    if (overlappingGroups.length > 0) {
+      const mergedGroup = overlappingGroups.flat();
+      mergedGroup.push(placement);
+      for (const group of overlappingGroups) {
+        groups.splice(groups.indexOf(group), 1);
       }
-    }
-
-    for (const group of groups) {
-      if (group.length < 2) continue;
-
-      const alignedX =
-        group[0].label.x >= group[0].anchor.x
-          ? Math.max(...group.map((placement) => placement.label.x))
-          : Math.min(...group.map((placement) => placement.label.x));
-      const sortedGroup = [...group].sort((a, b) => a.label.y - b.label.y);
-      const centerY = sortedGroup.reduce((sum, placement) => sum + placement.label.y, 0) / sortedGroup.length;
-      const startY = centerY - ((sortedGroup.length - 1) * REGION_CITY_LABEL_STACK_GAP) / 2;
-
-      for (let index = 0; index < sortedGroup.length; index += 1) {
-        const placement = sortedGroup[index];
-        const alignedLabel = {
-          x: alignedX,
-          y: Math.min(Math.max(28, startY + index * REGION_CITY_LABEL_STACK_GAP), Math.max(28, height - 28))
-        };
-
-        if (distance(alignedLabel, placement.anchor) <= REGION_CITY_LABEL_MAX_ALIGN_DISTANCE) {
-          placement.label = alignedLabel;
-          placement.isOffset = distance(placement.label, placement.anchor) > 1;
-        }
-      }
+      groups.push(mergedGroup);
+    } else {
+      groups.push([placement]);
     }
   }
 
-  return nextPlacements;
+  return groups;
+}
+
+function alignOffsetCityLabels(placements: RegionCityLabelPlacement[], height: number): RegionCityLabelPlacement[] {
+  const nextPlacements = placements.map((placement) => ({ ...placement, label: { ...placement.label } }));
+
+  for (let pass = 0; pass < 3; pass += 1) {
+    const sides = [
+      nextPlacements.filter((placement) => placement.label.x >= placement.anchor.x),
+      nextPlacements.filter((placement) => placement.label.x < placement.anchor.x)
+    ];
+    let movedAnyLabel = false;
+
+    for (const sidePlacements of sides) {
+      if (sidePlacements.length < 2) continue;
+
+      const sortedPlacements = [...sidePlacements].sort((a, b) => a.label.y - b.label.y);
+      const groups = buildOverlappingLabelGroups(sortedPlacements);
+
+      for (const group of groups) {
+        if (group.length < 2) continue;
+
+        const alignedX =
+          group[0].label.x >= group[0].anchor.x
+            ? Math.max(...group.map((placement) => placement.label.x))
+            : Math.min(...group.map((placement) => placement.label.x));
+        const sortedGroup = [...group].sort((a, b) => a.label.y - b.label.y);
+        const centerY = sortedGroup.reduce((sum, placement) => sum + placement.label.y, 0) / sortedGroup.length;
+        const startY = centerY - ((sortedGroup.length - 1) * REGION_CITY_LABEL_STACK_GAP) / 2;
+
+        for (let index = 0; index < sortedGroup.length; index += 1) {
+          const placement = sortedGroup[index];
+          const alignedLabel = {
+            x: alignedX,
+            y: Math.min(Math.max(28, startY + index * REGION_CITY_LABEL_STACK_GAP), Math.max(28, height - 28))
+          };
+
+          if (distance(alignedLabel, placement.anchor) <= REGION_CITY_LABEL_MAX_ALIGN_DISTANCE) {
+            movedAnyLabel ||= distance(alignedLabel, placement.label) > 0.5;
+            placement.label = alignedLabel;
+            placement.isOffset = distance(placement.label, placement.anchor) > 1;
+          }
+        }
+      }
+    }
+
+    if (!movedAnyLabel) break;
+  }
+
+  return nextPlacements
+    .sort((a, b) => b.priority - a.priority || distance(a.label, a.anchor) - distance(b.label, b.anchor))
+    .reduce<RegionCityLabelPlacement[]>((visiblePlacements, placement) => {
+      if (!visiblePlacements.some((visiblePlacement) => labelsOverlap(placement, visiblePlacement))) {
+        visiblePlacements.push(placement);
+      }
+      return visiblePlacements;
+    }, [])
+    .sort((a, b) => placements.findIndex((placement) => placement.key === a.key) - placements.findIndex((placement) => placement.key === b.key));
+}
+
+function cityLabelPriority(city: TopCity): number {
+  if (city.isCapital && !city.isStateCapital) return 3;
+  if (city.isStateCapital) return 1;
+  return 2;
 }
 
 export function RegionMap({
   universities,
   region,
   language,
+  rankingSource,
   activeUniversity,
   focusRequest,
   onSelect,
@@ -542,6 +585,20 @@ export function RegionMap({
   );
   const cityLabels = useMemo(() => {
     const countrySet = new Set(regionCountries);
+    const universityRegionCities = regionUniversities.map((university) => {
+      const cityCenter = universityCityCenters.find(
+        (city) => city.city === university.city && city.country === university.country
+      );
+
+      return {
+        city: university.city,
+        country: university.country,
+        latitude: cityCenter?.latitude ?? university.latitude,
+        longitude: cityCenter?.longitude ?? university.longitude,
+        population: cityCenter?.population ?? 0,
+        isCapital: cityCenter?.isCapital ?? false
+      };
+    });
 
     const sourceCities =
       region === "Europe"
@@ -553,18 +610,7 @@ export function RegionMap({
               }
             }
 
-            for (const university of regionUniversities) {
-              const cityCenter = universityCityCenters.find(
-                (city) => city.city === university.city && city.country === university.country
-              );
-              const universityCity: TopCity = {
-                city: university.city,
-                country: university.country,
-                latitude: cityCenter?.latitude ?? university.latitude,
-                longitude: cityCenter?.longitude ?? university.longitude,
-                population: cityCenter?.population ?? 0,
-                isCapital: cityCenter?.isCapital ?? false
-              };
+            for (const universityCity of universityRegionCities) {
               const key = cityKey(universityCity);
               const existingCity = europeCities.get(key);
               europeCities.set(key, {
@@ -577,6 +623,7 @@ export function RegionMap({
           })()
         : uniqueCities([
             ...topCountryCities.filter((city) => countrySet.has(city.country)),
+            ...universityRegionCities,
             ...(region === "Americas" && countrySet.has("United States of America") ? usPriorityCities : []),
             ...(region === "Americas" && countrySet.has("United States of America") ? usStateCapitals : [])
           ]);
@@ -618,9 +665,10 @@ export function RegionMap({
         markerPoints.map(({ university, screen }) => ({
           university,
           screen: applyTransform(screen, viewTransform)
-        }))
+        })),
+        rankingSource
     ),
-    [markerPoints, viewTransform]
+    [markerPoints, rankingSource, viewTransform]
   );
   const debugCenter = useMemo(() => {
     if (!SHOW_MAP_DEBUG_OVERLAY) return null;
@@ -648,6 +696,8 @@ export function RegionMap({
             key: `${city.city}-${city.country}`,
             name: city.name,
             isCapital: city.isCapital,
+            isCountryCapital: city.isCapital && !city.isStateCapital,
+            priority: cityLabelPriority(city),
             anchor,
             label: overlapsMarker
               ? {
@@ -976,7 +1026,7 @@ export function RegionMap({
                   y1={city.anchor.y}
                   x2={city.label.x}
                   y2={city.label.y}
-                  className={`city-connector ${city.isCapital ? "is-capital" : ""}`}
+                  className={`city-connector ${city.isCountryCapital ? "is-capital" : ""}`}
                 />
               ))}
           </svg>
@@ -986,8 +1036,8 @@ export function RegionMap({
           cityLabelPlacements.map((city) => (
           <div
             key={city.key}
-            className={`city-label screen-city-label ${city.isCapital ? "is-capital" : ""}`}
-            style={{ left: `${city.label.x}px`, top: `${city.label.y}px`, zIndex: city.isCapital ? 950 : 900 }}
+            className={`city-label screen-city-label ${city.isCountryCapital ? "is-capital" : ""}`}
+            style={{ left: `${city.label.x}px`, top: `${city.label.y}px`, zIndex: city.isCountryCapital ? 950 : 900 }}
           >
             <span className="city-dot" />
             <span className="city-name">{city.name}</span>
@@ -1015,13 +1065,15 @@ export function RegionMap({
                 top: `${cluster.screen.y}px`,
                 width: `${REGION_MARKER_SIZE}px`,
                 height: `${REGION_MARKER_SIZE}px`,
-                zIndex: containsActiveUniversity ? 2200 : 1200 - parseRank(topUniversity.rank2027)
+                zIndex: containsActiveUniversity
+                  ? 2200
+                  : Math.max(1, 1200 - parseRank(getRankForSource(topUniversity, rankingSource)))
               }}
               type="button"
               aria-label={
                 isCluster
                   ? `${cluster.universities.length} university cluster, showing ${displayUniversity.name}`
-                  : `${displayUniversity.rank2027}: ${displayUniversity.name}`
+                  : `${getMarkerRank(displayUniversity, rankingSource)}: ${displayUniversity.name}`
               }
               onMouseEnter={(event) => {
                 const rect = event.currentTarget.getBoundingClientRect();
@@ -1068,7 +1120,11 @@ export function RegionMap({
               }}
             >
               <img src={assetPath(displayUniversity.logoPath)} alt="" />
-              {isCluster ? <span className="cluster-count">+{hiddenCount}</span> : <span>{displayUniversity.rank2027}</span>}
+              {isCluster ? (
+                <span className="cluster-count">+{hiddenCount}</span>
+              ) : (
+                <span className="marker-rank">{getMarkerRank(displayUniversity, rankingSource)}</span>
+              )}
             </button>
           );
         })}

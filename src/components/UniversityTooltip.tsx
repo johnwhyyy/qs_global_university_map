@@ -16,6 +16,12 @@ type UniversityTooltipProps = {
   onPointerLeave: () => void;
 };
 
+function getPrimaryRankLabel(university: University): string {
+  if (university.rank2027) return `QS ${university.rank2027}`;
+  if (university.usNewsGlobalRank) return `USN ${university.usNewsGlobalRank}`;
+  return "NR";
+}
+
 export function UniversityTooltip({
   language,
   hover,
@@ -54,7 +60,7 @@ export function UniversityTooltip({
           {hover.universities.map((university) => (
             <li key={university.name}>
               <button type="button" onClick={() => onSelectUniversity(university)}>
-                <span>QS {university.rank2027}</span>
+                <span>{getPrimaryRankLabel(university)}</span>
                 {getLocalizedUniversityName(university, language)}
               </button>
             </li>
@@ -78,7 +84,7 @@ export function UniversityTooltip({
       onMouseLeave={onPointerLeave}
     >
       <div className="tooltip-topline">
-        <span>QS {university.rank2027}</span>
+        <span>{getPrimaryRankLabel(university)}</span>
         <img src={assetPath(university.logoPath)} alt="" />
       </div>
       <h3>{getLocalizedUniversityName(university, language)}</h3>
@@ -94,11 +100,15 @@ export function UniversityTooltip({
         </div>
         <div>
           <dt>{getUiString(language, "ranking2027")}</dt>
-          <dd>{university.rank2027}</dd>
+          <dd>{university.rank2027 || getUiString(language, "notRanked")}</dd>
         </div>
         <div>
           <dt>{getUiString(language, "ranking2026")}</dt>
           <dd>{university.rank2026 || getUiString(language, "notRanked")}</dd>
+        </div>
+        <div>
+          <dt>{getUiString(language, "usNewsGlobalRanking")}</dt>
+          <dd>{university.usNewsGlobalRank || getUiString(language, "notRanked")}</dd>
         </div>
       </dl>
     </div>

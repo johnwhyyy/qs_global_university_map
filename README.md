@@ -71,19 +71,21 @@ The selected university marker is highlighted in the same green used by the Regi
 
 The structured data lives in `src/data/universities.json`. Each record includes:
 
-- 2027 and 2026 QS rank, university name, city, country
+- 2027 and 2026 QS rank, US News global rank, university name, city, country
 - Region
 - Campus latitude and longitude
 - Annual tuition amount when available, currency, label, and assumptions
 - Official website
 - Marker logo path
-- QS, logo, official website, and coordinate source links
+- QS, US News, logo, official website, and coordinate source links
 
-The ranking and region values are sourced from `2027 QS World University Rankings.xlsx`, using rows 4 through 103. The app currently renders 100 university records.
+The QS ranking and region values are sourced from `2027 QS World University Rankings.xlsx`, using rows 4 through 103. The app also includes the U.S. News Best Global Universities top 100 as `usNewsGlobalRank`. The current dataset renders 130 university records: the QS top 100 plus U.S. News top-100 institutions not already present in the QS set.
 
-The app keeps the QS page URL in the row data for reference:
+The app keeps the ranking source URLs in the row data for reference:
 
 - https://www.topuniversities.com/world-university-rankings
+- https://www.usnews.com/education/best-global-universities/rankings?int=a27a09
+- https://forum.chasedream.com/thread-1401143-1-1.html
 
 Search and rank ordering helpers live in `src/utils/universitySearch.ts`, so future data updates do not require changing component-level filtering logic.
 
@@ -99,11 +101,11 @@ Tuition varies by residency, course, school, and whether fees are quoted as tuit
 - ETH Zurich: two semesters of tuition plus the international surcharge; mandatory semester fees are excluded.
 - UNSW Sydney: representative international undergraduate indicative annual tuition.
 
-The original top-ranked records keep representative tuition figures. Expanded top-100 records that were not manually audited use a clear "see official website" tuition label rather than an invented amount.
+Medical or graduate-only institutions in the U.S. News expansion use an explicit "No standard undergraduate tuition" label rather than an invented undergraduate figure.
 
 ## Logos And Markers
 
-The app uses local image assets in `public/logos/qs/`. Existing QS-sourced images are preserved for the original top-ranked records. For expanded records where QS profile scraping was unavailable from the local environment, generated local placeholder SVGs are stored in the same folder so the deployed app remains self-contained and does not hotlink assets.
+The app uses local image assets in `public/logos/qs/`. Existing QS-sourced images are preserved for the original top-ranked records. For expanded records where profile scraping was unavailable from the local environment, generated local placeholder SVGs are stored in the same folder so the deployed app remains self-contained and does not hotlink assets. U.S. News-only records currently use `public/logos/qs/us-news-placeholder.svg` until licensed local university logo assets are added.
 
 Logo source metadata, local paths, dimensions, and notes are recorded in `src/data/qs-logo-sources.json`. Confirm permission to use each university mark before deploying a public production site.
 
@@ -112,7 +114,7 @@ Logo source metadata, local paths, dimensions, and notes are recorded in `src/da
 To update a future QS release:
 
 1. Edit `src/data/universities.json`.
-2. Keep `rank2027`, `rank2026`, `region`, `latitude`, `longitude`, `tuition`, `currency`, `logoPath`, `officialWebsite`, and `qsSource` populated.
+2. Keep `rank2027`, `rank2026`, `usNewsGlobalRank`, `region`, `latitude`, `longitude`, `tuition`, `currency`, `logoPath`, `officialWebsite`, `qsSource`, and `usNewsSource` populated where applicable.
 3. Replace or add marker assets in `public/logos/qs/` and update `src/data/qs-logo-sources.json` if the source changes.
 4. Run `npm run build` before deployment.
 

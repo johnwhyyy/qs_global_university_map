@@ -4,11 +4,11 @@ import { RegionMap } from "./components/RegionMap";
 import { RegionSelector } from "./components/RegionSelector";
 import { UniversityTooltip } from "./components/UniversityTooltip";
 import universitiesData from "./data/universities.json";
-import type { HoverState, Language, University } from "./types";
+import type { HoverState, Language, RankingSource, University } from "./types";
 import type { MapMode, RegionName } from "./types/mapModeTypes";
 import { assetPath } from "./utils/asset";
 import { getLocalizedUniversityName, getUiString } from "./utils/i18n";
-import { sortByRank } from "./utils/universitySearch";
+import { getRankForSource, getRankLabelForSource, sortByRank } from "./utils/universitySearch";
 
 const universities = universitiesData as University[];
 const UniversityGlobe = lazy(() =>
@@ -46,6 +46,7 @@ export default function App() {
   const [regionFocusRequest, setRegionFocusRequest] = useState<{ university: University; id: number } | null>(null);
   const [hover, setHover] = useState<HoverState>(null);
   const [mobileCluster, setMobileCluster] = useState<University[] | null>(null);
+  const [rankingSource, setRankingSource] = useState<RankingSource>("qs");
   const hoverCloseTimer = useRef<number | null>(null);
   const isMobile = useIsMobile();
 
@@ -53,7 +54,10 @@ export default function App() {
     document.title = getUiString(language, "title");
   }, [language]);
 
-  const rankedUniversities = useMemo(() => sortByRank(universities), []);
+  const rankedUniversities = useMemo(
+    () => sortByRank(universities.filter((university) => getRankForSource(university, rankingSource)), rankingSource),
+    [rankingSource]
+  );
   const regions = useMemo(
     () => [...new Set(rankedUniversities.map((university) => university.region))].sort() as RegionName[],
     [rankedUniversities]
@@ -88,6 +92,20 @@ export default function App() {
       setMobileCluster(null);
     }
   }, [isMobile]);
+
+  useEffect(() => {
+    if (activeUniversity && !getRankForSource(activeUniversity, rankingSource)) {
+      setActiveUniversity(null);
+      setHover(null);
+      setMobileCluster(null);
+    }
+  }, [activeUniversity, rankingSource]);
+
+  useEffect(() => {
+    if (selectedRegion && !regions.includes(selectedRegion)) {
+      setSelectedRegion(null);
+    }
+  }, [regions, selectedRegion]);
 
   const handleUniversitySelection = (university: University, options: { focusGlobe?: boolean } = {}) => {
     setMobileCluster(null);
@@ -144,6 +162,8 @@ export default function App() {
       <InfoPanel
         language={language}
         onLanguageChange={setLanguage}
+        rankingSource={rankingSource}
+        onRankingSourceChange={setRankingSource}
         activeUniversity={activeUniversity}
         universities={rankedUniversities}
         onSelectUniversity={handleSideListUniversitySelection}
@@ -168,6 +188,7 @@ export default function App() {
               universities={rankedUniversities}
               region={selectedRegion}
               language={language}
+              rankingSource={rankingSource}
               activeUniversity={activeUniversity}
               focusRequest={regionFocusRequest}
               onSelect={(university) => handleUniversitySelection(university)}
@@ -179,6 +200,7 @@ export default function App() {
             <UniversityGlobe
               universities={rankedUniversities}
               language={language}
+              rankingSource={rankingSource}
               activeUniversity={activeUniversity}
               panelFocusRequest={panelFocusRequest}
               listResetRequest={globeListResetRequest}
@@ -220,7 +242,7 @@ export default function App() {
               {mobileCluster.map((university) => (
                 <li key={university.name}>
                   <button type="button" onClick={() => handleUniversitySelection(university)}>
-                    <span>QS {university.rank2027}</span>
+                    <span>{getRankLabelForSource(university, rankingSource)}</span>
                     <img src={assetPath(university.logoPath)} alt="" />
                     <strong>{getLocalizedUniversityName(university, language)}</strong>
                   </button>

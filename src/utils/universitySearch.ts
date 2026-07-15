@@ -1,15 +1,32 @@
-import type { University } from "../types";
+import type { RankingSource, University } from "../types";
 import { getLocalizedSearchText } from "./i18n";
 
 export function parseRankValue(rank: string): number {
-  return Number(rank.replace(/=/g, ""));
+  const parsedRank = Number(rank.replace(/=/g, ""));
+  return Number.isFinite(parsedRank) && parsedRank > 0 ? parsedRank : Number.POSITIVE_INFINITY;
 }
 
-export function sortByRank(universities: University[]): University[] {
+export function getRankForSource(university: University, rankingSource: RankingSource): string {
+  return rankingSource === "usNews" ? (university.usNewsGlobalRank ?? "") : university.rank2027;
+}
+
+export function getRankLabelForSource(university: University, rankingSource: RankingSource): string {
+  const rank = getRankForSource(university, rankingSource);
+  if (rank) return rankingSource === "usNews" ? `USN ${rank}` : `QS ${rank}`;
+
+  const fallbackRank = rankingSource === "usNews" ? university.rank2027 : university.usNewsGlobalRank;
+  if (fallbackRank) return rankingSource === "usNews" ? `QS ${fallbackRank}` : `USN ${fallbackRank}`;
+
+  return "NR";
+}
+
+export function sortByRank(universities: University[], rankingSource: RankingSource = "qs"): University[] {
   return [...universities].sort((a, b) => {
-    const rankA = parseRankValue(a.rank2027);
-    const rankB = parseRankValue(b.rank2027);
-    return rankA - rankB || a.name.localeCompare(b.name);
+    const primaryRankA = parseRankValue(getRankForSource(a, rankingSource));
+    const primaryRankB = parseRankValue(getRankForSource(b, rankingSource));
+    const secondaryRankA = parseRankValue(getRankForSource(a, rankingSource === "usNews" ? "qs" : "usNews"));
+    const secondaryRankB = parseRankValue(getRankForSource(b, rankingSource === "usNews" ? "qs" : "usNews"));
+    return primaryRankA - primaryRankB || secondaryRankA - secondaryRankB || a.name.localeCompare(b.name);
   });
 }
 

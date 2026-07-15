@@ -1,8 +1,11 @@
 export type Language = "en" | "zh";
+export type RankingSource = "qs" | "usNews";
 
 export type University = {
   rank2027: string;
   rank2026: string;
+  usNewsGlobalRank?: string;
+  usNewsSource?: string;
   region: string;
   name: string;
   city: string;
@@ -14,6 +17,7 @@ export type University = {
     currency: string;
     label: string;
     assumption: string;
+    sourceUrl?: string;
   };
   logoPath: string;
   logoSource: string;

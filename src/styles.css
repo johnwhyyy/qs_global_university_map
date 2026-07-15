@@ -57,7 +57,7 @@ a {
 .panel-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
 }
 
@@ -69,20 +69,21 @@ a {
 
 .language-toggle {
   display: inline-flex;
-  padding: 0.18rem;
+  flex: 0 0 auto;
+  padding: 0.12rem;
   border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.6);
 }
 
 .language-toggle button {
-  min-height: 1.9rem;
-  padding: 0 0.75rem;
+  min-height: 1.65rem;
+  padding: 0 0.52rem;
   border: 0;
   border-radius: 999px;
   color: #9fb1c7;
   background: transparent;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 700;
   cursor: pointer;
   transition:
@@ -138,11 +139,18 @@ h1 {
   width: 100%;
   max-width: 100%;
   color: #f8fafc;
-  font-size: clamp(1.9rem, 3.35vw, 3.55rem);
+  font-size: clamp(1.55rem, 2.75vw, 2.65rem);
   font-weight: 760;
-  line-height: 0.95;
+  line-height: 1;
   overflow-wrap: anywhere;
   word-break: normal;
+}
+
+.panel-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.65rem;
 }
 
 .lede {
@@ -163,6 +171,20 @@ h1 {
   border-radius: 8px;
   background: rgba(15, 23, 42, 0.58);
   box-shadow: 0 1.3rem 3.5rem rgba(0, 0, 0, 0.26);
+}
+
+.selected-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.selected-card-rank-logo {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .panel-secondary-button {
@@ -201,6 +223,52 @@ h1 {
   flex-direction: column;
   gap: 0.8rem;
   margin-top: 0.2rem;
+}
+
+.ranking-control-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.rank-source-field {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 2.4rem;
+  padding: 0 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 8px;
+  color: #9fb1c7;
+  background: rgba(15, 23, 42, 0.58);
+}
+
+.rank-source-field span {
+  color: #86efac;
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rank-source-field select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #e5edf7;
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.rank-source-field select option {
+  color: #0f172a;
+  background: #f8fafc;
 }
 
 .search-field {
@@ -375,7 +443,18 @@ h2 {
   line-height: 1.15;
 }
 
-.detail-list,
+.detail-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 0.8rem;
+  row-gap: 0.75rem;
+  margin: 0;
+}
+
+.detail-list .detail-list-full {
+  grid-column: 1 / -1;
+}
+
 .tooltip-card dl {
   display: grid;
   gap: 0.9rem;
@@ -796,7 +875,8 @@ dd span {
   object-fit: contain;
 }
 
-.marker span {
+.marker .marker-rank,
+.marker .cluster-count {
   position: absolute;
   right: -0.42rem;
   bottom: -0.28rem;
@@ -1092,16 +1172,26 @@ dd span {
     column-gap: 0.75rem;
     row-gap: 0.65rem;
     gap: 0.95rem;
-    height: 50svh;
-    max-height: 50svh;
+    height: 44svh;
+    max-height: 44svh;
     overflow-y: auto;
   }
 
+  .globe-stage,
+  .visualization-panel,
+  .region-map-stage {
+    min-height: 56svh;
+    height: 56svh;
+  }
+
   h1 {
-    grid-column: 1;
-    grid-row: 1;
     align-self: center;
-    font-size: clamp(0.92rem, 3.6vw, 1.45rem);
+    font-size: clamp(0.86rem, 3.2vw, 1.25rem);
+  }
+
+  .panel-title-row {
+    grid-column: 1 / -1;
+    gap: 0.4rem;
   }
 
   .lede {
@@ -1160,30 +1250,6 @@ dd span {
     width: 4.6rem;
   }
 
-  .panel-header {
-    grid-column: 2;
-    grid-row: 1;
-    align-items: center;
-    flex-direction: row;
-    justify-self: end;
-  }
-
-  .panel-header-main {
-    display: none;
-  }
-
-  .language-toggle {
-    margin-left: auto;
-    flex: 0 0 auto;
-    padding: 0.12rem;
-  }
-
-  .language-toggle button {
-    min-height: 1.45rem;
-    padding: 0 0.45rem;
-    font-size: 0.62rem;
-  }
-
   .selected-card,
   .ranking-panel {
     grid-column: 1 / -1;
@@ -1193,10 +1259,29 @@ dd span {
     gap: 0.45rem;
   }
 
+  .ranking-control-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem;
+  }
+
   .search-field {
     min-height: 1.85rem;
     gap: 0.4rem;
     padding: 0 0.55rem;
+  }
+
+  .rank-source-field {
+    min-height: 1.85rem;
+    gap: 0.4rem;
+    padding: 0 0.5rem;
+  }
+
+  .rank-source-field span {
+    font-size: 0.54rem;
+  }
+
+  .rank-source-field select {
+    font-size: 0.68rem;
   }
 
   .search-field input {
@@ -1245,6 +1330,30 @@ dd span {
     gap: 0.55rem;
     margin-top: 0;
     padding: 0.65rem;
+  }
+
+  .selected-card-top {
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .selected-card-rank-logo {
+    gap: 0.45rem;
+  }
+
+  .selected-card .rank-chip {
+    display: inline-flex;
+    min-height: 1.45rem;
+    padding: 0 0.45rem;
+    font-size: 0.58rem;
+  }
+
+  .selected-card .panel-logo {
+    display: grid;
+    width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 0.42rem;
+    box-shadow: none;
   }
 
   .panel-secondary-button {
