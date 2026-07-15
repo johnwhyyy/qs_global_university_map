@@ -3,7 +3,7 @@ import type { Language, University } from "../types";
 export const UI_STRINGS = {
   en: {
     title: "World Best University Map",
-    lede: "Top universities in the world according to QS and US News 2027 world university ranking..",
+    lede: "According to QS and US News 2027 world university ranking",
     listChip: "QS top 100",
     backToList: "Go back to full ranking list",
     location: "Location",
