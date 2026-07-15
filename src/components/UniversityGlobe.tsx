@@ -85,6 +85,18 @@ const CITY_LABEL_LIFT_PX = 16;
 
 const topCountryCities = topCountryCitiesData as CityCenter[];
 const universityCityCenters = cityCentersData as CityCenter[];
+const EUROPE_CITY_LABEL_COUNTRIES = new Set([
+  "Belgium",
+  "Denmark",
+  "France",
+  "Germany",
+  "Ireland",
+  "Italy",
+  "Netherlands",
+  "Sweden",
+  "Switzerland",
+  "United Kingdom"
+]);
 
 function cityKey(city: Pick<CityCenter, "city" | "country">): string {
   return `${city.city.toLowerCase()}|${city.country.toLowerCase()}`;
@@ -402,8 +414,11 @@ function UniversityGlobeComponent({
   );
   const displayedCityCenters = useMemo(() => {
     const universityCityKeys = new Set(universities.map((university) => cityKey(university)));
+    const filteredTopCountryCities = topCountryCities.filter(
+      (cityCenter) => !EUROPE_CITY_LABEL_COUNTRIES.has(cityCenter.country) || universityCityKeys.has(cityKey(cityCenter))
+    );
     return uniqueCities([
-      ...topCountryCities,
+      ...filteredTopCountryCities,
       ...universityCityCenters.filter((cityCenter) => universityCityKeys.has(cityKey(cityCenter)))
     ]);
   }, [universities]);
