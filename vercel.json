@@ -4,6 +4,14 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/majors",
+      "destination": "https://uni-major-display.vercel.app/majors"
+    },
+    {
+      "source": "/majors/(.*)",
+      "destination": "https://uni-major-display.vercel.app/majors/$1"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

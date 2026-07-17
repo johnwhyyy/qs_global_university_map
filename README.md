@@ -53,6 +53,10 @@ The selected university marker is highlighted in the same green used by the Regi
 2. Set the build command to `npm run build`.
 3. Set the output directory to `dist`.
 
+This project owns the `www.aceuniversitymap.cn` custom domain. Its Vercel
+rewrites keep the map app at the domain root and proxy `/majors` traffic to the
+separate `uni_major_display` Vercel project.
+
 ### Netlify
 
 1. Import the repository in Netlify.
