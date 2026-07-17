@@ -18,6 +18,7 @@ import {
   type CountryFeature
 } from "../utils/globe";
 import { getLocalizedCity, getUiString } from "../utils/i18n";
+import { isUniversityInRegion } from "../utils/region";
 import { getRankForSource } from "../utils/universitySearch";
 
 type RegionMapProps = {
@@ -68,6 +69,7 @@ const ASIA_CAPITAL_CITY_LABEL_MIN_SCALE = 6.5;
 const ASIA_OTHER_CITY_LABEL_MIN_SCALE = 10;
 const EUROPE_CAPITAL_CITY_LABEL_MIN_SCALE = 6;
 const EUROPE_OTHER_CITY_LABEL_MIN_SCALE = 7;
+const UK_CITY_LABEL_MIN_SCALE = 1;
 const REGION_CITY_LABEL_OVERLAP_DISTANCE = 36;
 const REGION_CITY_LABEL_OFFSET_X = 76;
 const REGION_CITY_LABEL_OFFSET_Y = -24;
@@ -147,6 +149,7 @@ const REGION_CONTEXT_COUNTRIES: Record<RegionName, string[]> = {
     "Switzerland",
     "United Kingdom"
   ],
+  UK: ["United Kingdom"],
   Oceania: ["Australia", "New Zealand"]
 };
 
@@ -360,6 +363,7 @@ function isRegionCityLabelVisible(region: RegionName, city: TopCity, scale: numb
   if (region === "Asia") {
     return city.isCapital ? scale >= ASIA_CAPITAL_CITY_LABEL_MIN_SCALE : scale > ASIA_OTHER_CITY_LABEL_MIN_SCALE;
   }
+  if (region === "UK") return scale >= UK_CITY_LABEL_MIN_SCALE;
   if (region !== "Europe") return scale >= REGION_CITY_LABEL_MIN_SCALE;
   return city.isCapital ? scale > EUROPE_CAPITAL_CITY_LABEL_MIN_SCALE : scale > EUROPE_OTHER_CITY_LABEL_MIN_SCALE;
 }
@@ -527,7 +531,7 @@ export function RegionMap({
   const viewTransformRef = useRef(viewTransform);
   const [isDragging, setIsDragging] = useState(false);
   const regionUniversities = useMemo(
-    () => universities.filter((university) => university.region === region),
+    () => universities.filter((university) => isUniversityInRegion(university, region)),
     [region, universities]
   );
   const regionCountries = useMemo(
@@ -601,7 +605,7 @@ export function RegionMap({
     });
 
     const sourceCities =
-      region === "Europe"
+      region === "Europe" || region === "UK"
         ? (() => {
             const europeCities = new Map<string, TopCity>();
             for (const city of topCountryCities) {
@@ -745,7 +749,7 @@ export function RegionMap({
   }, []);
 
   useEffect(() => {
-    if (!focusRequest || focusRequest.university.region !== region) return;
+    if (!focusRequest || !isUniversityInRegion(focusRequest.university, region)) return;
 
     const screen = projectPoint(projection, focusRequest.university.latitude, focusRequest.university.longitude);
     if (!screen) return;

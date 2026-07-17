@@ -8,9 +8,11 @@ import type { HoverState, Language, RankingSource, University } from "./types";
 import type { MapMode, RegionName } from "./types/mapModeTypes";
 import { assetPath } from "./utils/asset";
 import { getLocalizedUniversityName, getUiString } from "./utils/i18n";
+import { isUniversityInRegion } from "./utils/region";
 import { getRankForSource, getRankLabelForSource, sortByRank } from "./utils/universitySearch";
 
 const universities = universitiesData as University[];
+const DISPLAY_ONLY_REGIONS: RegionName[] = ["UK"];
 const UniversityGlobe = lazy(() =>
   import("./components/UniversityGlobe").then((module) => ({ default: module.UniversityGlobe }))
 );
@@ -58,10 +60,21 @@ export default function App() {
     () => sortByRank(universities.filter((university) => getRankForSource(university, rankingSource)), rankingSource),
     [rankingSource]
   );
-  const regions = useMemo(
+  const panelUniversities = useMemo(
+    () =>
+      selectedRegion
+        ? rankedUniversities.filter((university) => isUniversityInRegion(university, selectedRegion))
+        : rankedUniversities,
+    [rankedUniversities, selectedRegion]
+  );
+  const dataRegions = useMemo(
     () => [...new Set(rankedUniversities.map((university) => university.region))].sort() as RegionName[],
     [rankedUniversities]
   );
+  const regions = useMemo<RegionName[]>(() => {
+    const nextRegions = dataRegions.filter((region) => !DISPLAY_ONLY_REGIONS.includes(region));
+    return [...nextRegions, "UK"];
+  }, [dataRegions]);
   const mapMode: MapMode = selectedRegion ? "region" : "global";
 
   const cancelHoverClose = () => {
@@ -110,7 +123,7 @@ export default function App() {
   const handleUniversitySelection = (university: University, options: { focusGlobe?: boolean } = {}) => {
     setMobileCluster(null);
     setActiveUniversity(university);
-    if (selectedRegion && university.region !== selectedRegion) {
+    if (selectedRegion && !isUniversityInRegion(university, selectedRegion)) {
       setSelectedRegion(university.region as RegionName);
     }
     if (options.focusGlobe) {
@@ -127,7 +140,7 @@ export default function App() {
       return;
     }
 
-    if (university.region !== selectedRegion) {
+    if (!isUniversityInRegion(university, selectedRegion)) {
       setSelectedRegion(null);
       window.requestAnimationFrame(() => {
         setPanelFocusRequest({ university, id: Date.now() });
@@ -165,7 +178,7 @@ export default function App() {
         rankingSource={rankingSource}
         onRankingSourceChange={setRankingSource}
         activeUniversity={activeUniversity}
-        universities={rankedUniversities}
+        universities={panelUniversities}
         onSelectUniversity={handleSideListUniversitySelection}
         onShowRankingList={handleShowRankingList}
       />

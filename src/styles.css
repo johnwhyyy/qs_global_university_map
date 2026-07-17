@@ -1244,7 +1244,8 @@ dd span {
     top: 0.35rem;
     left: 0.75rem;
     right: auto;
-    max-width: min(17rem, calc(100% - 5.7rem));
+    width: auto;
+    max-width: calc(100% - 7.7rem);
     gap: 0.2rem;
     padding: 0.2rem;
     border-radius: 1rem;
@@ -1253,8 +1254,9 @@ dd span {
 
   .region-selector button {
     min-height: 1.52rem;
-    padding: 0 0.42rem;
-    font-size: 0.58rem;
+    padding: 0 0.36rem;
+    font-size: 0.56rem;
+    white-space: nowrap;
   }
 
   .map-reset-button {
@@ -1272,7 +1274,7 @@ dd span {
   }
 
   .map-zoom-control {
-    top: 2.18rem;
+    top: 5.95rem;
     right: 0.85rem;
     gap: 0.18rem;
     font-size: 0.46rem;

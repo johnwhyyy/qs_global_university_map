@@ -209,6 +209,7 @@ const REGION_ZH: Record<string, string> = {
   Americas: "美洲",
   Asia: "亚洲",
   Europe: "欧洲",
+  UK: "英国",
   Oceania: "大洋洲"
 };
 
