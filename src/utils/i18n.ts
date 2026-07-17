@@ -209,8 +209,15 @@ const REGION_ZH: Record<string, string> = {
   Americas: "美洲",
   Asia: "亚洲",
   Europe: "欧洲",
+  Oceania: "大洋洲",
   UK: "英国",
-  Oceania: "大洋洲"
+  US: "美国",
+  Australia: "澳大利亚",
+  "Hong Kong": "香港"
+};
+
+const REGION_DISPLAY_EN: Record<string, string> = {
+  "Hong Kong": "HK"
 };
 
 const COUNTRY_ZH: Record<string, string> = {
@@ -570,7 +577,7 @@ export function getLocalizedUniversityName(university: University, language: Lan
 }
 
 export function getLocalizedRegion(region: string, language: Language): string {
-  if (language === "en") return region;
+  if (language === "en") return REGION_DISPLAY_EN[region] ?? region;
   return REGION_ZH[region] ?? region;
 }
 

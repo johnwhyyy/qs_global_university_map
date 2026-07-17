@@ -12,7 +12,7 @@ import { isUniversityInRegion } from "./utils/region";
 import { getRankForSource, getRankLabelForSource, sortByRank } from "./utils/universitySearch";
 
 const universities = universitiesData as University[];
-const DISPLAY_ONLY_REGIONS: RegionName[] = ["UK"];
+const DISPLAY_ONLY_REGIONS: RegionName[] = ["UK", "US", "Australia", "Hong Kong"];
 const UniversityGlobe = lazy(() =>
   import("./components/UniversityGlobe").then((module) => ({ default: module.UniversityGlobe }))
 );
@@ -73,7 +73,7 @@ export default function App() {
   );
   const regions = useMemo<RegionName[]>(() => {
     const nextRegions = dataRegions.filter((region) => !DISPLAY_ONLY_REGIONS.includes(region));
-    return [...nextRegions, "UK"];
+    return [...nextRegions, ...DISPLAY_ONLY_REGIONS];
   }, [dataRegions]);
   const mapMode: MapMode = selectedRegion ? "region" : "global";
 

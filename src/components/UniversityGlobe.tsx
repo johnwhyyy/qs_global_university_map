@@ -60,7 +60,7 @@ type CityCenter = {
 type ScreenCityLabel = {
   key: string;
   name: string;
-  isCapital: boolean;
+  isCountryCapital: boolean;
   screen: ScreenPoint;
 };
 
@@ -85,6 +85,7 @@ const CITY_LABEL_LIFT_PX = 16;
 
 const topCountryCities = topCountryCitiesData as CityCenter[];
 const universityCityCenters = cityCentersData as CityCenter[];
+const countryCapitalCityKeys = new Set(topCountryCities.filter((city) => city.isCapital).map(cityKey));
 const EUROPE_CITY_LABEL_COUNTRIES = new Set([
   "Belgium",
   "Denmark",
@@ -520,7 +521,7 @@ function UniversityGlobeComponent({
             nextCityLabels.push({
               key: `${cityCenter.city}-${cityCenter.country}`,
               name: getLocalizedCity(cityCenter.city, language),
-              isCapital: cityCenter.isCapital,
+              isCountryCapital: countryCapitalCityKeys.has(cityKey(cityCenter)),
               screen: {
                 x: screen.x,
                 y: overlapsMarker || overlapsCity ? screen.y - CITY_LABEL_LIFT_PX : screen.y
@@ -639,11 +640,11 @@ function UniversityGlobeComponent({
         {screenCityLabels.map((cityLabel) => (
           <div
             key={cityLabel.key}
-            className={`city-label screen-city-label ${cityLabel.isCapital ? "is-capital" : ""}`}
+            className={`city-label screen-city-label ${cityLabel.isCountryCapital ? "is-capital" : ""}`}
             style={{
               left: `${cityLabel.screen.x}px`,
               top: `${cityLabel.screen.y}px`,
-              zIndex: cityLabel.isCapital ? 3100 : 3000
+              zIndex: cityLabel.isCountryCapital ? 3100 : 3000
             }}
           >
             <span className="city-dot" />

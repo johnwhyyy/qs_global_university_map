@@ -5,6 +5,7 @@ import type { FeatureCollection } from "geojson";
 import { RotateCcw } from "lucide-react";
 import { SHOW_MAP_DEBUG_OVERLAY } from "../config/debug";
 import cityCentersData from "../data/city-centers.json";
+import hongKongBoundaryData from "../data/hong-kong-boundary.json";
 import topCountryCitiesData from "../data/top-country-cities.json";
 import usPriorityCitiesData from "../data/us-priority-cities.json";
 import usStateCapitalsData from "../data/us-state-capitals.json";
@@ -54,6 +55,9 @@ const usStateCapitals = (usStateCapitalsData as TopCity[]).map((city) => ({
   isCapital: false,
   isStateCapital: true
 }));
+const countryCapitalCityKeys = new Set(
+  [...topCountryCities, ...usPriorityCities].filter((city) => city.isCapital).map(cityKey)
+);
 
 const REGION_MARKER_SIZE = 32.8;
 const REGION_CLUSTER_DISTANCE = REGION_MARKER_SIZE * (2 / 3);
@@ -69,7 +73,7 @@ const ASIA_CAPITAL_CITY_LABEL_MIN_SCALE = 6.5;
 const ASIA_OTHER_CITY_LABEL_MIN_SCALE = 10;
 const EUROPE_CAPITAL_CITY_LABEL_MIN_SCALE = 6;
 const EUROPE_OTHER_CITY_LABEL_MIN_SCALE = 7;
-const UK_CITY_LABEL_MIN_SCALE = 1;
+const DISPLAY_COUNTRY_CITY_LABEL_MIN_SCALE = 1;
 const REGION_CITY_LABEL_OVERLAP_DISTANCE = 36;
 const REGION_CITY_LABEL_OFFSET_X = 76;
 const REGION_CITY_LABEL_OFFSET_Y = -24;
@@ -79,8 +83,11 @@ const REGION_CITY_LABEL_VIEWPORT_MARGIN = 28;
 const REGION_START_VIEWS: Partial<Record<RegionName, { latitude: number; longitude: number; scale: number }>> = {
   Americas: { latitude: 42.939, longitude: -98.3069, scale: 3.88 },
   Asia: { latitude: 28.2674, longitude: 106.7436, scale: 6.5 },
-  Europe: { latitude: 51.0277, longitude: 5.8551, scale: 3.52 }
+  Europe: { latitude: 51.0277, longitude: 5.8551, scale: 3.52 },
+  US: { latitude: 39.8283, longitude: -98.5795, scale: 2 },
+  "Hong Kong": { latitude: 22.3193, longitude: 114.1694, scale: 1 }
 };
+const DISPLAY_COUNTRY_REGIONS: RegionName[] = ["UK", "US", "Australia", "Hong Kong"];
 const REGION_CONTEXT_COUNTRIES: Record<RegionName, string[]> = {
   Americas: [
     "Argentina",
@@ -150,8 +157,31 @@ const REGION_CONTEXT_COUNTRIES: Record<RegionName, string[]> = {
     "United Kingdom"
   ],
   UK: ["United Kingdom"],
+  US: ["United States of America"],
+  Australia: ["Australia"],
+  "Hong Kong": [],
   Oceania: ["Australia", "New Zealand"]
 };
+function rewindPolygonFeature(feature: CountryFeature): CountryFeature {
+  if (!feature.geometry) return feature;
+
+  return {
+    ...feature,
+    geometry: {
+      ...feature.geometry,
+      coordinates:
+        feature.geometry.type === "Polygon"
+          ? (feature.geometry.coordinates as number[][][]).map((ring) => [...ring].reverse())
+          : (feature.geometry.coordinates as number[][][][]).map((polygon) =>
+              polygon.map((ring) => [...ring].reverse())
+            )
+    }
+  };
+}
+
+const hongKongBoundaryFeatures = ((hongKongBoundaryData as FeatureCollection).features as CountryFeature[]).map(
+  rewindPolygonFeature
+);
 
 type ViewTransform = {
   x: number;
@@ -363,13 +393,17 @@ function isRegionCityLabelVisible(region: RegionName, city: TopCity, scale: numb
   if (region === "Asia") {
     return city.isCapital ? scale >= ASIA_CAPITAL_CITY_LABEL_MIN_SCALE : scale > ASIA_OTHER_CITY_LABEL_MIN_SCALE;
   }
-  if (region === "UK") return scale >= UK_CITY_LABEL_MIN_SCALE;
+  if (DISPLAY_COUNTRY_REGIONS.includes(region)) return scale >= DISPLAY_COUNTRY_CITY_LABEL_MIN_SCALE;
   if (region !== "Europe") return scale >= REGION_CITY_LABEL_MIN_SCALE;
   return city.isCapital ? scale > EUROPE_CAPITAL_CITY_LABEL_MIN_SCALE : scale > EUROPE_OTHER_CITY_LABEL_MIN_SCALE;
 }
 
 function cityKey(city: Pick<TopCity, "city" | "country">): string {
   return `${city.city.toLowerCase()}|${city.country.toLowerCase()}`;
+}
+
+function isCountryCapitalCity(city: Pick<TopCity, "city" | "country">): boolean {
+  return countryCapitalCityKeys.has(cityKey(city));
 }
 
 function uniqueCities(cities: TopCity[]): TopCity[] {
@@ -498,7 +532,7 @@ function alignOffsetCityLabels(placements: RegionCityLabelPlacement[], height: n
 }
 
 function cityLabelPriority(city: TopCity): number {
-  if (city.isCapital && !city.isStateCapital) return 3;
+  if (isCountryCapitalCity(city)) return 3;
   if (city.isStateCapital) return 1;
   return 2;
 }
@@ -543,6 +577,8 @@ export function RegionMap({
     [regionCountries]
   );
   const regionCountryFeatures = useMemo(() => {
+    if (region === "Hong Kong") return hongKongBoundaryFeatures;
+
     const geometryNames = new Set([
       ...regionCountries.map(getCountryGeometryName),
       ...REGION_CONTEXT_COUNTRIES[region]
@@ -700,7 +736,7 @@ export function RegionMap({
             key: `${city.city}-${city.country}`,
             name: city.name,
             isCapital: city.isCapital,
-            isCountryCapital: city.isCapital && !city.isStateCapital,
+            isCountryCapital: isCountryCapitalCity(city),
             priority: cityLabelPriority(city),
             anchor,
             label: overlapsMarker
@@ -971,10 +1007,10 @@ export function RegionMap({
     >
       <svg className="region-map-svg" viewBox={`0 0 ${size.width} ${size.height}`} role="img">
         <rect width={size.width} height={size.height} className="region-map-ocean" />
-        <g transform={`translate(${viewTransform.x} ${viewTransform.y}) scale(${viewTransform.scale})`}>
-          {regionCountryFeatures.map((feature: CountryFeature) => (
+        <g key={region} transform={`translate(${viewTransform.x} ${viewTransform.y}) scale(${viewTransform.scale})`}>
+          {regionCountryFeatures.map((feature: CountryFeature, index) => (
             <path
-              key={feature.properties?.name}
+              key={`${region}-${feature.properties?.name ?? "feature"}-${index}`}
               d={path(feature as never) ?? ""}
               className={`region-country-shape ${
                 regionSchoolGeometryNames.has(feature.properties?.name ?? "") ? "has-schools" : "is-context"
