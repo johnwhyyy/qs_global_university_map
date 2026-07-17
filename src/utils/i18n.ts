@@ -247,6 +247,28 @@ const COUNTRY_ZH: Record<string, string> = {
   "United States of America": "美国"
 };
 
+const US_STATE_ZH: Record<string, string> = {
+  CA: "加利福尼亚州",
+  CT: "康涅狄格州",
+  GA: "佐治亚州",
+  IL: "伊利诺伊州",
+  MA: "马萨诸塞州",
+  MD: "马里兰州",
+  MI: "密歇根州",
+  MN: "明尼苏达州",
+  MO: "密苏里州",
+  NC: "北卡罗来纳州",
+  NJ: "新泽西州",
+  NY: "纽约州",
+  OH: "俄亥俄州",
+  PA: "宾夕法尼亚州",
+  RI: "罗德岛州",
+  TN: "田纳西州",
+  TX: "得克萨斯州",
+  WA: "华盛顿州",
+  WI: "威斯康星州"
+};
+
 const CITY_ZH: Record<string, string> = {
   Adelaide: "阿德莱德",
   Aalborg: "奥尔堡",
@@ -591,7 +613,21 @@ export function getLocalizedCity(city: string, language: Language): string {
   return CITY_ZH[city] ?? city;
 }
 
+function getUsStateFromCity(city: string): string | null {
+  const match = city.match(/,\s*([A-Z]{2})$/);
+  return match ? match[1] : null;
+}
+
 export function getLocalizedLocation(university: University, language: Language): string {
+  if (language === "zh") {
+    const stateCode =
+      university.country === "United States of America" ? getUsStateFromCity(university.city) : null;
+    const state = stateCode ? US_STATE_ZH[stateCode] : null;
+    return [getLocalizedCity(university.city, language), state, getLocalizedCountry(university.country, language)]
+      .filter(Boolean)
+      .join("，");
+  }
+
   return `${getLocalizedCity(university.city, language)}, ${getLocalizedCountry(university.country, language)}`;
 }
 
